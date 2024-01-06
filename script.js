@@ -20,12 +20,8 @@ clear.onclick= function(){
 copy.onclick = function(){
     let copytext = navigator.clipboard.readText(text.value);
     text = copytext;
-    // props.showalert("Copied to Clipboard", "success");
 }
 remove.onclick = function(){
     let newText = text.value.split(/[ ]+/);
-    
-    text.value = newText;
-    
-    // props.showalert("Remove Extra-Spaces", "success")
+    text.value = newText.join(" ");    
 }
