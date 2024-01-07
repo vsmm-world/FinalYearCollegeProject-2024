@@ -1,9 +1,12 @@
 *{
-    background-color: rgb(236, 227, 227);
     /* background-color: rgb(98, 89, 89); */
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+}
+
+body{
+    background-color: rgb(236, 227, 227);
 }
 
 .first-navbar{
@@ -29,6 +32,21 @@
     padding: 1vh ;
 }
 
+.loginform{
+    display: flex;
+    justify-content: space-around;
+}
+
+.logintxt{
+    text-decoration: none;
+    color: black;
+}
+
+.regitxt{
+    text-decoration: none;
+    color: black;
+
+}
 .textareawrite{
     width: 80vw;
     height: 50vh;
@@ -42,9 +60,9 @@
 }
 
 .btns{
-    height: 9vh;
-    width: 34vw;
-    padding: 1vh 1vw;
+    /* height: 9vh; */
+    width: 50vw;
+    padding:6px;
     background-color: blue;
     margin: 3vh 6vw;
     color: white;

@@ -18,8 +18,7 @@ clear.onclick= function(){
     text.value = clr;
 }
 copy.onclick = function(){
-    let copytext = navigator.clipboard.readText(text.value);
-    text = copytext;
+    navigator.clipboard.writeText(text.value);
 }
 remove.onclick = function(){
     let newText = text.value.split(/[ ]+/);
