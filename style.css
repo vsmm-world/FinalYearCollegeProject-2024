@@ -42,7 +42,8 @@
 }
 
 .btns{
-    height: 7vh;
+    height: 9vh;
+    width: 34vw;
     padding: 1vh 1vw;
     background-color: blue;
     margin: 3vh 6vw;
