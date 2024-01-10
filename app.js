@@ -62,6 +62,15 @@ app.get('/logout', (req, res) => {
     });
 });
 
+app.get('/about',(req,res)=>{
+    res.render('about')
+})
+app.get('/contact',(req,res)=>{
+    res.render('about')
+})
+
+
+
 app.get('/photos',async(req,res)=>{
     const imgs = await File.find({}).then((data,err)=>{
         if(err){
@@ -70,9 +79,13 @@ app.get('/photos',async(req,res)=>{
         res.status(200).render('photos',{imgs:data})
     })
 })
+
+
 app.get('/test',(req,res)=>{
     res.status(200).render('test');
 })
+
+
 app.get('/get-img',async(req,res)=>{
     const imgs = await File.find({}).then((data,err)=>{
         if(err){
