@@ -10,8 +10,8 @@ const fs = require('fs');
 const path = require('path');
 const { upload } = require('./middleware/imageHandler');
 const File = require('./models/file');
-PassInit(passport);
 
+PassInit(passport);
 
 // Middlwere Usages 
 app.use(express.json());
@@ -23,13 +23,11 @@ app.use(expressSession({
     cookie: {
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
-
 }));
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.set("view engine", "ejs");
-
 
 //Server Initial Setup 
 ConnectDB();
@@ -37,11 +35,10 @@ app.listen(port, () => {
     console.log(`website is runnig at : http://localhost:${port}`);
 });
 
-
 // Get Request Handeling 
 
 app.get("/", (req, res) => {
-    res.render("home");
+    res.render("index");
 });
 
 app.get("/register", (req, res) => {
@@ -50,6 +47,12 @@ app.get("/register", (req, res) => {
 app.get("/login", (req, res) => {
     res.status(200).render("login");
 });
+app.get("/about" , (req , res) => {
+    res.status(200).render("about");
+})
+app.get("/contact" , (req , res) => {
+    res.status(200).render("contact");
+})
 app.get('/secret', isAuthenticted, (req, res) => {
     res.render('secret');
 })
