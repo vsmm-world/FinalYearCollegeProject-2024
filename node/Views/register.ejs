@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/node/Views/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <span class="spanf">
+                    <li><a class="navbartxt" href="/node/Views/index.ejs">Home</a></li>
+                    <li><a class="navbartxt" href="/node/Views/about.ejs">About</a></li>
+                    <li><a class="navbartxt" href="/node/Views/contact.ejs">Contact Us</a></li>
+                    <li><a class="navbartxt" href="/node/Views/photos.ejs">Photos</a></li>
+                    <li><a class="navbartxt" href="/node/Views/test.ejs">Test</a></li>
+                </span>
+                <span class="spans">
+                    <li><a class="navbartxt" href="/node/Views/login.ejs">Login</a></li>
+                    <li><a class="navbartxt" href="/node/Views/register.ejs">Register</a></li>
+                </span>
+            </ul>
+        </nav>
+    </header>
+    <!-- <div class="main">
+        <form action="api/register" method="post" id="form">
+
+            <label for="name">Enter Your Name :
+                <input type="text" name="name" id="name" required>
+            </label><br>
+            <label for="username">Choose Your Uniqe Username :
+                <input type="text" name="username" id="username" required>
+            </label><br>
+            <label for="email"> Enter Your e-mail id :
+                <input type="email" name="email" id="email" required>
+            </label><br>
+            <label for="password"> Create Strong Password :
+                <input type="password" name="password" id="password" required>
+            </label><br>
+            <label for="confirm_password"> Confirm Password :
+                <input type="password" name="confirm_password" id="confirm_password" required>
+            </label><br>
+
+            <input type="submit" value="Register" id="submit">
+            <button id="cls">clear</button>
+        </form>
+
+        <div class="stat" id="stat">
+
+        </div>
+    </div> -->
+
+    <div id="register-form-wrap">
+        <h2>Register</h2>
+        <!-- <form id="login-form" method="post"> -->
+        <form action="api/register" method="post" id="login-form">
+            <p>
+                <input type="text" id="name" name="name" placeholder="Name" required>
+            </p>
+            <p>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </p>
+            <p>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </p>
+            <p>
+                <input type="password" id="password" name="Password" placeholder="Password" required>
+                <!-- 
+                    <div id="showdiv">
+                        <input type="checkbox" onclick="showpass()"  id="showpas" > <span id="showspan"></span>
+                    </div> -->
+            </p>
+            <p>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="confirm password"
+                    required>
+
+                <!-- <div id="showdiv">
+                    <input type="checkbox" onclick="showpass()"  id="showpas" > <span id="showspan">Show Password</span>
+                </div> -->
+            </p>
+            <button type="button" id="hidebtn" onclick="hideimage()">
+                <img id="hideimg" src="/img/hide.png" onclick="hideimg()" alt="hide password">
+            </button>
+
+            <p>
+                <input type="submit" id="form" value="Register">
+            </p>
+            <!-- <p>
+                <button class="clearbutton" id="clrbtn">Clear</button>
+            </p> -->
+
+        </form>
+
+        <div class="stat" id="stat">
+
+        </div>
+
+    </div>
+    <script>
+        const submit = document.getElementById('logic');
+        const clrbtn = document.getElementById('clrbtn');
+        const name = document.getElementById('name');
+        const username = document.getElementById('username');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const confirm_password = document.getElementById('confirm_password');
+        const form = document.getElementById('form');
+        const cls = document.getElementById('cls');
+        const stat = document.getElementById('stat');
+        const hide = document.getElementById('hideimg');
+        const hidebtn = document.getElementById('hidebtn');
+        // clear button logic
+        // clrbtn.onclick = function(){
+        //     username.value = "";
+        //     email.value = "";
+        //     password.value = ""; 
+        // }
+
+        //     function showpass() {
+        //     const x = document.getElementById("password");
+        //     const check = document.getElementById("showpas")
+        //     if (check.checked) {
+        //         x.type = "text";
+        //     } else {
+        //         x.type = "password";
+        //     }
+        // }
+        // change password to text
+        function hideimage() {
+            if (hide.src = "/img/hide.png") {
+                hide.src = "/img/show.png";
+                confirm_password.type = "text";
+            }
+            else {
+                hide.src = "/img/hide.png";
+                confirm_password.type = "password";
+            }
+        }
+        function hideimg() {
+            if (hide.src = "/img/show.png") {
+                hide.src = "/img/hide.png";
+                confirm_password.type = "password";
+            }
+        }
+
+        function showimage() {
+
+        }
+        stat.style.display = 'none';
+
+        const baseURL = 'http://localhost:5000/';
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (password.value != confirm_password.value) {
+
+                return alert('Enter The Same Password again')
+            }
+
+            const res = await fetch(baseURL + 'api/register', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name.value,
+                    username: username.value,
+                    email: email.value,
+                    password: password.value,
+                })
+            }).then(async (e) => {
+                const data = await e.json();
+                stat.style.display = 'block';
+                stat.innerHTML = data.message;
+                console.log(data)
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>

@@ -3,8 +3,12 @@ let lower = document.getElementById('btn2');
 let remove = document.getElementById('btn3');
 let clear = document.getElementById('btn4');
 let copy = document.getElementById('btn5');
-let text = document.getElementById('text')
+let text = document.getElementById('text');
+let capitalize = document.getElementById('btn6');
 
+capitalize.onclick = function(){
+
+}
 upper.onclick = function() {
     let uppperString = text.value.toUpperCase();
     text.value = uppperString;
