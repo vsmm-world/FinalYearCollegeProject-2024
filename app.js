@@ -14,6 +14,7 @@ const File = require('./models/file');
 PassInit(passport);
 
 // Middlwere Usages 
+app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(expressSession({
@@ -47,10 +48,10 @@ app.get("/register", (req, res) => {
 app.get("/login", (req, res) => {
     res.status(200).render("login");
 });
-app.get("/about" , (req , res) => {
+app.get("/about", (req, res) => {
     res.status(200).render("about");
 })
-app.get("/contact" , (req , res) => {
+app.get("/contact", (req, res) => {
     res.status(200).render("contact");
 })
 app.get('/secret', isAuthenticted, (req, res) => {
@@ -62,33 +63,33 @@ app.get('/logout', (req, res) => {
     });
 });
 
-app.get('/about',(req,res)=>{
+app.get('/about', (req, res) => {
     res.render('about')
 })
-app.get('/contact',(req,res)=>{
+app.get('/contact', (req, res) => {
     res.render('about')
 })
 
-
-
-app.get('/photos',async(req,res)=>{
-    const imgs = await File.find({}).then((data,err)=>{
-        if(err){
-            console.log(err);
-        }
-        res.status(200).render('photos',{imgs:data})
-    })
-})
-
-
-app.get('/test',(req,res)=>{
+app.get('/test', (req, res) => {
     res.status(200).render('test');
 })
 
 
-app.get('/get-img',async(req,res)=>{
-    const imgs = await File.find({}).then((data,err)=>{
-        if(err){
+app.get('/photos', async (req, res) => {
+    const imgs = await File.find({}).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).render('photos', { imgs: data })
+    })
+})
+
+
+
+
+app.get('/get-img', async (req, res) => {
+    const imgs = await File.find({}).then((data, err) => {
+        if (err) {
             console.log(err);
         }
         res.status(200).send(data);
@@ -97,7 +98,7 @@ app.get('/get-img',async(req,res)=>{
 
 // Post Requests Handeling
 
-app.post('/data/img',upload.single('avatar'), async (req, res) => {
+app.post('/data/img', upload.single('avatar'), async (req, res) => {
     const obj = {
         img: {
             data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
