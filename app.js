@@ -3,7 +3,7 @@ const ConnectDB = require("./db/connection");
 const app = express();
 const expressSession = require('express-session');
 const passport = require("passport");
-const port = process.env.port || 1000;
+const port = process.env.port || 5000;
 const register = require('./auth/auth');
 const { PassInit, isAuthenticted } = require('./auth/passportConf');
 const fs = require('fs');
@@ -119,8 +119,5 @@ app.post('/api/login', passport.authenticate('local'), (req, res) => {
 });
 
 
-
-
-
-
-
+//editing code in codespace 
+//for all extra comments
