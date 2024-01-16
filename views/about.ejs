@@ -3,128 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            background: rgb(125, 73, 73);
-        }
-
-        .aboutimg {
-            width: 40vw;
-            margin: 7vh;
-            height: 60vh;
-
-        }
-
-        .fakro {
-            padding: 4vh 5vh;
-            background: rgb(112, 51, 51);
-            color: rgb(255, 255, 255);
-            box-shadow: 3vh 5px 30vh rgb(0, 0, 0);
-        }
-
-        .first {
-            display: flex;
-            padding-top: 6vh;
-            padding-bottom: 3vh;
-            margin-bottom: 3vh;
-        }
-
-        .secondof {
-            width: 50vw;
-        }
-
-        .second {
-            display: flex;
-            padding: 3vh;
-            margin-bottom: 3vh;
-        }
-
-        .thired {
-            display: flex;
-            padding: 3vh;
-            margin-bottom: 3vh;
-            padding-bottom: 5vh;
-        }
-
-        /* Footer Start here */
-        .full-header {
-            background-color: rgb(37, 35, 35);
-            box-sizing: border-box;
-            margin-top: -3vh;
-        }
-
-        .ft-part-1 {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            padding: 10vh 5vw;
-            column-gap: 20px;
-        }
-
-        .ft-name-1 {
-            color: #9c8787;
-            font-size: 12px;
-            padding-bottom: 3vh;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .ft-mail {
-            border-left: 1px solid #454d5e;
-            padding-left: 32px;
-        }
-
-        .ft-about {
-            font-family: 'Inter', sans-serif;
-            font-size: 12px;
-            color: #fff;
-            display: block;
-            line-height: 4vh;
-            text-decoration: none;
-        }
-
-        .ft-part-1 {
-            margin-bottom: -2vh;
-        }
-
-        .ft-part-1 p {
-            white-space: nowrap;
-            color: #fff;
-            font-size: 12px;
-            line-height: 4vh;
-        }
-
-        .ft-part-2 {
-            display: flex;
-            align-items: center;
-            border-top: 1px solid #454d5e;
-            padding: 25px 0;
-            width: 100%;
-            justify-content: space-evenly;
-        }
-
-        .ft-part-2 span {
-            color: white;
-        }
-
-        .ft-2-in {
-            display: flex;
-            align-items: center;
-        }
-
-        .ft-2-in a {
-            text-decoration: none;
-            color: white;
-            padding-left: 1vw;
-        }
-    </style>
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
     <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <span class="spanf">
+                        <li><a class="navbartxt" href="/"><img class="navimg" src="img/girl.jpg" alt=""></a></li>
+                        <li><a class="navbartxt" href="/">Home</a></li>
+                        <li><a class="navbartxt" href="/about">About</a></li>
+                        <li><a class="navbartxt" href="/contact">Contact Us</a></li>
+                        <li><a class="navbartxt" href="/photos">Photos</a></li>
+                        <li><a class="navbartxt" href="/test">Test</a></li>
+                    </span>
+                    <span class="spans">
+                        <li><a class="navbartxt" href="/login">Login</a></li>
+                        <li><a class="navbartxt" href="/register">Register</a></li>
+                    </span>
+                </ul>
+            </nav>
+        </header>
         <div class="first">
             <div class="fy1 firstof fakro">
                 <h1>Title Of Project</h1>
@@ -144,12 +46,12 @@
                     iste, amet sunt voluptatum molestias? Perspiciatis sapiente architecto dolores!</p>
             </div>
             <div class="fy2 secondof">
-                <img class="aboutimg" src="/img/beautiful-young-woman-with-acne.jpg" alt="First">
+                <img class="aboutimg" src="img/girl.jpg" alt="First">
             </div>
         </div>
         <div class="second">
             <div class="sy1 firstof">
-                <img src="/img/nature.jpg" class="aboutimg" alt="Second">
+                <img src="/img/girl.jpg" class="aboutimg" alt="Second">
             </div>
             <div class="sy2 secondof fakro">
                 <h1>Our Method</h1>
@@ -188,7 +90,7 @@
                     modi? Perspiciatis, numquam dicta.</p>
             </div>
             <div class="ty2 secondof">
-                <img src="img/Road.jpg" class="aboutimg" alt="">
+                <img src="img/girl.jpg" class="aboutimg" alt="">
             </div>
         </div>
         <footer>

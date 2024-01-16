@@ -1,0 +1,73 @@
+/* Footer Start here */
+.full-header {
+    background-color: rgb(37, 35, 35);
+    box-sizing: border-box;
+    margin-top: -3vh;
+}
+
+.ft-part-1 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 10vh 5vw;
+    column-gap: 20px;
+}
+
+.ft-name-1 {
+    color: #9c8787;
+    font-size: 12px;
+
+    padding-bottom: 3vh;
+    width: 17vw;
+    display: block;
+    font-family: 'Inter', sans-serif;
+}
+
+.ft-mail {
+    border-left: 1px solid #454d5e;
+    padding-left: 32px;
+    margin-left: -8vw;
+}
+
+.ft-about {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #fff;
+    display: block;
+    line-height: 4vh;
+    text-decoration: none;
+}
+
+.ft-part-1 {
+    margin-bottom: -2vh;
+}
+
+.ft-part-1 p {
+    white-space: nowrap;
+    color: #fff;
+    font-size: 12px;
+    line-height: 4vh;
+}
+
+.ft-part-2 {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #454d5e;
+    padding: 25px 0;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.ft-part-2 span {
+    color: white;
+}
+
+.ft-2-in {
+    display: flex;
+    align-items: center;
+}
+
+.ft-2-in a {
+    text-decoration: none;
+    color: white;
+    padding-left: 1vw;
+}

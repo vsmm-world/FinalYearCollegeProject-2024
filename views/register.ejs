@@ -5,29 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="/node/Views/login.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                <span class="spanf">
-                    <li><a class="navbartxt" href="/">Home</a></li>
-                    <li><a class="navbartxt" href="/about">About</a></li>
-                    <li><a class="navbartxt" href="/contact">Contact Us</a></li>
-                    <li><a class="navbartxt" href="/photos">Photos</a></li>
-                    <li><a class="navbartxt" href="/test">Test</a></li>
-                </span>
-                <span class="spans">
-                    <li><a class="navbartxt" href="/login">Login</a></li>
-                    <li><a class="navbartxt" href="/register">Register</a></li>
-                </span>
-            </ul>
-        </nav>
-    </header>
-    <!-- <div class="main">
+    <div class="container">
+
+        <header>
+            <nav>
+                <ul>
+                    <span class="spanf">
+                        <li><a class="navbartxt" href="/"><img class="navimg" src="img/girl.jpg" alt=""></a></li>
+                        <li><a class="navbartxt" href="/">Home</a></li>
+                        <li><a class="navbartxt" href="/about">About</a></li>
+                        <li><a class="navbartxt" href="/contact">Contact Us</a></li>
+                        <li><a class="navbartxt" href="/photos">Photos</a></li>
+                        <li><a class="navbartxt" href="/test">Test</a></li>
+                    </span>
+                    <span class="spans">
+                        <li><a class="navbartxt" href="/login">Login</a></li>
+                        <li><a class="navbartxt" href="/register">Register</a></li>
+                    </span>
+                </ul>
+            </nav>
+        </header>
+        <!-- <div class="main">
         <form action="api/register" method="post" id="form">
 
             <label for="name">Enter Your Name :
@@ -55,51 +60,132 @@
         </div>
     </div> -->
 
-    <div id="register-form-wrap">
-        <h2>Register</h2>
-        <!-- <form id="login-form" method="post"> -->
-        <form action="api/register" method="post" id="login-form">
-            <p>
-                <input type="text" id="name" name="name" placeholder="Name" required>
-            </p>
-            <p>
-                <input type="email" id="email" name="email" placeholder="Email" required>
-            </p>
-            <p>
-                <input type="text" id="username" name="username" placeholder="Username" required>
-            </p>
-            <p>
-                <input type="password" id="password" name="Password" placeholder="Password" required>
-                <!-- 
-                    <div id="showdiv">
-                        <input type="checkbox" onclick="showpass()"  id="showpas" > <span id="showspan"></span>
-                    </div> -->
-            </p>
-            <p>
-                <input type="password" id="confirm_password" name="confirm_password" placeholder="confirm password"
-                    required>
-
-                <!-- <div id="showdiv">
-                    <input type="checkbox" onclick="showpass()"  id="showpas" > <span id="showspan">Show Password</span>
-                </div> -->
-            </p>
-            <button type="button" id="hidebtn" onclick="hideimage()">
-                <img id="hideimg" src="/img/hide.png" onclick="hideimg()" alt="hide password">
-            </button>
-
-            <p>
-                <input type="submit" id="form" value="Register">
-            </p>
-            <!-- <p>
+        <div id="register-form-wrap">
+            <h1>Register</h1>
+            <!-- <form id="login-form" method="post"> -->
+            <form action="api/register" method="post" id="login-form">
+                <div>
+                    <input type="text" id="name" name="name" placeholder="Name" required>
+                </div>
+                <div>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div>
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div>
+                    <input type="password" id="password" name="Password" placeholder="Password" required>
+                </div>
+                <div>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="confirm password"
+                        required>
+                </div>
+                <div id="showdiv">
+                    <label id="showspan" name="show password">
+                    <input type="checkbox" onclick="showpass()" id="showpas">
+                    Show Password</label>
+                </div>
+                <div>
+                    <input type="submit" id="form" value="Register">
+                </div>
+                <!-- <p>
                 <button class="clearbutton" id="clrbtn">Clear</button>
             </p> -->
 
-        </form>
+            </form>
 
-        <div class="stat" id="stat">
+            <div class="stat" id="stat">
+
+            </div>
 
         </div>
 
+        <footer>
+            <div class="full-header">
+                <div class="ft-part-1">
+
+                    <div>
+                        <div class="ft-name-1">ABOUT</div>
+                        <a href="#" class="ft-about" aria-label="Contact Us">Contact Us</a>
+                        <a href="#" class="ft-about" aria-label="About Us">About Us</a>
+                        <a href="#" class="ft-about" aria-label="Careers">Careers</a>
+                        <a href="#" class="ft-about" aria-label="HomeMart Stories">HomeMart Stories</a>
+                        <a href="#" class="ft-about" aria-label="Press">Press</a>
+                        <a href="#" class="ft-about" aria-label="HomeMart Wholesale">HomeMart Wholesale</a>
+                        <a href="#" class="ft-about" aria-label="Cleartrip">Cleartrip</a>
+                        <a href="#" class="ft-about" aria-label="Corporate Information">Corporate Information</a>
+                    </div>
+
+                    <div>
+                        <div class="ft-name-1">HELP</div>
+                        <a href="#" class="ft-about" aria-label="Payments">Payments</a>
+                        <a href="#" class="ft-about" aria-label="Shipping">Shipping</a>
+                        <a href="#" class="ft-about" aria-label="Cancellation & Returns">Cancellation & Returns</a>
+                        <a href="#" class="ft-about" aria-label="FAQ">FAQ</a>
+                        <a href="#" class="ft-about" aria-label="Report Infringement">Report Infringement</a>
+                    </div>
+
+                    <div>
+                        <div class="ft-name-1">CONSUMER POLICY</div>
+                        <a href="#" class="ft-about" aria-label="Cancellation & Returns">Cancellation & Returns</a>
+                        <a href="#" class="ft-about" aria-label="Terms of Use">Terms of Use</a>
+                        <a href="#" class="ft-about" aria-label="Security">Security</a>
+                        <a href="#" class="ft-about" aria-label="Privacy">Privacy</a>
+                        <a href="#" class="ft-about" aria-label="Sitemap">Sitemap</a>
+                        <a href="#" class="ft-about" aria-label="Grievance Redressal">Grievance Redressal</a>
+                        <a href="#" class="ft-about" aria-label="EPR Compliance">EPR Compliance</a>
+                    </div>
+
+                    <div>
+                        <div class="ft-name-1">SOCIAL</div>
+                        <a href="#" class="ft-about" aria-label="Facebook">Facebook</a>
+                        <a href="#" class="ft-about" aria-label="Twitter">Twitter</a>
+                        <a href="#" class="ft-about" aria-label="Youtube">Youtube</a>
+                    </div>
+
+                    <div class="ft-mail">
+                        <div class="ft-name-1 ">Mail Us :</div>
+                        <p>HomeMart Internet Private Limited, </p>
+                        <p> Buildings Alyssa, Begonia & </p>
+                        <p> Clove Embassy Tech Village, </p>
+                        <p> Outer Ring Road, Devarabeesanahalli Village, </p>
+                        <p> Bengaluru, 560103, </p>
+                        <p> Karnataka, India</p>
+                    </div>
+
+                    <div>
+                        <div class="ft-name-1">Ragisterd Ofiice Address :</div>
+                        <p>HomeMart Internet Private Limited, </p>
+                        <p> Buildings Alyssa, Begonia & </p>
+                        <p> Clove Embassy Tech Village, </p>
+                        <p> Outer Ring Road, Devarabeesanahalli Village, </p>
+                        <p> Bengaluru, 560103, </p>
+                        <p> Karnataka, India </p>
+                        <p> CIN : U51109KA2012PTC066107 </p>
+                        <p>Telephone : <a href="+91 94287 88336" style="text-decoration: none;">+91 94287 88336</a></p>
+                    </div>
+                </div>
+                <div class="ft-part-2">
+                    <div class="ft-2-in">
+                        <!-- <img src="" width="13" height="13" alt=""> -->
+                        <a href="#" aria-label="Become a Seller">Become a Seller</a>
+                    </div>
+                    <div class="ft-2-in">
+                        <!-- <img src="" width="13" height="13" alt=""> -->
+                        <a href="#" aria-label="Advertise">Advertise</a>
+                    </div>
+                    <div class="ft-2-in">
+                        <!-- <img src="" width="13" height="13" alt=""> -->
+                        <a href="#" aria-label="Gift Cards">Gift Cards</a>
+                    </div>
+                    <div class="ft-2-in">
+                        <!-- <img src="" width="13" height="13" alt=""> -->
+                        <a href="#" aria-label="Help Center">Help Center</a>
+                    </div>
+                    <span class="ft-copyright">&copy; 2002-2023 HomeMart.com</span>
+                </div>
+            </div>
+        </footer>
     </div>
     <script>
         const submit = document.getElementById('logic');
@@ -114,42 +200,15 @@
         const stat = document.getElementById('stat');
         const hide = document.getElementById('hideimg');
         const hidebtn = document.getElementById('hidebtn');
-        // clear button logic
-        // clrbtn.onclick = function(){
-        //     username.value = "";
-        //     email.value = "";
-        //     password.value = ""; 
-        // }
 
-        //     function showpass() {
-        //     const x = document.getElementById("password");
-        //     const check = document.getElementById("showpas")
-        //     if (check.checked) {
-        //         x.type = "text";
-        //     } else {
-        //         x.type = "password";
-        //     }
-        // }
-        // change password to text
-        function hideimage() {
-            if (hide.src = "/img/hide.png") {
-                hide.src = "/img/show.png";
-                confirm_password.type = "text";
+        function showpass() {
+            const x = document.getElementById("confirm_password");
+            const check = document.getElementById("showpas")
+            if (check.checked) {
+                x.type = "text";
+            } else {
+                x.type = "password";
             }
-            else {
-                hide.src = "/img/hide.png";
-                confirm_password.type = "password";
-            }
-        }
-        function hideimg() {
-            if (hide.src = "/img/show.png") {
-                hide.src = "/img/hide.png";
-                confirm_password.type = "password";
-            }
-        }
-
-        function showimage() {
-
         }
         stat.style.display = 'none';
 

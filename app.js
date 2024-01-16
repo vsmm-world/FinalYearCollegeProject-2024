@@ -3,7 +3,7 @@ const ConnectDB = require("./db/connection");
 const app = express();
 const expressSession = require('express-session');
 const passport = require("passport");
-const port = process.env.port || 1000;
+const port = process.env.port || 5000;
 const register = require('./auth/auth');
 const { PassInit, isAuthenticted } = require('./auth/passportConf');
 const fs = require('fs');
@@ -14,8 +14,7 @@ const File = require('./models/file');
 PassInit(passport);
 
 // Middlwere Usages 
-app.use(express.static("public"));
-app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(expressSession({
     secret: 'secret',
@@ -73,8 +72,6 @@ app.get('/contact', (req, res) => {
 app.get('/test', (req, res) => {
     res.status(200).render('test');
 })
-
-
 app.get('/photos', async (req, res) => {
     const imgs = await File.find({}).then((data, err) => {
         if (err) {
@@ -83,8 +80,6 @@ app.get('/photos', async (req, res) => {
         res.status(200).render('photos', { imgs: data })
     })
 })
-
-
 
 
 app.get('/get-img', async (req, res) => {
@@ -117,10 +112,3 @@ app.post('/api/register', register);
 app.post('/api/login', passport.authenticate('local'), (req, res) => {
     res.status(200).json({ message: "Succsess" });
 });
-
-
-
-
-
-
-

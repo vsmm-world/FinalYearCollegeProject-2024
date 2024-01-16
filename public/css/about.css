@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background: rgb(146, 135, 135);
+}
+
+.aboutimg {
+    width: 40vw;
+    margin: 7vh;
+    height: 65vh;
+    margin-left: 1vw;
+}
+
+.fy1{
+    margin-left: 1.5vw;
+}
+.fakro {
+    width: 55vw;
+    padding: 4vh 5vh;
+    background: rgb(177, 149, 149);
+    color: rgb(0, 0, 0);
+    box-shadow: 3vh 5px 30vh rgb(0, 0, 0);
+}
+
+.first {
+    display: flex;
+    padding-top: 6vh;
+    padding-bottom: 3vh;
+    margin-bottom: 3vh;
+}
+
+.secondof {
+    width: 50vw;
+}
+
+.second {
+    display: flex;
+    padding: 3vh;
+    margin-bottom: 3vh;
+}
+
+.thired {
+    display: flex;
+    padding: 3vh;
+    margin-bottom: 3vh;
+    padding-bottom: 5vh;
+}
+
