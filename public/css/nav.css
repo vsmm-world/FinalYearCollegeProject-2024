@@ -13,7 +13,7 @@ nav ul {
     display: flex;
     align-items: center;
     /* justify-content: space-around; */
-    padding: 20px;
+    padding: 2vh;
     gap: 20px;
 }
 
@@ -32,8 +32,8 @@ nav ul {
 
 .navimg{
     width: 4vw;
-    height: 5vh;
-    border-radius: 30%;
+    height: 7vh;
+    border-radius: 50%;
 }
 
 nav ul li {
