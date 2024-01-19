@@ -1,5 +1,4 @@
 * {
-    /* background-color: rgb(98, 89, 89); */
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -7,16 +6,21 @@
 }
 
 body {
-    background-color: rgb(236, 227, 227);
+    background-image: url("/img/wal1.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
 }
 
 .titleindex {
     margin-left: 6vw;
+    color: rgb(186, 170, 170);
+    font-size: 6vh;
 }
 
 main {
-    padding-top: 4vh;
-    background-color: lightgray;
+    padding-top: -1vh;
+    /* background-color: lightgray; */
     height: 100vh;
 }
 
@@ -30,12 +34,16 @@ main {
 }
 
 .textareawrite {
-    border: 1px solid black;
+    border: none;
+    user-select:texta;
+    outline: none;
     width: 80vw;
     height: 50vh;
     font-size: 4vh;
     margin: 2vh 9vw;
-    background-color: rgb(177, 211, 200);
+    background: transparent;
+    color: rgb(255, 255, 255);
+    backdrop-filter: blur(5px);
     padding: 1vw;
     line-height: 6vh;
     display: flex;

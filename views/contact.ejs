@@ -10,24 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <nav>
-                <ul>
-                    <span class="spanf">
-                        <li><a class="navbartxt" href="/"><img class="navimg" src="img/girl.jpg" alt=""></a></li>
-                        <li><a class="navbartxt" href="/">Home</a></li>
-                        <li><a class="navbartxt" href="/about">About</a></li>
-                        <li><a class="navbartxt" href="/contact">Contact Us</a></li>
-                        <li><a class="navbartxt" href="/photos">Photos</a></li>
-                        <li><a class="navbartxt" href="/test">Test</a></li>
-                    </span>
-                    <span class="spans">
-                        <li><a class="navbartxt" href="/login">Login</a></li>
-                        <li><a class="navbartxt" href="/register">Register</a></li>
-                    </span>
-                </ul>
-            </nav>
-        </header>
+        <%- include('navbar') %>
         <!-- Header Finish Here . . . -->
 
         <main>
@@ -35,92 +18,7 @@
         </main>
 
         <!-- Footer Start Here . . .  -->
-        <footer>
-            <div class="full-header">
-                <div class="ft-part-1">
-
-                    <div>
-                        <div class="ft-name-1">ABOUT</div>
-                        <a href="#" class="ft-about" aria-label="Contact Us">Contact Us</a>
-                        <a href="#" class="ft-about" aria-label="About Us">About Us</a>
-                        <a href="#" class="ft-about" aria-label="Careers">Careers</a>
-                        <a href="#" class="ft-about" aria-label="HomeMart Stories">HomeMart Stories</a>
-                        <a href="#" class="ft-about" aria-label="Press">Press</a>
-                        <a href="#" class="ft-about" aria-label="HomeMart Wholesale">HomeMart Wholesale</a>
-                        <a href="#" class="ft-about" aria-label="Cleartrip">Cleartrip</a>
-                        <a href="#" class="ft-about" aria-label="Corporate Information">Corporate Information</a>
-                    </div>
-
-                    <div>
-                        <div class="ft-name-1">HELP</div>
-                        <a href="#" class="ft-about" aria-label="Payments">Payments</a>
-                        <a href="#" class="ft-about" aria-label="Shipping">Shipping</a>
-                        <a href="#" class="ft-about" aria-label="Cancellation & Returns">Cancellation & Returns</a>
-                        <a href="#" class="ft-about" aria-label="FAQ">FAQ</a>
-                        <a href="#" class="ft-about" aria-label="Report Infringement">Report Infringement</a>
-                    </div>
-
-                    <div>
-                        <div class="ft-name-1">CONSUMER POLICY</div>
-                        <a href="#" class="ft-about" aria-label="Cancellation & Returns">Cancellation & Returns</a>
-                        <a href="#" class="ft-about" aria-label="Terms of Use">Terms of Use</a>
-                        <a href="#" class="ft-about" aria-label="Security">Security</a>
-                        <a href="#" class="ft-about" aria-label="Privacy">Privacy</a>
-                        <a href="#" class="ft-about" aria-label="Sitemap">Sitemap</a>
-                        <a href="#" class="ft-about" aria-label="Grievance Redressal">Grievance Redressal</a>
-                        <a href="#" class="ft-about" aria-label="EPR Compliance">EPR Compliance</a>
-                    </div>
-
-                    <div>
-                        <div class="ft-name-1">SOCIAL</div>
-                        <a href="#" class="ft-about" aria-label="Facebook">Facebook</a>
-                        <a href="#" class="ft-about" aria-label="Twitter">Twitter</a>
-                        <a href="#" class="ft-about" aria-label="Youtube">Youtube</a>
-                    </div>
-
-                    <div class="ft-mail">
-                        <div class="ft-name-1 ">Mail Us :</div>
-                        <p>HomeMart Internet Private Limited, </p>
-                        <p> Buildings Alyssa, Begonia & </p>
-                        <p> Clove Embassy Tech Village, </p>
-                        <p> Outer Ring Road, Devarabeesanahalli Village, </p>
-                        <p> Bengaluru, 560103, </p>
-                        <p> Karnataka, India</p>
-                    </div>
-
-                    <div>
-                        <div class="ft-name-1">Ragisterd Ofiice Address :</div>
-                        <p>HomeMart Internet Private Limited, </p>
-                        <p> Buildings Alyssa, Begonia & </p>
-                        <p> Clove Embassy Tech Village, </p>
-                        <p> Outer Ring Road, Devarabeesanahalli Village, </p>
-                        <p> Bengaluru, 560103, </p>
-                        <p> Karnataka, India </p>
-                        <p> CIN : U51109KA2012PTC066107 </p>
-                        <p>Telephone : <a href="+91 94287 88336" style="text-decoration: none;">+91 94287 88336</a></p>
-                    </div>
-                </div>
-                <div class="ft-part-2">
-                    <div class="ft-2-in">
-                        <!-- <img src="" width="13" height="13" alt=""> -->
-                        <a href="#" aria-label="Become a Seller">Become a Seller</a>
-                    </div>
-                    <div class="ft-2-in">
-                        <!-- <img src="" width="13" height="13" alt=""> -->
-                        <a href="#" aria-label="Advertise">Advertise</a>
-                    </div>
-                    <div class="ft-2-in">
-                        <!-- <img src="" width="13" height="13" alt=""> -->
-                        <a href="#" aria-label="Gift Cards">Gift Cards</a>
-                    </div>
-                    <div class="ft-2-in">
-                        <!-- <img src="" width="13" height="13" alt=""> -->
-                        <a href="#" aria-label="Help Center">Help Center</a>
-                    </div>
-                    <span class="ft-copyright">&copy; 2002-2023 HomeMart.com</span>
-                </div>
-            </div>
-        </footer>
+        <%- include('footer') %>
     </div>
 </body>
 </html>

@@ -28,6 +28,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.set("view engine", "ejs");
+app.set('views', __dirname + '/views'); 
 
 //Server Initial Setup 
 ConnectDB();
@@ -36,11 +37,13 @@ app.listen(port, () => {
 });
 
 // Get Request Handeling 
-
 app.get("/", (req, res) => {
-    res.render("index");
+    res.render("main");
 });
 
+app.get("/index", (req, res) => {
+    res.status(200).render("index");
+});
 app.get("/register", (req, res) => {
     res.status(200).render("register");
 });

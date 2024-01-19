@@ -1,6 +1,10 @@
 body {
-  background-color: #9f9da7;
+  /* background: transparent; */
+  background-image: url("/img/wal1.jpg");
+    background-size: cover;
   font-size: 1.1 rem;
+  width: 100vw;
+    height: 100vh;
   font-family: sans-serif;
   font-family: "Open Sans", sans-serif;
   color: #2b3e51;
@@ -11,6 +15,7 @@ h1 {
   text-align: center;
   margin-bottom: 3vh;
   margin-top: 2vh;
+  color: #c8c3c3;
 }
 
 p {
@@ -28,17 +33,19 @@ a:active {
 
 
 #login-form-wrap {
-  background-color: #fff;
+  /* background-color: #fff; */
   width: 30%;
   margin: 12px auto;
   text-align: center;
   padding: 5vh 5vh;
   border-radius: 4px;
   box-shadow: 0px 30px 50px 0px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3vh);
 }
 
 #register-form-wrap {
-  background-color: #fff;
+  backdrop-filter: blur(3vh);
+  /* background-color: #fff; */
   width: 30%;
   margin: 12px auto;
   text-align: center;
@@ -78,7 +85,7 @@ input[type="email"] {
   width: 100%;
   padding: 0 3.7vw 0 10px;
   margin: 0;
-  color: #404246;
+  color: #ffffff;
   border: 1px solid #c2c0ca;
   font-style: normal;
   font-size: 16px;
@@ -106,6 +113,7 @@ input[type="email"]:focus {
   display: flex;
   font-size: 2.6vh;
   margin-top: -1.5vh;
+  color: rgb(198, 186, 186);
 }
 
 
@@ -118,9 +126,12 @@ input[type="email"]:focus {
 }
 
 input[type="submit"] {
+  background-color: rgb(75, 75, 114);
+  color: rgb(255, 255, 255);
+  backdrop-filter: blur(10px);
   border: none;
   display: block;
-  background-color: #3ca9e2;
+  /* background-color: #3ca9e2; */
   color: #fff;
   font-weight: bold;
   text-transform: uppercase;
@@ -135,7 +146,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #329dd5;
+  background-color: rgb(71, 71, 151);
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
@@ -153,20 +164,24 @@ input[type="submit"]:hover {
 
 
 #create-account-wrap {
-  background-color: white;
-  color: #8a8b8e;
+  /* background-color: white; */
+  color: #bec1c9;
   font-size: 14px;
-  width: 100%;
+  width: 60%;
   padding: 0px 0;
   border-radius: 0 0 4px 4px;
+  margin: 0 auto;
 }
 
 .createaccount {
   list-style: none;
   text-decoration: none;
-  color: black;
+  color: rgb(200, 183, 183);
 }
 
+.createaccount:hover{
+  color: #3ca9e2;
+}
 .main {
 
   display: flex;

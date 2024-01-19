@@ -4,7 +4,10 @@
 }
 
 .container {
-    background: rgb(146, 135, 135);
+    background-image: url("/img/wal1.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
 }
 
 .aboutimg {
@@ -19,10 +22,10 @@
 }
 .fakro {
     width: 55vw;
-    padding: 4vh 5vh;
-    background: rgb(177, 149, 149);
-    color: rgb(0, 0, 0);
-    box-shadow: 3vh 5px 30vh rgb(0, 0, 0);
+    padding: 2vh 5vh;
+    color: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    /* box-shadow: 3vh 5px 30vh rgb(0, 0, 0); */
 }
 
 .first {

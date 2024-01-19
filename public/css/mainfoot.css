@@ -1,10 +1,10 @@
 /* Footer Start here */
+
 .full-header {
-    background:transparent;
+    background: transparent;
     box-sizing: border-box;
     margin-top: -3vh;
     backdrop-filter: blur(3vh);
-    user-select: none;
 }
 
 .ft-part-1 {
@@ -46,7 +46,7 @@
     white-space: nowrap;
     color: #fff;
     font-size: 12px;
-    line-height: 4vh;
+    line-height: 2.2vh;
 }
 
 .ft-part-2 {
