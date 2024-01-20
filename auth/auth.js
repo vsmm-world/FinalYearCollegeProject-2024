@@ -5,22 +5,33 @@ const register = async (req, res, next) => {
 
     const { name, username, email, password } = req.body;
 
-    bcrypt.hash(password, 10).then(async (hash) => {
+console.log(req.body)
 
-        await User.create({
+    await bcrypt.hash(password, 10, async (err, hash) => {
+        if (err) {
+          console.log(err);
+        }
+        console.log(err)
+        console.log(hash);
+        let user = new User({
             name,
             username,
             email,
-            password:hash,
-        }).then((e) => {
-
-            res.status(200).json({ message: "Succsess" });
-            console.log(e);
-        }).catch(() => {
-            res.status(400).json({
-                message: 'Not Registerd'
-            })
+            password: hash
         })
-    })
+        try {
+            const savedUser = await user.save();
+            res.status(200).json({
+                message: 'User added successfully',
+                user: savedUser
+            })
+        } catch (error) {
+            res.status(200).json({
+                message: 'An error occured'
+            })
+        }
+    }
+    )
 }
 module.exports = register;
+
