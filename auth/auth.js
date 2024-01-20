@@ -13,6 +13,9 @@ console.log(req.body)
     // console.log(salt)
     console.log( hash)
 
+
+
+    
     // await bcrypt.hash(password, 10, async (err, hash) => {
     //     if (err) {
     //       console.log(err);
