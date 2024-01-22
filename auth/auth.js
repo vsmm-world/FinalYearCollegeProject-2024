@@ -13,7 +13,6 @@ const register = async (req, res, next) => {
         });
     }
 
-
     const hash = await bcrypt.hash(Password, 10);
 
 
