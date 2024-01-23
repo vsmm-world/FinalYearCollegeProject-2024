@@ -7,7 +7,4 @@ const ConnectDB = async () => {
         console.log('Connected to Database');
     })
 }
-
 module.exports = ConnectDB;
-
-

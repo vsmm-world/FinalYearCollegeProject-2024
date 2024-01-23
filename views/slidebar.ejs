@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Demo styles -->
+    <style>
+        /* start my */
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-image: url("/img/wal1.jpg");
+            background-size: cover;
+        }
+
+        header nav ul {
+            margin-bottom: 0;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        .firstheading {
+            text-align: center;
+            width: 40vw;
+            margin: 3vh auto;
+        }
+
+        .firsthead {
+            color: rgb(233, 225, 225);
+        }
+
+        .secondhead {
+            color: gray;
+        }
+
+        .thiredhead {
+            color: rgb(210, 198, 198);
+        }
+
+        .starttoday {
+            border: 0;
+            /* background: transparent; */
+            background-color: rgb(75, 75, 114);
+            color: rgb(255, 255, 255);
+            backdrop-filter: blur(10px);
+            font-size: 3vh;
+            padding: 2vh;
+            cursor: pointer;
+            border-radius: 2vh;
+            margin: 0 45% 4vh 45%;
+        }
+
+        .cardbtn {
+            background-color: rgb(75, 75, 114);
+            color: rgb(255, 255, 255);
+            backdrop-filter: blur(10px);
+            text-decoration: none;
+            padding: 2vh;
+            border-radius: 3vh;
+            display: block;
+            width: fit-content;
+            margin: 1vh auto;
+        }
+
+        .card-img-top {
+            filter: drop-shadow(10px);
+            display: block;
+            height: 20vh;
+            margin: 0 auto ;
+            object-fit: cover;
+        }
+
+        .card-title {
+            text-align: center;
+            margin-bottom: 1vh;
+            font-size: 3vh;
+        }
+
+        .card {
+            width: 20vw;
+            color: rgb(223, 223, 20);
+            /* background:linear-gradient(red green blue); */
+            scroll-behavior: none;
+            background: transparent;
+            border-radius: 2vh;
+            backdrop-filter: blur(5px);
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-evenly;
+            margin-bottom: 5vh;
+        }
+
+        .card-text {
+            font-size: 2.6vh;
+            padding: 2vh 1vw;
+        }
+
+        body {
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper {
+            margin: 3vh 5vw;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: grab;
+        }
+        .swiper-wrapper{
+            margin-bottom: 5vh;
+        }
+
+    </style>
+</head>
+
+<body>  
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide card css-card">
+                <div class="card-body">
+                    <img src="icons/css.png" class="card-img-top" alt="...">
+                    <h5 class="card-title">CSS</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                    <a href="#" class="btn cardbtn">Go somewhere</a>
+                </div>
+            </div>
+            <div class="swiper-slide card css-card">
+                <div class="card-body">
+                    <img src="icons/css.png" class="card-img-top" alt="...">
+                    <h5 class="card-title">CSS</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                    <a href="#" class="btn cardbtn">Go somewhere</a>
+                </div>
+            </div>
+            <div class="swiper-slide card css-card">
+                <div class="card-body">
+                    <img src="icons/css.png" class="card-img-top" alt="...">
+                    <h5 class="card-title">CSS</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                    <a href="#" class="btn cardbtn">Go somewhere</a>
+                </div>
+            </div>
+            <div class="swiper-slide card css-card">
+                <div class="card-body">
+                    <img src="icons/css.png" class="card-img-top" alt="...">
+                    <h5 class="card-title">CSS</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                    <a href="#" class="btn cardbtn">Go somewhere</a>
+                </div>
+            </div>
+            <div class="swiper-slide card css-card">
+                <div class="card-body">
+                    <img src="icons/css.png" class="card-img-top" alt="...">
+                    <h5 class="card-title">CSS</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                    <a href="#" class="btn cardbtn">Go somewhere</a>
+                </div>
+            </div>
+            <div class="swiper-slide card css-card">
+                <div class="card-body">
+                    <img src="icons/css.png" class="card-img-top" alt="...">
+                    <h5 class="card-title">CSS</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                    <a href="#" class="btn cardbtn">Go somewhere</a>
+                </div>
+            </div>
+            <div class="swiper-slide card css-card">
+                <div class="card-body">
+                    <img src="icons/css.png" class="card-img-top" alt="...">
+                    <h5 class="card-title">CSS</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                    <a href="#" class="btn cardbtn">Go somewhere</a>
+                </div>
+            </div>
+            <div class="swiper-slide card css-card">
+                <div class="card-body">
+                    <img src="icons/css.png" class="card-img-top" alt="...">
+                    <h5 class="card-title">CSS</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                    <a href="#" class="btn cardbtn">Go somewhere</a>
+                </div>
+            </div>
+            <div class="swiper-slide card css-card">
+                <div class="card-body">
+                    <img src="icons/css.png" class="card-img-top" alt="...">
+                    <h5 class="card-title">CSS</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                    <a href="#" class="btn cardbtn">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        let swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 20,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextE1loop: true,
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+</body>
+
+</html>

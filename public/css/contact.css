@@ -4,9 +4,153 @@
 }
 
 .container {
-    background-color: gray;
-    background-image: url("img/wal1.jpg");
+    background-image: url("/img/wal1.jpg");
     background-size: cover;
     width: 100vw;
     height: 100vh;
+}
+.cpart{
+    color: white;
+    text-align: center;
+}
+
+.cfirstpara{
+    color: rgb(209, 198, 198);
+    margin:3vh 0;
+    font-size: large;
+}
+
+.con-cards{
+    display: flex;
+    justify-content: space-around;
+}
+
+.con-card{
+    fill-opacity: 10vh;
+    color: white;
+    margin: 0 2vw;
+    backdrop-filter: blur(30px);    
+    padding: 2vh;
+    border-radius:4vh;
+
+}
+
+.con-card1{
+    border: 2px solid rgb(214, 31, 31);
+    margin-top: 14vh;
+    margin-bottom: 15vh;
+    width: 25vw;
+}
+.con-card2{
+    width: 25vw;
+    border: 2px solid Green;
+    margin-top: 8vh;
+    height: 60vh;
+}
+.con-card3{
+    margin-top: 14vh;
+    margin-bottom: 15vh;
+    width: 25vw;
+    border: 2px solid blue;
+}
+.con-card span{
+    cursor: default;
+    display: block;
+    text-align: center;
+    margin-bottom: 7vh;
+    margin-top: 5vh;
+    font-size: 4vh;
+}
+.con-card2 span{
+    display: block;
+    text-align: center;
+    margin-bottom: 7vh;
+    margin-top: 5vh;
+    font-size: 6vh;
+}
+.con-card2 p{
+    cursor: default;
+    width: 17vw;
+    font-size: 3.4vh;
+    height: 20vh;
+    margin: 4vh auto;
+}
+.con-p{
+    width: 17vw;
+    cursor: default;
+    font-size: 3vh;
+    height: 20vh;
+    margin: 3vh auto;
+}
+
+.cbtn1{
+    padding: 1vh 3vw;
+    margin: 2vh auto;
+    display: block;
+    text-align: center;
+    color: rgb(255, 0, 0);;
+    background-color: transparent;
+    border:2px solid rgb(214, 31, 31);
+    border-radius: 3vh;
+    font-size: 2.7vh;
+}
+.cbtn2{
+    padding: 2vh 4vw;
+    margin: 2vh auto;
+    display: block;
+    text-align: center;
+    color: green;
+    font-size: 3vh;
+    background-color: transparent;
+    border:2px solid green;
+    border-radius: 3vh;
+}
+.cbtn3{
+    font-size: 2.7vh;
+    padding: 1vh 3vw;
+    margin: 2vh auto;
+    display: block;
+    text-align: center;
+    color: blue;
+    background-color: transparent;
+    border:2px solid blue;
+    border-radius: 3vh;
+}
+.cbtn1:hover{
+    color: white;
+    background-color:  rgb(214, 31, 31);
+    transition: 1s;
+    font-size: 3vh;
+}
+.cbtn2:hover{
+    font-size: 3.4vh;
+    color: white;
+    background-color: green;
+    transition: 1s;
+}
+.cbtn3:hover{
+    font-size: 3vh;
+    color: white;
+    background-color: blue;
+    transition: 1s;
+}
+/* logo start here */
+
+.social{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 4vh 0;
+}
+.media{
+    text-align: center;
+}
+
+.pngs{
+    width: 4vw;   
+}
+
+.media-text{
+    color: white;
+    cursor: default;
+    user-select: none;
 }

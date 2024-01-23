@@ -1,20 +1,24 @@
 * {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     font-family: sans-serif;
+}
+nav {
+    background: rgb(101, 93, 93);
 }
 
 nav ul {
     display: flex;
     align-items: center;
-    padding: 20px;
+    /* justify-content: space-around; */
+    padding: 2vh;
     gap: 20px;
 }
 
 .spanf {
     display: flex;
-    margin-right: 48vw;
+    margin-right: 45vw;
     margin-left: -1vw;
     align-items: center;
 }
@@ -27,8 +31,8 @@ nav ul {
 
 .navimg{
     width: 4vw;
-    height: 5vh;
-    border-radius: 30%;
+    height: 7vh;
+    border-radius: 50%;
 }
 
 nav ul li {
@@ -38,9 +42,10 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    /* color: rgb(37, 35, 35); */
+    color: rgb(221, 212, 212);
     position: relative;
 }
 nav ul li a:hover{
-    color: rgb(229, 219, 219);
+    color: rgb(255, 255, 255);
 }

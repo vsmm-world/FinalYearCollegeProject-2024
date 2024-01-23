@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -15,7 +14,6 @@
     <div class="container">
 
         <%- include('navbar') %>
-
         <div id="register-form-wrap">
             <h1>Register</h1>
             <!-- <form id="login-form" method="post"> -->
@@ -30,7 +28,7 @@
                     <input type="text" id="username" name="username" placeholder="Username" required>
                 </div>
                 <div>
-                    <input type="password" id="password" name="Password" placeholder="Password" required>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
                 </div>
                 <div>
                     <input type="password" id="confirm_password" name="confirm_password" placeholder="confirm password"
@@ -55,9 +53,7 @@
             </div>
 
         </div>
-
         <%- include('footer') %>
-
     </div>
     <script>
         const submit = document.getElementById('logic');

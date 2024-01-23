@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
 }
-
 .container {
     background-image: url("/img/wal1.jpg");
     background-size: cover;
@@ -25,7 +24,6 @@
     padding: 2vh 5vh;
     color: rgb(255, 255, 255);
     backdrop-filter: blur(10px);
-    /* box-shadow: 3vh 5px 30vh rgb(0, 0, 0); */
 }
 
 .first {

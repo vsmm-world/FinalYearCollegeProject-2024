@@ -4,93 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        nav {
-            background-color: gray;
-        }
-
-        nav ul {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            gap: 20px;
-        }
-
-        nav ul li {
-            list-style: none;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-        }
-
-        main {
-            background-color: lightgray;
-            height: 100vh;
-        }
-        
-        footer {
-
-            background-color: gray;
-            height: 100px;
-        }
-        .links ul {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-            justify-content: center;
-            height: 100px;
-        }
-
-        .links ul li a {
-            text-decoration: none;
-        }
-
-        .links ul li {
-            list-style: none;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/test.css">
 </head>
 
 <body>
-
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact Us</a></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
-                <li><a href="/photos">Photos</a></li>
-                <li><a href="/test">Test</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <div class="main">
-
-        </div>
-    </main>
-
-    <footer>
-        <div class="links">
-            <ul>
-                <li> <a href="/login">Login</a></li>
-                <li> <a href="/register">Register</a></li>
-                <li> <a href="/secret"> Secret Route</a></li>
-            </ul>
-        </div>
-    </footer>
+    <%- include('lnavbar') %>
+        <main>
+            <div class="container">
+                <div class="slidebar">
+                    <ul class="item-ul">
+                        <li class="item-li"><a href="/test" style="" class="item">HTML</a></li>
+                        <li class="item-li"><a href="/test" class="item">CSS</a></li>
+                        <li class="item-li"><a href="/test" class="item">JAVASCRIPT</a></li>
+                        <li class="item-li"><a href="/test" class="item">PHP</a></li>
+                        <li class="item-li"><a href="/test" class="item">SQL</a></li>
+                    </ul>
+                </div>
+                <div class="content">
+                    <%- include('../env/html.env') %>
+                </div>
+            </div>
+        </main>
+        <%- include('lfooter') %>
 </body>
 
 </html>

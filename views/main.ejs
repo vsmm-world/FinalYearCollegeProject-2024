@@ -1,62 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en">  
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Manuplation and best language contants</title>
-    <link rel="icon" type="image/x-icon" href="/img/girl.ico">  
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script> -->
-    <link rel="stylesheet" href="css/main.css">
+        <link id="favicon" rel="icon"
+          href="/icons/css.png"
+          type="image/png" 
+          sizes="16x16"> 
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <span class="spanf">
-                    <li><a class="navbartxt" href="/"><img class="navimg" src="img/girl.jpg" alt=""></a></li>
-                    <li><a class="navbartxt" href="/index">Home</a></li>
-                    <li><a class="navbartxt" href="/about">About</a></li>
-                    <li><a class="navbartxt" href="/contact">Contact Us</a></li>
-                    <li><a class="navbartxt" href="/photos">Photos</a></li>
-                    <li><a class="navbartxt" href="/test">Test</a></li>
-                </span>
-                <span class="spans">
-                    <li><a class="navbartxt" href="/login">Login</a></li>
-                    <li><a class="navbartxt" href="/register">Register</a></li>
-                </span>
-            </ul>
-        </nav>
-    </header>
+    <%- include('navbar') %>
     <main>
-        <h1 class="firstheading firsthead">Ｅｎｔｅｒ  ｙｏｕｒ  ｆｕｔｕｒｅ</h1>
+        <h1 class="firstheading firsthead">Ｅｎｔｅｒ ｙｏｕｒ ｆｕｔｕｒｅ</h1>
         <h3 class="firstheading secondhead">Express Your Intersting Cards</h3>
         <p class="firstheading thiredhead">We are care of your future, you can explore these unique features with great confinence , and achieve a
             great future with us . . . </p>
-
         <button class="btn starttoday"><b>Start Today</b></button>
-
         <div class="cards">
             <div class="card html-card">
                 <img src="icons/html-code.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">HTML</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                         the card's content.</p>
                     <a href="#" class="btn cardbtn">Go somewhere</a>
                 </div>
             </div>
-
             <div class="card css-card" >
                 <img src="icons/css-code.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">CSS</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                         the card's content.</p>
                     <a href="#" class="btn cardbtn">Go somewhere</a>
@@ -65,7 +42,7 @@
             <div class="card js-card">
                 <img src="icons/js.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">JavaScript</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                         the card's content.</p>
                     <a href="#" class="btn cardbtn">Go somewhere</a>
@@ -81,96 +58,9 @@
                     <a href="#" class="btn cardbtn">Go somewhere</a>
                 </div>
             </div>
-
-        </div>
+        </div>  
     </main>
-
-    <footer>
-        <div class="full-header">
-            <div class="ft-part-1">
-
-                <div>
-                    <div class="ft-name-1">ABOUT</div>
-                    <a href="#" class="ft-about" aria-label="Contact Us">Contact Us</a>
-                    <a href="#" class="ft-about" aria-label="About Us">About Us</a>
-                    <a href="#" class="ft-about" aria-label="Careers">Careers</a>
-                    <a href="#" class="ft-about" aria-label="HomeMart Stories">HomeMart Stories</a>
-                    <a href="#" class="ft-about" aria-label="Press">Press</a>
-                    <a href="#" class="ft-about" aria-label="HomeMart Wholesale">HomeMart Wholesale</a>
-                    <a href="#" class="ft-about" aria-label="Cleartrip">Cleartrip</a>
-                    <a href="#" class="ft-about" aria-label="Corporate Information">Corporate Information</a>
-                </div>
-
-                <div>
-                    <div class="ft-name-1">HELP</div>
-                    <a href="#" class="ft-about" aria-label="Payments">Payments</a>
-                    <a href="#" class="ft-about" aria-label="Shipping">Shipping</a>
-                    <a href="#" class="ft-about" aria-label="Cancellation & Returns">Cancellation & Returns</a>
-                    <a href="#" class="ft-about" aria-label="FAQ">FAQ</a>
-                    <a href="#" class="ft-about" aria-label="Report Infringement">Report Infringement</a>
-                </div>
-
-                <div>
-                    <div class="ft-name-1">CONSUMER POLICY</div>
-                    <a href="#" class="ft-about" aria-label="Cancellation & Returns">Cancellation & Returns</a>
-                    <a href="#" class="ft-about" aria-label="Terms of Use">Terms of Use</a>
-                    <a href="#" class="ft-about" aria-label="Security">Security</a>
-                    <a href="#" class="ft-about" aria-label="Privacy">Privacy</a>
-                    <a href="#" class="ft-about" aria-label="Sitemap">Sitemap</a>
-                    <a href="#" class="ft-about" aria-label="Grievance Redressal">Grievance Redressal</a>
-                    <a href="#" class="ft-about" aria-label="EPR Compliance">EPR Compliance</a>
-                </div>
-
-                <div>
-                    <div class="ft-name-1">SOCIAL</div>
-                    <a href="#" class="ft-about" aria-label="Facebook">Facebook</a>
-                    <a href="#" class="ft-about" aria-label="Twitter">Twitter</a>
-                    <a href="#" class="ft-about" aria-label="Youtube">Youtube</a>
-                </div>
-
-                <div class="ft-mail">
-                    <div class="ft-name-1 ">Mail Us :</div>
-                    <p>HomeMart Internet Private Limited, </p>
-                    <p> Buildings Alyssa, Begonia & </p>
-                    <p> Clove Embassy Tech Village, </p>
-                    <p> Outer Ring Road, Devarabeesanahalli Village, </p>
-                    <p> Bengaluru, 560103, </p>
-                    <p> Karnataka, India</p>
-                </div>
-
-                <div>
-                    <div class="ft-name-1">Ragisterd Ofiice Address :</div>
-                    <p>HomeMart Internet Private Limited, </p>
-                    <p> Buildings Alyssa, Begonia & </p>
-                    <p> Clove Embassy Tech Village, </p>
-                    <p> Outer Ring Road, Devarabeesanahalli Village, </p>
-                    <p> Bengaluru, 560103, </p>
-                    <p> Karnataka, India </p>
-                    <p> CIN : U51109KA2012PTC066107 </p>
-                    <p>Telephone : <a href="+91 94287 88336" style="text-decoration: none;">+91 94287 88336</a></p>
-                </div>
-            </div>
-            <div class="ft-part-2">
-                <div class="ft-2-in">
-                    <!-- <img src="" width="13" height="13" alt=""> -->
-                    <a href="#" aria-label="Become a Seller">Become a Seller</a>
-                </div>
-                <div class="ft-2-in">
-                    <!-- <img src="" width="13" height="13" alt=""> -->
-                    <a href="#" aria-label="Advertise">Advertise</a>
-                </div>
-                <div class="ft-2-in">
-                    <!-- <img src="" width="13" height="13" alt=""> -->
-                    <a href="#" aria-label="Gift Cards">Gift Cards</a>
-                </div>
-                <div class="ft-2-in">
-                    <!-- <img src="" width="13" height="13" alt=""> -->
-                    <a href="#" aria-label="Help Center">Help Center</a>
-                </div>
-                <span class="ft-copyright">&copy; 2002-2023 HomeMart.com</span>
-            </div>
-        </div>
-    </footer>
+    <%- include('footer') %>
 </body>
 
 </html>

@@ -10,6 +10,7 @@ const fs = require('fs');
 const path = require('path');
 const { upload } = require('./middleware/imageHandler');
 const File = require('./models/file');
+require('dotenv').config();
 
 PassInit(passport);
 
