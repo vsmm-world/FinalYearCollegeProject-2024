@@ -116,3 +116,12 @@ app.post('/api/register', register);
 app.post('/api/login', passport.authenticate('local'), (req, res) => {
     res.status(200).json({ message: "Succsess" });
 });
+
+app.get('api/whoami', isAuthenticted, (req, res) => {
+    res.status(200).json(req.user);
+})
+
+app.get(`/api/languages/:lang`, (req, res) => {
+    const lang = req.params.lang;
+    res.status(200).json({ message: `You have selected ${lang}` });
+})
