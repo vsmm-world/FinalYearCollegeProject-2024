@@ -7,6 +7,9 @@
 
 nav {
     background: transparent;
+    cursor: default;
+    user-select: none;
+
 }
 
 nav ul {

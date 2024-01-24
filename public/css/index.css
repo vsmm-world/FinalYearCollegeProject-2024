@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
+body {
+    background-image: url("/img/wal1.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    user-select: none;
+}
+
+.titleindex {
+    margin-left: 6vw;
+    color: rgb(186, 170, 170);
+    font-size: 6vh;
+}
+
+main {
+    padding-top: -1vh;
+    /* background-color: lightgray; */
+    height: 100vh;
+}
+
+.navbuttons {
+    list-style: none;
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    margin: auto 0vw;
+    padding: 1vh;
+}
+
+.textareawrite {
+    user-select: text;
+    border: none;
+    user-select:texta;
+    outline: none;
+    width: 80vw;
+    height: 50vh;
+    font-size: 4vh;
+    margin: 2vh 9vw;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    backdrop-filter: blur(5px);
+    padding: 1vw;
+    line-height: 6vh;
+    display: flex;
+    justify-content: center;
+}
+
+.btns {
+    height: 9vh;
+    width: 11vw;
+    font-size: 14px;
+    padding: 4px;
+    background-color: blue;
+    color: white;
+    border-radius: 2vh;
+    box-shadow: 0vh 1vw 6vh rgb(0, 0, 0);
+}
+
+.btn5 {
+    padding: 2vh 0;
+}
+
+.buton {
+    display: flex;
+    margin-top: 3vh;
+    justify-content: space-around;
+}

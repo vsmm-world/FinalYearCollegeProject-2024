@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/language.css">
+    <link rel="stylesheet" href="css/universal.css">
+</head>
+
+<body>
+    <%- include('lnavbar') %>
+        <main>
+            <div class="container">
+                <div class="slidebar">
+                    <ul class="item-ul">
+                        <li class="item-li"><a href="/language" class="item">HTML</a></li>
+                        <li class="item-li"><a href="/language" class="item">CSS</a></li>
+                        <li class="item-li"><a href="/language" class="item">JAVASCRIPT</a></li>
+                        <li class="item-li"><a href="/language" class="item">PHP</a></li>
+                        <li class="item-li"><a href="/language" class="item">SQL</a></li>
+                    </ul>
+                </div>
+                <div class="content">
+                    <%- include('../env/html.env') %>
+                </div>
+            </div>
+        </main>
+        <%- include('lfooter') %>
+</body>
+</html>

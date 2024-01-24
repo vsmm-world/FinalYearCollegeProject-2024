@@ -73,8 +73,8 @@ app.get('/contact', (req, res) => {
     res.render('about')
 })
 
-app.get('/test', (req, res) => {
-    res.status(200).render('test');
+app.get('/language', (req, res) => {
+    res.status(200).render('language');
 })
 app.get('/photos', async (req, res) => {
     const imgs = await File.find({}).then((data, err) => {

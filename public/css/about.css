@@ -1,12 +1,15 @@
 * {
     margin: 0;
     padding: 0;
+    
 }
 .container {
     background-image: url("/img/wal1.jpg");
     background-size: cover;
     width: 100vw;
     height: 100vh;
+    cursor: defalut;
+    user-select: none;
 }
 
 .aboutimg {
@@ -29,6 +32,8 @@
 .first {
     display: flex;
     padding-top: 6vh;
+    user-select: none;
+    cursor: default;
     padding-bottom: 3vh;
     margin-bottom: 3vh;
 }
@@ -39,14 +44,18 @@
 
 .second {
     display: flex;
+    cursor: default;
     padding: 3vh;
     margin-bottom: 3vh;
+    user-select: none;
 }
 
 .thired {
+    cursor: default;
     display: flex;
     padding: 3vh;
     margin-bottom: 3vh;
     padding-bottom: 5vh;
+    user-select: none;
 }
 

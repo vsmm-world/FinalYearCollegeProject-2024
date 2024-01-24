@@ -6,7 +6,6 @@
     margin-top: -3vh;
     backdrop-filter: blur(3vh);
     user-select: none;
-
 }
 
 .ft-part-1 {
@@ -37,7 +36,6 @@
     border-left: 1px solid #ffffff;
     padding-left: 2vw;
     width: 20vw;
-    /* margin-left: -8vw; */
 }
 
 .ft-about {
@@ -48,7 +46,6 @@
     display: block;
     line-height: 4vh;
     text-decoration: none;
-    /* padding: 0 2vw; */
 }
 
 .ft-about:hover{

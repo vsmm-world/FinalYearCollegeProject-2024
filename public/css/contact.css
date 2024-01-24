@@ -8,6 +8,7 @@
     background-size: cover;
     width: 100vw;
     height: 100vh;
+    user-select: none;
 }
 .cpart{
     color: white;
@@ -39,7 +40,8 @@
     border: 2px solid rgb(214, 31, 31);
     margin-top: 14vh;
     margin-bottom: 15vh;
-    width: 25vw;
+    width: 28vw;
+    height: 50vh;
 }
 .con-card2{
     width: 25vw;
@@ -50,7 +52,8 @@
 .con-card3{
     margin-top: 14vh;
     margin-bottom: 15vh;
-    width: 25vw;
+    height: 50vh;
+    width: 28vw;
     border: 2px solid blue;
 }
 .con-card span{
@@ -84,15 +87,16 @@
 }
 
 .cbtn1{
+    font-size: 2.7vh;
     padding: 1vh 3vw;
     margin: 2vh auto;
     display: block;
     text-align: center;
-    color: rgb(255, 0, 0);;
+    color: rgb(214, 31, 31);
     background-color: transparent;
     border:2px solid rgb(214, 31, 31);
+    cursor: pointer;
     border-radius: 3vh;
-    font-size: 2.7vh;
 }
 .cbtn2{
     padding: 2vh 4vw;
@@ -104,6 +108,7 @@
     background-color: transparent;
     border:2px solid green;
     border-radius: 3vh;
+    cursor: pointer;
 }
 .cbtn3{
     font-size: 2.7vh;
@@ -114,6 +119,7 @@
     color: blue;
     background-color: transparent;
     border:2px solid blue;
+    cursor: pointer;
     border-radius: 3vh;
 }
 .cbtn1:hover{

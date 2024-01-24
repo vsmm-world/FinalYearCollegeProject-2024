@@ -3,6 +3,7 @@ body{
     height: 100vh;
     background-image: url("/img/wal1.jpg");
     background-size: cover;
+    user-select: none;
 }
 header nav ul{
     margin-bottom: 0;
