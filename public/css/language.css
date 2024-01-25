@@ -8,16 +8,20 @@ body{
 }
 
 /* Sidebar will Start here . . . */
-.container{
+.lan-container{
     display: flex;
     margin: 0;
+    background: rgb(28, 27, 71);
+    color: white;
+    margin-top: 11.7vh;
 }
 
 .slidebar{
+
     width: 18vw;
     height:auto;
     padding: 1vh 0;
-    /* background-color: rgb(79, 38, 38); */
+    background-color: rgb(40, 39, 104);
     border-right: 1px solid black;
     transition: .5s;
     backdrop-filter: blur(3vh);
@@ -26,12 +30,12 @@ body{
 .item{
     display: flex;
     justify-content: center;
-    color: rgb(115, 35, 171);
+    color: rgb(173, 158, 184);
     padding: 2vh ;
     text-decoration: none;
 }
 .item:hover{
-    background-color: rgb(115, 35, 171);
+    background-color: rgb(28, 27, 71);
     color: white;
 }
 .content{

@@ -1,79 +1,64 @@
 /* Footer Start here */
+
 .full-header {
-    background:rgb(34, 32, 55);
+    background: transparent;
     box-sizing: border-box;
-    color: rgb(192, 177, 177);
     margin-top: -3vh;
     backdrop-filter: blur(3vh);
-    user-select: none;
 }
 
 .ft-part-1 {
-    /* display: grid; */
-    /* grid-template-columns: repeat(6, 1fr); */
-    display: flex;
-    margin:2vh 2vw;
-    padding: 10vh 1vw;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 10vh 5vw;
     column-gap: 20px;
 }
-.columns{
-    margin-left: 3vw;
-}
+
 .ft-name-1 {
-    /* color: #453939; */
+    color: #9c8787;
     font-size: 12px;
     padding-bottom: 3vh;
-    /* margin-left: 1vw; */
+    width: 17vw;
     display: block;
     font-family: 'Inter', sans-serif;
-    /* text-align: center; */   
-}
-.cntr{
-    text-align: center;
 }
 
 .ft-mail {
-    border-left: 1px solid #ffffff;
-    padding-left: 2vw;
-    width: 20vw;
+    border-left: 1px solid #454d5e;
+    padding-left: 32px;
+    margin-left: -8vw;
 }
 
 .ft-about {
-    text-align: center;
     font-family: 'Inter', sans-serif;
     font-size: 12px;
-    color: white;
+    color: #fff;
     display: block;
     line-height: 4vh;
     text-decoration: none;
 }
 
-.ft-about:hover{
-    text-decoration: underline;
-}
 .ft-part-1 {
     margin-bottom: -2vh;
 }
 
 .ft-part-1 p {
     white-space: nowrap;
-    /* color: #302c2c; */
-    color: white;
+    color: #fff;
     font-size: 12px;
-    line-height: 4vh;
+    line-height: 2.2vh;
 }
 
 .ft-part-2 {
     display: flex;
     align-items: center;
-    border-top: 1px solid #ffffff;
+    border-top: 1px solid #454d5e;
     padding: 25px 0;
     width: 100%;
     justify-content: space-evenly;
 }
 
 .ft-part-2 span {
-    /* color: #302c2c; */
     color: white;
 }
 
@@ -84,7 +69,6 @@
 
 .ft-2-in a {
     text-decoration: none;
-    /* color: #302c2c; */
     color: white;
     padding-left: 1vw;
 }

@@ -4,49 +4,49 @@
     overflow-x: hidden;
     font-family: sans-serif;
 }
-
+.full-nav{
+    position: fixed;
+    z-index: 1;
+}
 nav {
-    background: transparent;
+    background:rgb(34, 32, 55);
     cursor: default;
     user-select: none;
-
 }
-
 nav ul {
     display: flex;
     align-items: center;
     /* justify-content: space-around; */
+    width: 96.99vw;
     padding: 2vh;
     gap: 20px;
 }
-
 .spanf {
     display: flex;
     margin-right: 45vw;
     margin-left: -1vw;
     align-items: center;
 }
-
 .spans {
+    position: fixed;
+    margin-left: 84.3vw;
     display: flex;
     align-items: center;
     margin-right: -26vw;
 }
-
 .navimg{
     width: 4vw;
     height: 7vh;
     border-radius: 50%;
 }
-
 nav ul li {
     list-style: none;
     padding: 0 1vw;
 }
-
 nav ul li a {
     text-decoration: none;
-    color: rgb(199, 187, 187);
+    /* color: rgb(37, 35, 35); */
+    color: rgb(221, 212, 212);
     position: relative;
 }
 nav ul li a:hover{

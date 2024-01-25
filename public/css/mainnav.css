@@ -5,24 +5,17 @@
     font-family: sans-serif;
 }
 
-nav {
-    background: transparent;
-    cursor: default;
-    user-select: none;
-
-}
-
 nav ul {
     display: flex;
     align-items: center;
-    /* justify-content: space-around; */
-    padding: 2vh;
+    padding: 20px;
     gap: 20px;
+    
 }
 
 .spanf {
     display: flex;
-    margin-right: 45vw;
+    margin-right: 48vw;
     margin-left: -1vw;
     align-items: center;
 }
@@ -35,8 +28,8 @@ nav ul {
 
 .navimg{
     width: 4vw;
-    height: 7vh;
-    border-radius: 50%;
+    height: 5vh;
+    border-radius: 30%;
 }
 
 nav ul li {
@@ -46,9 +39,9 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: rgb(199, 187, 187);
+    color: rgb(255, 255, 255);
     position: relative;
 }
 nav ul li a:hover{
-    color: rgb(255, 255, 255);
+    color: rgb(229, 219, 219);
 }

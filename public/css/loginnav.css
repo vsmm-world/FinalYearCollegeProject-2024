@@ -1,0 +1,39 @@
+/* 
+/* body{
+    background-color: rgb(236, 227, 227);
+} */
+
+nav {
+    background-color: rgb(49, 43, 43);
+    margin-top: -2.8vh;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+
+.spanf{
+    display: flex;
+    /* margin-right: 50vw; */
+  }
+  
+  .spans{
+    display: flex;
+    /* margin-right: -26vw; */
+    
+  }
+
+nav ul li {
+    list-style: none;
+    padding: 0 1vw;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    position:relative;
+} 

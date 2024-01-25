@@ -7,10 +7,7 @@ let text = document.getElementById('text');
 let capitalize = document.getElementById('btn6');
 
 capitalize.onclick = function(){
-    let capital = text.value.toLowerCase().split(" ").map((item)=> 
-    item.charAt(0).toUpperCase() + item.slice(1)).join(" ");
-    console.log(capital);
-    text.value = capital;
+
 }
 upper.onclick = function() {
     let uppperString = text.value.toUpperCase();
@@ -29,5 +26,5 @@ copy.onclick = function(){
 }
 remove.onclick = function(){
     let newText = text.value.split(/[ ]+/);
-    text.value = newText.join(" ");
+    text.value = newText.join(" ");    
 }
