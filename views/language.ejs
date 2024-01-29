@@ -13,13 +13,29 @@
         <main>
             <div class="lan-container">
                 <div class="slidebar">
-                    <ul class="item-ul">
-                        <li class="item-li"><a href="/language" class="item">HTML</a></li>
-                        <li class="item-li"><a href="/language" class="item">CSS</a></li>
-                        <li class="item-li"><a href="/language" class="item">JAVASCRIPT</a></li>
-                        <li class="item-li"><a href="/language" class="item">PHP</a></li>
-                        <li class="item-li"><a href="/language" class="item">SQL</a></li>
+                    <ul class="item-ul-cvd">
+                        <li class="item-list">
+                            <select name="content" class="cvd" id="content">
+                                <option selected value="content">Content</option>
+                                <option value="videos">Videos</option>
+                                <option value="documentation">Documentation</option>
+                            </select>
+                        </li>
                     </ul>
+                    <div class="item-list-part">
+                        <ul class="item-ul">
+                            <li class="item-li"><a href="/language" class="item active">HTML</a></li>
+                            <li class="item-li"><a href="/language" class="item">CSS</a></li>
+                            <li class="item-li"><a href="/language" class="item">JAVASCRIPT</a></li>
+                            <li class="item-li"><a href="/language" class="item">JAVA</a></li>
+                            <li class="item-li"><a href="/language" class="item">PYTHON</a></li>
+                            <li class="item-li"><a href="/language" class="item">C</a></li>
+                            <li class="item-li"><a href="/language" class="item">C++</a></li>
+                            <li class="item-li"><a href="/language" class="item">PHP</a></li>
+                            <li class="item-li"><a href="/language" class="item">Flutter</a></li>
+                            <li class="item-li"><a href="/language" class="item">Kotlin</a></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="content">
                     <%- include('../env/html.env') %>
@@ -28,4 +44,6 @@
         </main>
         <%- include('lfooter') %>
 </body>
+<script src="/js/language.js"></script>
+
 </html>

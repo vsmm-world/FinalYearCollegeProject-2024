@@ -3,11 +3,9 @@ body{
     height: 100vh;
     margin: 0;
     padding: 0;
-    /* background-image: url("/img/wal1.jpg"); */
     background-size: cover;
 }
 
-/* Sidebar will Start here . . . */
 .lan-container{
     display: flex;
     margin: 0;
@@ -17,7 +15,6 @@ body{
 }
 
 .slidebar{
-
     width: 18vw;
     height:auto;
     padding: 1vh 0;
@@ -33,9 +30,44 @@ body{
     padding: 2vh ;
     text-decoration: none;
 }
+.item-list{
+    display: flex;
+    justify-content: center;
+    color: rgb(155, 84, 84);
+    padding: 2vh ;
+    text-decoration: none;
+}       
+.cvd{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(38, 38, 45);
+    color: rgb(222, 209, 209);
+    padding: 2vh ;
+    border: 0;
+    font-size: 3vh;
+    text-decoration: none;
+    border-bottom: 2px solid rgb(222, 209, 209);
+}
+
+.drop{
+    display: flex;
+    justify-content: center;
+    /* color: rgb(222, 209, 209); */
+    padding: 2vh ;
+    text-decoration: none;
+}
+
 .item:hover{
-    background-color: rgb(15, 15, 21);
     color: white;
+    background-color: rgb(15, 15, 21);
+}
+.active{
+    color: white;
+    background-color: rgb(15, 15, 21);
+}
+.item-list-part ul li a.active{
+    color: white;
+    background-color: rgb(15, 15, 21);
 }
 .content{
     width: 82vw;
