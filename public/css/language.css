@@ -11,8 +11,8 @@ body{
 .lan-container{
     display: flex;
     margin: 0;
-    background: rgb(28, 27, 71);
-    color: white;
+    background: white;
+    color: rgb(44, 43, 43);
     margin-top: 11.7vh;
 }
 
@@ -21,21 +21,20 @@ body{
     width: 18vw;
     height:auto;
     padding: 1vh 0;
-    background-color: rgb(40, 39, 104);
+    background-color: rgb(38, 38, 45);
     border-right: 1px solid black;
     transition: .5s;
     backdrop-filter: blur(3vh);
 }
-
 .item{
     display: flex;
     justify-content: center;
-    color: rgb(173, 158, 184);
+    color: rgb(222, 209, 209);
     padding: 2vh ;
     text-decoration: none;
 }
 .item:hover{
-    background-color: rgb(28, 27, 71);
+    background-color: rgb(15, 15, 21);
     color: white;
 }
 .content{
