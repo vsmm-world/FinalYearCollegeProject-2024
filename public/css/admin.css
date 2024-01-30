@@ -1,0 +1,19 @@
+.container{
+    width: 50vw;
+    margin: 0 auto;
+    border: 2px solid black;
+}
+.ad-head{
+    text-align: center;
+    font-size: 5vh;
+}
+.label{
+    margin-left: 7vw;
+    display: block;
+}
+.ad-inp{
+    margin: 0 auto;
+    display: block;
+    padding: 2vh ;
+    width: 70%;
+}

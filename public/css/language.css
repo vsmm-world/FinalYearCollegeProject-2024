@@ -65,10 +65,7 @@ body{
     color: white;
     background-color: rgb(15, 15, 21);
 }
-.item-list-part ul li a.active{
-    color: white;
-    background-color: rgb(15, 15, 21);
-}
+
 .content{
     width: 82vw;
     margin: 2vh 4vw;
