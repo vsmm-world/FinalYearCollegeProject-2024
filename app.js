@@ -12,6 +12,7 @@ const { upload } = require('./middleware/imageHandler');
 const File = require('./models/file');
 require('dotenv').config();
 const Langauage = require('./models/admin');
+const bodyParser = require('body-parser');
 
 PassInit(passport);
 
@@ -28,6 +29,8 @@ app.use(expressSession({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
 app.set('views', __dirname + '/views');
@@ -165,7 +168,7 @@ app.get('/admin/panel/users/update/:id', async (req, res) => {
     })
 })
 
-app.get('admin/Langauage/get', async (req, res) => {
+app.get('/admin/langauage/get', async (req, res) => {
     const lang = await Langauage.find({}).then((data, err) => {
         if (err) {
             console.log(err);
@@ -173,20 +176,9 @@ app.get('admin/Langauage/get', async (req, res) => {
         res.status(200).send(data);
     })
 })
-
-app.get('/admin/Langauage/delete/:id', async (req, res) => {
+app.get('/admin/langauage/get/:id', async (req, res) => {
     const id = req.params.id;
-    await Langauage.findByIdAndDelete(id).then((data, err) => {
-        if (err) {
-            console.log(err);
-        }
-        res.status(200).send(data);
-    })
-})
 
-app.get('/admin/Langauage/update/:id', async (req, res) => {
-
-    const id = req.params.id;
     const lang = await Langauage.findById(id).then((data, err) => {
         if (err) {
             console.log(err);
@@ -195,18 +187,45 @@ app.get('/admin/Langauage/update/:id', async (req, res) => {
     })
 })
 
-app.post('admin/Langauage/create', async (req, res) => {
+app.post('/admin/langauage/update', async (req, res) => {
+
+    const { id, NewVideoEmbed, NewLanguageText, NewLanguageName, NewLangauageDoc } = req.body;
+    const _id = id;
+    await Langauage.findByIdAndUpdate(_id, { VideoEmbed: NewVideoEmbed, LanguageText: NewLanguageText, LanguageName: NewLanguageName, LangauageDoc: NewLangauageDoc }).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).redirect('/admin');
+    })
 
 
+})
+
+app.post('/admin/langauage/delete', async (req, res) => {
+    const { id } = req.body.id;
+    const _id = id;
+    await Langauage.deleteOne(_id).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).redirect('/admin');
+    })
+})
+
+
+app.post('/admin/langauage/create', async (req, res) => {
+
+    const { LanguageName, VideoEmbed, LanguageText, LangauageDoc } = req.body;
+    if (!LanguageName || !VideoEmbed || !LanguageText || !LangauageDoc) {
+        return res.status(400).json({ message: "Please fill all the fields" });
+    }
 
     const lang = await Langauage.create(req.body).then((data, err) => {
         if (err) {
             console.log(err);
         }
-        res.status(200).send(data);
+        res.status(200).redirect('/admin');
 
     })
-
-
 
 })

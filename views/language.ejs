@@ -23,26 +23,65 @@
                         </li>
                     </ul>
                     <div class="item-list-part">
-                        <ul class="item-ul">
-                            <li class="item-li"><a href="/language" class="item">HTML</a></li>
-                            <li class="item-li"><a href="/language" class="item active">CSS</a></li>
-                            <li class="item-li"><a href="/language" class="item">JAVASCRIPT</a></li>
-                            <li class="item-li"><a href="/language" class="item">JAVA</a></li>
-                            <li class="item-li"><a href="/language" class="item">PYTHON</a></li>
-                            <li class="item-li"><a href="/language" class="item">C</a></li>
-                            <li class="item-li"><a href="/language" class="item">C++</a></li>
-                            <li class="item-li"><a href="/language" class="item">PHP</a></li>
-                            <li class="item-li"><a href="/language" class="item">Flutter</a></li>
-                            <li class="item-li"><a href="/language" class="item">Kotlin</a></li>
+                        <ul class="item-ul" id="langs-list">
+
                         </ul>
                     </div>
                 </div>
-                <div class="content">
-                    <%- include('../env/html.env') %>
+                <div class="content" id="mainData">
+
                 </div>
             </div>
         </main>
         <%- include('lfooter') %>
+
+            <script>
+                const baseURL = 'http://localhost:5000/';
+                const langsList = document.querySelector('#langs-list');
+                const mainData = document.querySelector('#mainData');
+
+                const getlanguages = async () => {
+                    const res = await fetch(baseURL + 'admin/langauage/get')
+                    const data = await res.json();
+                    console.log(data);
+                    langsList.innerHTML = '';
+                    data.forEach((lang) => {
+                        langsList.innerHTML += `
+                        <li class="item-list">
+                            <button class="item-btn" id="${lang._id}" onclick="getLangaugeData(id)">${lang.LanguageName}</button>
+                        </li>
+                        `
+                    })
+                }
+                getlanguages();
+
+                const getLangaugeData = async (id) => {
+                    const res = await fetch(baseURL + 'admin/langauage/get/' + id)
+                    const lang = await res.json();
+                    mainData.innerHTML = '';
+
+                    mainData.innerHTML += ` 
+                        <div class="content-item">
+                            <div class="content-item-header">
+                                <h1>${lang.LanguageName}</h1>
+                            </div>
+                            <div class="content-item-body">
+                                <div class="content-item-body-video">
+                                    <iframe width="560" height="315" src="${lang.VideoEmbed}"title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
+                                </div>
+                                <div class="content-item-body-text">
+                                    <p>${lang.LanguageText}</p>
+                                </div>
+                                <div class="content-item-body-doc">
+                                    <a href="${lang.LangauageDoc}">Documentation</a>
+                                </div>
+                            </div>
+                        </div>
+                        `
+                }
+
+
+            </script>
 </body>
 <script src="/js/language.js"></script>
 

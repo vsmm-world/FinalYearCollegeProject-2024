@@ -8,17 +8,129 @@
 </head>
 
 <body>
-    <h1>this admin panel with add langaueg and perform crud on n it </h1>
+    <h1>this admin panel with add langaueg and perform crud on langauages </h1>
 
-    <div class="langauages">
+    <div class="langauages" id="lang">
         all language will be shown here
     </div>
 
     <div class="addLang">
         language can be added here
     </div>
+    <div class="update" style="display: none;">
+        language can be updated here
+        <input type="text" name="NewLanguageName" id="NewLanguageName" placeholder="NewLanguageName" required>
+        <input type="text" name="NewVideoEmbed" id="NewVideoEmbed" placeholder="NewVideoEmbed" required>
+        <input type="text" name="NewLanguageText" id="NewLanguageText" placeholder="NewLanguageText" required>
+        <input type="text" name="NewLangauageDoc" id="NewLangauageDoc" placeholder="NewLangauageDoc" required>
+        <button id="update">update</button>
+
+    </div>
+
+    <div class="createLang" id="createLang">
+        <form action="/admin/langauage/create" method="post">
+            <input type="text" name="LanguageName" id="LanguageName" placeholder="LanguageName" required>
+            <input type="text" name="VideoEmbed" id="VideoEmbed" placeholder="VideoEmbed" required>
+            <input type="text" name="LanguageText" id="LanguageText" placeholder="LanguageText" required>
+            <input type="text" name="LangauageDoc" id="LangauageDoc" placeholder="LangauageDoc" required>
+            <input type="submit" value="submit" onclick="updateLangaugeSubmit(id)">
+        </form>
+    </div>
 
 
+    <script>
+        const baseURL = 'http://localhost:5000/';
+
+        const lang = document.querySelector('#lang');
+        const NewLangauageDoc = document.querySelector('#NewLangauageDoc');
+        const NewLanguageName = document.querySelector('#NewLanguageName');
+        const NewLanguageText = document.querySelector('#NewLanguageText');
+        const NewVideoEmbed = document.querySelector('#NewVideoEmbed');
+        const LanguageName = document.querySelector('#LanguageName');
+        const VideoEmbed = document.querySelector('#VideoEmbed');
+        const LanguageText = document.querySelector('#LanguageText');
+        const LangauageDoc = document.querySelector('#LangauageDoc');
+        const updateBtn = document.querySelector('#update');
+        let fltr = '';
+
+
+        const update = document.querySelector('.update');
+        const getlanguages = async () => {
+            const res = await fetch(baseURL + 'admin/Langauage/get')
+            const data = await res.json();
+            if (data.length === 0) {
+                lang.innerHTML = `<h1>no language found</h1>`
+            }
+            lang.innerHTML = '';
+
+            data.forEach(element => {
+
+                lang.innerHTML +=
+                    `   <div class="langauge">
+                    <h1>${element.LanguageName}</h1>
+                    <h2>${element.VideoEmbed}</h2>
+                    <h3>${element.LanguageText}</h3>
+                    <h4>${element.LangauageDoc}</h4>
+
+                    <button onclick="deleteLangauge('${element._id}')">Delete</button>
+                    <button onclick="updateLangauge('${element._id}')">Update</button>`
+            });
+            return data;
+        }
+
+
+        const x = getlanguages();
+
+        const deleteLangauge = async (id) => {
+            console.log(id);
+            await fetch('/admin/langauage/delete', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id
+                })
+            }).catch(err => console.log(err));
+            const x = getlanguages();
+        }
+
+        const updateLangauge = async (id) => {
+            update.style.display = 'block';
+            fltr = id;
+            const x = getlanguages();
+            const dtx = await x;
+            const data = dtx.find((element) => element._id === id);
+            NewLangauageDoc.value = data.LangauageDoc;
+            NewLanguageName.value = data.LanguageName;
+            NewLanguageText.value = data.LanguageText;
+            NewVideoEmbed.value = data.VideoEmbed;
+            update.style.display = 'block';
+
+        }
+        updateBtn.addEventListener('click', () => {
+            updateLangaugeSubmit(fltr);
+        })
+
+        const updateLangaugeSubmit = async (id) => {
+            await fetch('/admin/langauage/update', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id,
+                    NewLangauageDoc: NewLangauageDoc.value,
+                    NewLanguageName: NewLanguageName.value,
+                    NewLanguageText: NewLanguageText.value,
+                    NewVideoEmbed: NewVideoEmbed.value
+                })
+            }).catch(err => console.log(err));
+            const x = getlanguages();
+            update.style.display = 'none';
+        }
+
+    </script>
 </body>
 
 </html>
