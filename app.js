@@ -29,7 +29,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.set("view engine", "ejs");
-app.set('views', __dirname + '/views'); 
+app.set('views', __dirname + '/views');
 
 //Server Initial Setup 
 ConnectDB();
@@ -120,3 +120,61 @@ app.post('/api/register', register);
 app.post('/api/login', passport.authenticate('local'), (req, res) => {
     res.status(200).json({ message: "Succsess" });
 });
+
+app.get('/language/:id', (req, res) => {
+
+
+
+    const id = req.params.id;
+    const lang = {
+        1: {
+            name: "C++",
+            description: "C++ is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or C with Classes.",
+            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
+        },
+        2: {
+            name: "Python",
+            description: "Python is an interpreted high-level general-purpose programming language. Python's design philosophy emphasizes code readability with its notable use of significant indentation.",
+            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
+        },
+        3: {
+            name: "Java",
+            description: "Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.",
+            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
+        },
+        4: {
+            name: "JavaScript",
+            description: "JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification.",
+            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
+        },
+        5: {
+            name: "C#",
+            description: "C# is a general-purpose, multi-paradigm programming language encompassing static typing, strong typing, lexically scoped, imperative, declarative, functional, generic, object-oriented, and component-oriented programming disciplines.",
+            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
+        },
+        6: {
+            name: "PHP",
+            description: "PHP is a general-purpose scripting language especially suited to web development. It was originally created by Danish-Canadian programmer Rasmus Lerdorf in 1994.",
+            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
+        },
+        7: {
+            name: "Swift",
+            description: "Swift is a general-purpose, multi-paradigm, compiled programming language developed by Apple Inc. and the open-source community, first released in 2014.",
+            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
+        },
+        8: {
+            name: "R",
+            description: "R is a programming language and free software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing.",
+            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
+        },
+        9: {
+            name: "Go",
+            description: "Go is a statically typed, compiled programming language designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson.",
+            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
+        }
+    }
+
+    console.log(lang[id]);
+    res.status(200).render('language', { lang: lang[id] });
+})
+    
