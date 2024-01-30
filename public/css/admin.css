@@ -8,12 +8,24 @@
     font-size: 5vh;
 }
 .label{
-    margin-left: 7vw;
-    display: block;
+    margin-left: 3vw;
+    display: inline;
+}
+.lang-logo{
+    display: inline;
+    margin: 3vh auto;
+    padding: 1vh 2vw ;
+    width: 50%;
 }
 .ad-inp{
+    margin: 3vh auto;
+    display: block;
+    padding: 1vh 2vw ;
+    width: 60%;
+}
+.ad-submit{
     margin: 0 auto;
     display: block;
-    padding: 2vh ;
-    width: 70%;
+    font-size: large;
+    padding: 1vh 3vw;
 }
