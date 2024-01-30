@@ -11,6 +11,7 @@ const path = require('path');
 const { upload } = require('./middleware/imageHandler');
 const File = require('./models/file');
 require('dotenv').config();
+const Langauage = require('./models/admin');
 
 PassInit(passport);
 
@@ -118,60 +119,91 @@ app.post('/api/login', passport.authenticate('local'), (req, res) => {
     res.status(200).json({ message: "Succsess" });
 });
 
-app.get('/language/:id', (req, res) => {
 
 
+
+//Admin Panel API
+
+
+app.get('/admin', (req, res) => {
+    res.render('admin');
+})
+
+
+
+app.get('/admin/panel/users/get', async (req, res) => {
+    const users = await User.find({}).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).send(data);
+    })
+})
+
+
+app.get('/admin/panel/users/delete/:id', async (req, res) => {
+    const id = req.params.id;
+    await User.findByIdAndDelete(id).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).send(data);
+    })
+})
+
+app.get('/admin/panel/users/update/:id', async (req, res) => {
 
     const id = req.params.id;
-    const lang = {
-        1: {
-            name: "C++",
-            description: "C++ is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or C with Classes.",
-            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
-        },
-        2: {
-            name: "Python",
-            description: "Python is an interpreted high-level general-purpose programming language. Python's design philosophy emphasizes code readability with its notable use of significant indentation.",
-            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
-        },
-        3: {
-            name: "Java",
-            description: "Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.",
-            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
-        },
-        4: {
-            name: "JavaScript",
-            description: "JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification.",
-            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
-        },
-        5: {
-            name: "C#",
-            description: "C# is a general-purpose, multi-paradigm programming language encompassing static typing, strong typing, lexically scoped, imperative, declarative, functional, generic, object-oriented, and component-oriented programming disciplines.",
-            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
-        },
-        6: {
-            name: "PHP",
-            description: "PHP is a general-purpose scripting language especially suited to web development. It was originally created by Danish-Canadian programmer Rasmus Lerdorf in 1994.",
-            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
-        },
-        7: {
-            name: "Swift",
-            description: "Swift is a general-purpose, multi-paradigm, compiled programming language developed by Apple Inc. and the open-source community, first released in 2014.",
-            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
-        },
-        8: {
-            name: "R",
-            description: "R is a programming language and free software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing.",
-            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
-        },
-        9: {
-            name: "Go",
-            description: "Go is a statically typed, compiled programming language designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson.",
-            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
+    const user = await User.findById(id).then((data, err) => {
+        if (err) {
+            console.log(err);
         }
-    }
-
-    console.log(lang[id]);
-    res.status(200).render('language', { lang: lang[id] });
+        res.status(200).send(data);
+    })
 })
-    
+
+app.get('admin/Langauage/get', async (req, res) => {
+    const lang = await Langauage.find({}).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).send(data);
+    })
+})
+
+app.get('/admin/Langauage/delete/:id', async (req, res) => {
+    const id = req.params.id;
+    await Langauage.findByIdAndDelete(id).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).send(data);
+    })
+})
+
+app.get('/admin/Langauage/update/:id', async (req, res) => {
+
+    const id = req.params.id;
+    const lang = await Langauage.findById(id).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).send(data);
+    })
+})
+
+app.post('admin/Langauage/create', async (req, res) => {
+
+
+
+    const lang = await Langauage.create(req.body).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).send(data);
+
+    })
+
+
+
+})
