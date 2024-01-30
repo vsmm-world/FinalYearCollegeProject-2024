@@ -55,6 +55,9 @@ app.get("/login", (req, res) => {
 app.get("/about", (req, res) => {
     res.status(200).render("about");
 })
+app.get("/admin", (req, res) => {
+    res.status(200).render("admin");
+})
 app.get("/contact", (req, res) => {
     res.status(200).render("contact");
 })
