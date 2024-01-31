@@ -8,16 +8,13 @@ const adminUP = new mongoose.Schema({
     },
     VideoEmbed: {
         type: String,
-        required: true,
 
     },
     LanguageText: {
         type: String,
-        required: true,
     },
     LangauageDoc: {
-        type: Array,
-        required: true,
+        type: String,
     }
 }, {
     timestamps: {

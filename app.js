@@ -14,6 +14,10 @@ require('dotenv').config();
 const Langauage = require('./models/Langauage');
 const bodyParser = require('body-parser');
 
+const VideoContent = require('./models/videoContent');
+const TextContent = require('./models/textContent');
+const DocContent = require('./models/docContent');
+
 PassInit(passport);
 
 // Middlwere Usages 
@@ -228,4 +232,96 @@ app.post('/admin/langauage/create', async (req, res) => {
 
     })
 
+})
+
+
+
+// Language APIs 
+
+
+// Video Content APIs
+
+
+app.post('/language/videos/get', async (req, res) => {
+    const { id } = req.body;
+    const lang = await VideoContent.findOne({ language: id }).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).send(data);
+    })
+}
+)
+
+app.post('/language/videos/update', async (req, res) => {
+    const { id, video } = req.body;
+    const lang = await VideoContent.findOneAndUpdate({ language: id }, { video: video }).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).redirect('/admin');
+    })
+})
+
+app.post('/language/videos/create', async (req, res) => {
+    const { id, video } = req.body;
+    const lang = await VideoContent.create({ language: id, video: video }).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).redirect('/admin');
+    })
+})
+
+app.post('/language/videos/delete', async (req, res) => {
+    const { id } = req.body;
+    const lang = await VideoContent.deleteOne({ language: id }).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).redirect('/admin');
+    })
+})
+
+// Text Content APIs
+
+app.post('/language/text/get', async (req, res) => {
+    const { id } = req.body;
+    const lang = await TextContent.findOne({ language: id }).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).send(data);
+    })
+})
+
+app.post('/language/text/update', async (req, res) => {
+    const { id, text } = req.body;
+    const lang = await TextContent.findOneAndUpdate({ language: id }, { text: text }).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).redirect('/admin');
+    }
+    )
+})
+
+app.post('/language/text/create', async (req, res) => {
+    const { id, text } = req.body;
+    const lang = await TextContent.create({ language: id, text: text }).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).redirect('/admin');
+    })
+})
+
+app.post('/language/text/delete', async (req, res) => {
+    const { id } = req.body;
+    const lang = await TextContent.deleteOne({ language: id }).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).redirect('/admin');
+    })
 })

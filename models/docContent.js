@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 
 
 const docContentSchema = new mongoose.Schema({
+    language: {
+        type: String,
+        required: true
+    },
     doc: {
         type: Array,
     }

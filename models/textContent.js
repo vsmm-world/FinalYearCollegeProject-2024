@@ -1,12 +1,19 @@
 
 
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-var textContentSchema = new Schema({
-    text:{
-        type:String,
-        required:true
+const textContentSchema = new Schema({
+    language: {
+        type: String,
+        required: true
+    },
+    text: {
+        type: String,
+        required: true
     }
 });
+
+const TextContent = mongoose.model('TextContent', textContentSchema);
+module.exports = TextContent;
