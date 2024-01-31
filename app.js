@@ -11,7 +11,7 @@ const path = require('path');
 const { upload } = require('./middleware/imageHandler');
 const File = require('./models/file');
 require('dotenv').config();
-const Langauage = require('./models/admin');
+const Langauage = require('./models/Langauage');
 const bodyParser = require('body-parser');
 
 PassInit(passport);
