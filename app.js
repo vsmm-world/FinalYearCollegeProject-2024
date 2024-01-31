@@ -325,3 +325,46 @@ app.post('/language/text/delete', async (req, res) => {
         res.status(200).redirect('/admin');
     })
 })
+
+// Doc Content APIs
+
+app.post('/language/doc/get', async (req, res) => {
+    const { id } = req.body;
+    const lang = await DocContent.findOne({ language: id }).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).send(data);
+    })
+})
+
+app.post('/language/doc/update', async (req, res) => {
+    const { id, doc } = req.body;
+
+    const lang = await DocContent.findOneAndUpdate({ language: id }, { doc: doc }).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).redirect('/admin');
+    })
+})
+
+app.post('/language/doc/create', async (req, res) => {
+    const { id, docLink } = req.body;
+    const lang = await DocContent.create({ language: id, doc: docLink }).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).redirect('/admin');
+    })
+})
+
+app.post('/language/doc/delete', async (req, res) => {
+    const { id } = req.body;
+    const lang = await DocContent.deleteOne({ language: id }).then((data, err) => {
+        if (err) {
+            console.log(err);
+        }
+        res.status(200).redirect('/admin');
+    })
+})
