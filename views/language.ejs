@@ -36,6 +36,8 @@
                 </div>
                 <div class="content" id="mainData">
 
+                    <p>This is the best language learning platform developed by team Citiya</p>
+
                 </div>
             </div>
         </main>
@@ -104,10 +106,12 @@
                         mainData.innerHTML += `
                         <h2>Documentation</h2>
                         <ol>
-                            ${DocContent.map((doc) => {
+                   
+                             ${DocContent.map((doc) => {
+                            return `<li><a href="${doc.doc}" target="_blank">${doc.doc}</a></li>\n`;
+                        }).join('')}
 
-                            return `<li><a href="${doc.doc}" target="_blank">${doc.doc}</a> <hr></li>`
-                        })}
+
                         </ol>
                         `
                     }
