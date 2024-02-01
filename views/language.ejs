@@ -15,8 +15,8 @@
                 <div class="slidebar">
                     <ul class="item-ul-cvd">
                         <li class="item-list">
-                            <select name="content" class="cvd" id="content">
-                                <option selected value="content">Content</option>
+                            <select class="cvd" id="select">
+                                <option value="content">Content</option>
                                 <option value="videos">Videos</option>
                                 <option value="documentation">Documentation</option>
                             </select>
@@ -39,6 +39,7 @@
                 const baseURL = 'http://localhost:5000/';
                 const langsList = document.querySelector('#langs-list');
                 const mainData = document.querySelector('#mainData');
+                const select = document.querySelector('#select');
 
                 const getlanguages = async () => {
                     const res = await fetch(baseURL + 'admin/langauage/get')
@@ -48,7 +49,7 @@
                     data.forEach((lang) => {
                         langsList.innerHTML += `
                         <li class="item-list">
-                            <button class="item-btn" id="${lang._id}" onclick="getLangaugeData(id)">${lang.LanguageName}</button>
+                            <button class="item-btn" id="${lang._id}" onclick="getLangaugeData('${lang._id}')">${lang.LanguageName}</button>
                         </li>
                         `
                     })
@@ -56,28 +57,52 @@
                 getlanguages();
 
                 const getLangaugeData = async (id) => {
-                    const res = await fetch(baseURL + 'admin/langauage/get/' + id)
-                    const lang = await res.json();
+                    const LangData = await fetch(baseURL + 'admin/langauage/get/all', {
+
+                        method: 'POST',
+                        headers: {
+                            'content-type': "application/json"
+                        },
+                        body: JSON.stringify({
+                            id: id
+                        })
+                    })
+                    const data = await LangData.json()
+                    const VideoContent = data.VideoC;
+                    const TextContent = data.TextC;
+                    const DocContent = data.DocC;
+                    console.log(select.value)
+
                     mainData.innerHTML = '';
 
-                    mainData.innerHTML += ` 
-                        <div class="content-item">
-                            <div class="content-item-header">
-                                <h1>${lang.LanguageName}</h1>
-                            </div>
-                            <div class="content-item-body">
-                                <div class="content-item-body-video">
-                                    <iframe width="560" height="315" src="${lang.VideoEmbed}"title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
-                                </div>
-                                <div class="content-item-body-text">
-                                    <p>${lang.LanguageText}</p>
-                                </div>
-                                <div class="content-item-body-doc">
-                                    <a href="${lang.LangauageDoc}">Documentation</a>
-                                </div>
-                            </div>
-                        </div>
+                    if (select.value == 'content') {
+                        mainData.innerHTML += `                
+                        <h2>Text Content</h2>
+                        <ul>
+                            ${TextContent.map((text) => {
+                            return `<li>${text.text}</li>`
+                        })}
+                        </ul>
                         `
+                    } else if (select.value == 'videos') {
+                        mainData.innerHTML += `
+                        <h2>Video Content</h2>
+                        <ul>
+                            ${VideoContent.map((video) => {
+                            return `<li>${video.video}</li>`
+                        })}
+                        </ul>
+                        `
+                    } else if (select.value == 'documentation') {
+                        mainData.innerHTML += `
+                        <h2>Documentation</h2>
+                        <ul>
+                            ${DocContent.map((doc) => {
+                            return `<li>${doc.doc}</li>`
+                        })}
+                        </ul>
+                        `
+                    }
                 }
 
 
