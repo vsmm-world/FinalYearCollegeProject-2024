@@ -191,13 +191,13 @@
         const baseURL = 'http://localhost:5000/';
 
         // Function to add a new language
-        function addLanguage() {
+        async function addLanguage() {
             const languageName = document.getElementById('LanguageName').value;
             const videoEmbed = document.getElementById('VideoEmbed').value;
             const languageText = document.getElementById('LanguageText').value;
             const languageDoc = document.getElementById('LanguageDoc').value;
 
-            fetch(baseURL + 'admin/langauage/create', {
+            const add = await fetch(baseURL + 'admin/langauage/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -208,48 +208,41 @@
                     LanguageText: languageText,
                     LangauageDoc: languageDoc
                 })
-            }).then(response => response.json())
-                .then(data => {
-                    // After successfully adding the language, update the language list
-                    getLanguages();
-                })
-                .catch(error => console.error('Error:', error));
+            })
+            // const data = await add.json()
+            getLanguages()
         }
 
         // Function to get all languages
-        function getLanguages() {
-            fetch(baseURL + 'admin/langauage/get')
-                .then(response => response.json())
-                .then(data => {
-                    const languagesContainer = document.getElementById('languages');
-                    languagesContainer.innerHTML = '';
+        async function getLanguages() {
+            const res = await fetch(baseURL + 'admin/langauage/get')
+            const data = await res.json();
+            const languagesContainer = document.getElementById('languages');
+            languagesContainer.innerHTML = '';
+            data.forEach(language => {
+                languagesContainer.innerHTML += `
+               <div class="language-card">
+                   <h2>${language.LanguageName}</h2>
+                   <button onclick="getLanguageDetails('${language._id}')">Get Data</button>
+                   <button onclick="deleteLanguage('${language._id}')">Delete</button>
+                   <button onclick="addVideo('${language._id}')">Add Video</button>
+                   <button onclick="addText('${language._id}')">Add Text</button>
+                   <button onclick="addDoc('${language._id}')">Add Documentation</button>
+               </div>
+           `;
+            });
+            // Display each language as a card
 
-                    // Display each language as a card
-                    data.forEach(language => {
-                        languagesContainer.innerHTML += `
-                        <div class="language-card">
-                            <h2>${language.LanguageName}</h2>
-                            <p>${language.LanguageText}</p>
-                            <button onclick="updateLanguage('${language._id}')">Update</button>
-                            <button onclick="deleteLanguage('${language._id}')">Delete</button>
-                            <button onclick="addVideo('${language._id}')">Add Video</button>
-                            <button onclick="addText('${language._id}')">Add Text</button>
-                            <button onclick="addDoc('${language._id}')">Add Documentation</button>
-                        </div>
-                    `;
-                    });
-                })
-                .catch(error => console.error('Error:', error));
         }
 
         // Function to update a language
-        function updateLanguage(id) {
+        async function updateLanguage(id) {
             const languageName = prompt('Enter new language name:');
             const videoEmbed = prompt('Enter new video embed link:');
             const languageText = prompt('Enter new language text link:');
             const languageDoc = prompt('Enter new documentation link:');
 
-            fetch(baseURL + 'admin/langauage/update', {
+            const res = await fetch(baseURL + 'admin/langauage/update', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -261,17 +254,13 @@
                     NewLanguageText: languageText,
                     NewLangauageDoc: languageDoc
                 })
-            }).then(response => response.json())
-                .then(data => {
-                    // After successfully updating the language, update the language list
-                    getLanguages();
-                })
-                .catch(error => console.error('Error:', error));
+            })
+            // const data = await res.json()
         }
 
         // Function to delete a language
-        function deleteLanguage(id) {
-            fetch(baseURL + 'admin/langauage/delete', {
+        async function deleteLanguage(id) {
+            const res = await fetch(baseURL + 'admin/langauage/delete', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -279,18 +268,16 @@
                 body: JSON.stringify({
                     id: id
                 })
-            }).then(response => response.json())
-                .then(data => {
-                    // After successfully deleting the language, update the language list
-                    getLanguages();
-                })
-                .catch(error => console.error('Error:', error));
+            })
+
+            // const data = await res.json()
+            getLanguages()
         }
 
         // Function to add video content for a language
-        function addVideo(id) {
+        async function addVideo(id) {
             const videoLink = prompt('Enter video content link for the language:');
-            fetch(baseURL + 'language/videos/create', {
+            const res = await fetch(baseURL + 'language/videos/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -299,18 +286,14 @@
                     id: id,
                     video: videoLink
                 })
-            }).then(response => response.json())
-                .then(data => {
-                    // After successfully adding video content, update the language list
-                    getLanguages();
-                })
-                .catch(error => console.error('Error:', error));
+            })
+            //  const data = await res.json();
         }
 
         // Function to add text content for a language
-        function addText(id) {
+        async function addText(id) {
             const textLink = prompt('Enter text content link for the language:');
-            fetch(baseURL + 'language/text/create', {
+            const res = await fetch(baseURL + 'language/text/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -319,18 +302,16 @@
                     id: id,
                     text: textLink
                 })
-            }).then(response => response.json())
-                .then(data => {
-                    // After successfully adding text content, update the language list
-                    getLanguages();
-                })
-                .catch(error => console.error('Error:', error));
+            })
+            //   const data = await res.json();
+            getLanguages()
+
         }
 
         // Function to add documentation for a language
         async function addDoc(id) {
             const docLink = prompt('Enter documentation link for the language:');
-            await fetch(baseURL + 'language/doc/create', {
+            const res = await fetch(baseURL + 'language/doc/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -339,14 +320,23 @@
                     id: id,
                     doc: docLink
                 })
-            }).then(response => response.json())
-                .then(data => {
-                    // After successfully adding documentation, update the language list
-                    getLanguages();
-                })
-                .catch(error => console.error('Error:', error));
+            })
+            //  const data = await res.json();
+            getLanguages()
         }
 
+        async function getLanguageDetails(id) {
+            const LangData = await fetch(baseURL + '/admin/langauage/get/all', {
+
+                method: 'POST',
+                headers: {
+                    'content-type': "application/json"
+                },
+                body: JSON.stringify({
+                    id: id
+                })
+            })
+        }
         // Initial load of languages
         getLanguages();
     </script>

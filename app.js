@@ -177,8 +177,21 @@ app.get('/admin/langauage/get', async (req, res) => {
         if (err) {
             console.log(err);
         }
-        res.status(200).send(data);
+        res.status(200).json(data);
     })
+})
+
+app.post('/admin/langauage/get/all', async (req, res) => {
+    const id = req.body.id;
+    const VideoContent = await VideoContent.find({ language: id })
+    const TextContent = await TextContent.find({ language: id })
+    const DocContent = await DocContent.find({ language: id })
+    const data = {
+        VideoContent, TextContent, DocContent
+    }
+
+    res.status(200).send(data)
+
 })
 app.get('/admin/langauage/get/:id', async (req, res) => {
     const id = req.params.id;
