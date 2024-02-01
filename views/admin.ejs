@@ -180,22 +180,22 @@
         <h2>Add New Language</h2>
         <form id="addLanguageForm">
             <input type="text" name="LanguageName" id="LanguageName" placeholder="Language Name" required>
-            <input type="text" name="VideoEmbed" id="VideoEmbed" placeholder="Video Embed Link" required>
-            <input type="text" name="LanguageText" id="LanguageText" placeholder="Language Text Link" required>
-            <input type="text" name="LanguageDoc" id="LanguageDoc" placeholder="Language Documentation Link" required>
+
             <button type="button" onclick="addLanguage()">Add Language</button>
         </form>
+    </div>
+    <div class="langDetails" id="langDetails">
+
     </div>
 
     <script>
         const baseURL = 'http://localhost:5000/';
+        const langDetails = document.getElementById('langDetails');
+
 
         // Function to add a new language
         async function addLanguage() {
             const languageName = document.getElementById('LanguageName').value;
-            const videoEmbed = document.getElementById('VideoEmbed').value;
-            const languageText = document.getElementById('LanguageText').value;
-            const languageDoc = document.getElementById('LanguageDoc').value;
 
             const add = await fetch(baseURL + 'admin/langauage/create', {
                 method: 'POST',
@@ -204,9 +204,7 @@
                 },
                 body: JSON.stringify({
                     LanguageName: languageName,
-                    VideoEmbed: videoEmbed,
-                    LanguageText: languageText,
-                    LangauageDoc: languageDoc
+
                 })
             })
             // const data = await add.json()
@@ -250,9 +248,6 @@
                 body: JSON.stringify({
                     id: id,
                     NewLanguageName: languageName,
-                    NewVideoEmbed: videoEmbed,
-                    NewLanguageText: languageText,
-                    NewLangauageDoc: languageDoc
                 })
             })
             // const data = await res.json()
@@ -269,7 +264,7 @@
                     id: id
                 })
             })
-
+            langDetails.style.display = 'none';
             // const data = await res.json()
             getLanguages()
         }
@@ -318,15 +313,16 @@
                 },
                 body: JSON.stringify({
                     id: id,
-                    doc: docLink
+                    docLink: docLink
                 })
             })
+            console.log(docLink)
             //  const data = await res.json();
             getLanguages()
         }
 
         async function getLanguageDetails(id) {
-            const LangData = await fetch(baseURL + '/admin/langauage/get/all', {
+            const LangData = await fetch(baseURL + 'admin/langauage/get/all', {
 
                 method: 'POST',
                 headers: {
@@ -336,6 +332,34 @@
                     id: id
                 })
             })
+            const data = await LangData.json()  
+            langDetails.style.display = 'block';
+            const VideoContent = data.VideoC;
+            const TextContent = data.TextC;
+            const DocContent = data.DocC;
+            langDetails.innerHTML = '';
+            langDetails.innerHTML += `
+            <h2>Video Content</h2>
+            <ul>
+                ${VideoContent.map((video) => {
+                return `<li>${video.video}</li>`
+            })}
+            </ul>
+            <h2>Text Content</h2>
+            <ul>
+                ${TextContent.map((text) => {
+                return `<li>${text.text}</li>`
+            })}
+            </ul>
+            <h2>Documentation</h2>
+            <ul>
+                ${DocContent.map((doc) => {
+                return `<li>${doc.doc}</li>`
+            })}
+            </ul>
+            `
+
+
         }
         // Initial load of languages
         getLanguages();

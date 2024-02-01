@@ -183,11 +183,11 @@ app.get('/admin/langauage/get', async (req, res) => {
 
 app.post('/admin/langauage/get/all', async (req, res) => {
     const id = req.body.id;
-    const VideoContent = await VideoContent.find({ language: id })
-    const TextContent = await TextContent.find({ language: id })
-    const DocContent = await DocContent.find({ language: id })
+    const VideoC = await VideoContent.find({ language: id })
+    const TextC = await TextContent.find({ language: id })
+    const DocC = await DocContent.find({ language: id })
     const data = {
-        VideoContent, TextContent, DocContent
+        VideoC, TextC, DocC
     }
 
     res.status(200).send(data)
@@ -221,29 +221,28 @@ app.post('/admin/langauage/update', async (req, res) => {
 app.post('/admin/langauage/delete', async (req, res) => {
     const { id } = req.body.id;
     const _id = id;
-    await Langauage.deleteOne(_id).then((data, err) => {
-        if (err) {
-            console.log(err);
-        }
-        res.status(200).redirect('/admin');
-    })
+    const lang = await Langauage.deleteOne(_id)
+    await VideoContent.deleteOne({ language:_id });
+    await TextContent.deleteOne({ language:_id });
+    await DocContent.deleteOne({ language:_id });
+    res.status(200).redirect('/admin');
 })
 
 
 app.post('/admin/langauage/create', async (req, res) => {
 
-    const { LanguageName, VideoEmbed, LanguageText, LangauageDoc } = req.body;
-    if (!LanguageName || !VideoEmbed || !LanguageText || !LangauageDoc) {
+    const { LanguageName } = req.body;
+    if (!LanguageName) {
         return res.status(400).json({ message: "Please fill all the fields" });
     }
 
-    const lang = await Langauage.create(req.body).then((data, err) => {
-        if (err) {
-            console.log(err);
-        }
-        res.status(200).redirect('/admin');
+    const lang = await Langauage.create(req.body)
+    VideoContent.create({ language: lang._id, video: [] });
+    TextContent.create({ language: lang._id, text: 'text' });
+    DocContent.create({ language: lang._id, doc: [] });
 
-    })
+    res.status(200).redirect('/admin');
+
 
 })
 
@@ -278,12 +277,11 @@ app.post('/language/videos/update', async (req, res) => {
 
 app.post('/language/videos/create', async (req, res) => {
     const { id, video } = req.body;
-    const lang = await VideoContent.create({ language: id, video: video }).then((data, err) => {
-        if (err) {
-            console.log(err);
-        }
-        res.status(200).redirect('/admin');
-    })
+
+    const vid = await VideoContent.findOne({ language: id })
+    vid.video.push(video);
+    vid.save();
+    res.status(200).redirect('/admin');
 })
 
 app.post('/language/videos/delete', async (req, res) => {
@@ -321,12 +319,12 @@ app.post('/language/text/update', async (req, res) => {
 
 app.post('/language/text/create', async (req, res) => {
     const { id, text } = req.body;
-    const lang = await TextContent.create({ language: id, text: text }).then((data, err) => {
-        if (err) {
-            console.log(err);
-        }
-        res.status(200).redirect('/admin');
-    })
+
+    const lang = await TextContent.findOne({ language: id })
+    lang.text = text;
+    lang.save();
+    res.status(200).redirect('/admin');
+
 })
 
 app.post('/language/text/delete', async (req, res) => {
@@ -364,12 +362,11 @@ app.post('/language/doc/update', async (req, res) => {
 
 app.post('/language/doc/create', async (req, res) => {
     const { id, docLink } = req.body;
-    const lang = await DocContent.create({ language: id, doc: docLink }).then((data, err) => {
-        if (err) {
-            console.log(err);
-        }
-        res.status(200).redirect('/admin');
-    })
+    const dc = await DocContent.findOne({ language: id })
+    dc.doc.push(docLink);
+    dc.save();
+    res.status(200).redirect('/admin');
+
 })
 
 app.post('/language/doc/delete', async (req, res) => {
