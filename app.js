@@ -222,9 +222,9 @@ app.post('/admin/langauage/delete', async (req, res) => {
     const { id } = req.body.id;
     const _id = id;
     const lang = await Langauage.deleteOne(_id)
-    await VideoContent.deleteOne({ language:_id });
-    await TextContent.deleteOne({ language:_id });
-    await DocContent.deleteOne({ language:_id });
+    await VideoContent.deleteOne({ language: _id });
+    await TextContent.deleteOne({ language: _id });
+    await DocContent.deleteOne({ language: _id });
     res.status(200).redirect('/admin');
 })
 
