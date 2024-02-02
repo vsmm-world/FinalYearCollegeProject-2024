@@ -1,31 +1,71 @@
-.container{
-    width: 50vw;
-    margin: 0 auto;
-    border: 2px solid black;
+.languages{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
-.ad-head{
+
+.addLanguage{
+    width: 100%;
     text-align: center;
-    font-size: 5vh;
 }
-.label{
-    margin-left: 3vw;
-    display: inline;
+
+.addLanguage h2{
+    margin: 3vh 0;
 }
-.lang-logo{
-    display: inline;
-    margin: 3vh auto;
-    padding: 1vh 2vw ;
-    width: 50%;
+
+.language-inp{
+    border-top: 0;
+    font-size: 3vh;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 2px solid ;
+    outline: none;
 }
-.ad-inp{
-    margin: 3vh auto;
+
+.add-btn{
+    color: white;
+    border-radius: 1vh;
+    padding: 1vh;
+    font-size: 3vh;
+    background-color: rgb(67, 36, 95);
+}
+
+.language-card{
+    width: 22vw;
+    background-color: rgb(67, 36, 95);
+    height: 45vh;
+    border-radius: 5vh;
+    margin: 3vh 0;
+}
+
+.card-title{
+    color: white;
+    margin: 2vh 0;
+    width: 100%;
+    text-align: center;
+}
+
+.card-btn{
+    background-color: #ADEFD1FF;
+    border-radius: 1vh;
+    width: 15vw;
     display: block;
-    padding: 1vh 2vw ;
-    width: 60%;
+    margin: 2vh auto;
+    color: #00203FFF;
+    padding: 1vh;
+    border: 0;
 }
-.ad-submit{
-    margin: 0 auto;
+
+.ad-footer{
+    background-color: rgb(67, 36, 95);
+    position: fixed;
+    bottom: 0; 
+    width: 100%;
     display: block;
-    font-size: large;
-    padding: 1vh 3vw;
+    text-align: center;
+    color: white;
+}
+
+.ad-para{
+    padding: 2vh 0;
 }

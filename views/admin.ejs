@@ -1,21 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Page</title>
+    <title>Admin Panel</title>
     <link rel="stylesheet" href="css/admin.css">
 </head>
+
 <body>
-    <div class="container">
-        <h2 class="ad-head">Admin</h2>
-            <label for="lang-logo" class="label">Lanuage Logo</label>
-            <input type="file" name="lang-logo" class="lang-logo" placeholder="Language logo">
-        <input type="text" name="lang" class="ad-inp lang" placeholder="Language name">
-        <input type="text" name="lang-content" class="ad-inp lang-cont" placeholder="Language Content">
-        <label for="lang-video url" class="label">Language Video URL : </label>
-        <input type="url" name="lang-video" id="lang-video" class="ad-inp lang-url" placeholder="language video url">
-        <input type="submit" name="submit" value="Submit" class="ad-submit">
+    <%- include('lnavbar') %>
+    <h1 style="width: 100vw; text-align: center; margin: 2vh 0;">Admin Panel - Manage Languages</h1>
+
+
+    <div class="addLanguage" id="addLanguage">
+        <h2>Add New Language</h2>
+        <form id="addLanguageForm">
+            <input type="text" autofocus name="LanguageName" class="language-inp" id="LanguageName" placeholder="Language Name"
+                required>
+
+            <button type="button" class="add-btn" id="add-btn" onclick="addLanguage()">Add Language</button>
+        </form>
     </div>
+    <div class="langDetails" id="langDetails">
+
+    </div>
+    <div class="languages" id="languages">
+    </div>
+    <footer class="ad-footer">
+        <div>
+            <p class="ad-para">Copyright &copy; 2023-2024 Language Learner | All Rights Reserved</p>
+        </div>
+    </footer>
+        <!-- Displaying all languages dynamically -->
+    <script>
+        const baseURL = 'http://localhost:5000/';
+        const langDetails = document.getElementById('langDetails');
+        const inpt = document.getElementById("LanguageName")
+
+        inpt.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("add-btn").click();
+            }
+        });
+        // Function to add a new language
+        async function addLanguage() {
+            const languageName = document.getElementById('LanguageName').value;
+
+            const add = await fetch(baseURL + 'admin/langauage/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    LanguageName: languageName,
+
+                })
+            })
+            inpt.value = "";
+            // const data = await add.json()
+            getLanguages()
+        }
+
+        // Function to get all languages
+        async function getLanguages() {
+            const res = await fetch(baseURL + 'admin/langauage/get')
+            const data = await res.json();
+            const languagesContainer = document.getElementById('languages');
+            languagesContainer.innerHTML = '';
+            data.forEach(language => {
+                languagesContainer.innerHTML += `
+               <div class="language-card">
+                   <h2 class="card-title">${language.LanguageName}</h2>
+                   <button class="card-btn" onclick="addVideo('${language._id}')">Add Video</button>
+                   <button class="card-btn" onclick="addText('${language._id}')">Add Text</button>
+                   <button class="card-btn" onclick="addDoc('${language._id}')">Add Documentation</button>
+                   <button class="card-btn" onclick="getLanguageDetails('${language._id}')">Get Data</button>
+                   <button class="card-btn" onclick="deleteLanguage('${language._id}')">Delete</button>
+               </div>
+           `;
+            });
+            // Display each language as a card
+
+        }
+
+        // Function to update a language
+        async function updateLanguage(id) {
+            const languageName = prompt('Enter new language name:');
+            const videoEmbed = prompt('Enter new video embed link:');
+            const languageText = prompt('Enter new language text link:');
+            const languageDoc = prompt('Enter new documentation link:');
+
+            const res = await fetch(baseURL + 'admin/langauage/update', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: id,
+                    NewLanguageName: languageName,
+                })
+            })
+            // const data = await res.json()
+        }
+
+        // Function to delete a language
+        async function deleteLanguage(id) {
+            const res = await fetch(baseURL + 'admin/langauage/delete', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: id
+                })
+            })
+            langDetails.style.display = 'none';
+            // const data = await res.json()
+            getLanguages()
+        }
+
+        // Function to add video content for a language
+        async function addVideo(id) {
+            const videoLink = prompt('Enter video content link for the language:');
+            const res = await fetch(baseURL + 'language/videos/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: id,
+                    video: videoLink
+                })
+            })
+            //  const data = await res.json();
+        }
+
+        // Function to add text content for a language
+        async function addText(id) {
+            const textLink = prompt('Enter text content link for the language:');
+            const res = await fetch(baseURL + 'language/text/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: id,
+                    text: textLink
+                })
+            })
+            //   const data = await res.json();
+            getLanguages()
+
+        }
+
+        // Function to add documentation for a language
+        async function addDoc(id) {
+            const docLink = prompt('Enter documentation link for the language:');
+            const res = await fetch(baseURL + 'language/doc/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: id,
+                    docLink: docLink
+                })
+            })
+            console.log(docLink)
+            //  const data = await res.json();
+            getLanguages()
+        }
+
+        async function getLanguageDetails(id) {
+            const LangData = await fetch(baseURL + 'admin/langauage/get/all', {
+
+                method: 'POST',
+                headers: {
+                    'content-type': "application/json"
+                },
+                body: JSON.stringify({
+                    id: id
+                })
+            })
+            const data = await LangData.json()
+            langDetails.style.display = 'block';
+            const VideoContent = data.VideoC;
+            const TextContent = data.TextC;
+            const DocContent = data.DocC;
+            langDetails.innerHTML = '';
+            langDetails.innerHTML += `
+            <h2>Video Content</h2>
+            <ul>
+                ${VideoContent.map((video) => {
+                return `<li>${video.video}</li>`
+            })}
+            </ul>
+            <h2>Text Content</h2>
+            <ul>
+                ${TextContent.map((text) => {
+                return `<li>${text.text}</li>`
+            })}
+            </ul>
+            <h2>Documentation</h2>
+            <ul>
+                ${DocContent.map((doc) => {
+                return `<li>${doc.doc}</li>`
+            })}
+            </ul>
+            `
+
+
+        }
+        // Initial load of languages
+        getLanguages();
+    </script>
 </body>
+
 </html>

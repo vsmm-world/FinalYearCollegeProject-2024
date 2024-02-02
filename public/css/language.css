@@ -23,13 +23,7 @@ body{
     transition: .5s;
     backdrop-filter: blur(3vh);
 }
-.item{
-    display: flex;
-    justify-content: center;
-    color: rgb(222, 209, 209);
-    padding: 2vh ;
-    text-decoration: none;
-}
+
 .item-list{
     display: flex;
     justify-content: center;
@@ -37,6 +31,26 @@ body{
     padding: 2vh ;
     text-decoration: none;
 }       
+.item-listbar{
+    display: flex;
+    justify-content: center;
+    color: rgb(155, 84, 84);
+    
+    padding: 2vh ;
+    text-decoration: none;
+}       
+.item-btn{
+    padding: 1vh 1vw;
+    width: 15vw;
+    background-color:#dbd3d8;
+    border: 0;
+    border-radius: 1vh;
+    font-size: 3vh;
+}
+.item-btn:hover{
+    cursor: pointer;
+    background-color: #9b8d96;
+}
 .cvd{
     display: flex;
     justify-content: center;
@@ -49,24 +63,7 @@ body{
     border-bottom: 2px solid rgb(222, 209, 209);
 }
 
-.drop{
-    display: flex;
-    justify-content: center;
-    /* color: rgb(222, 209, 209); */
-    padding: 2vh ;
-    text-decoration: none;
-}
-
-.item:hover{
-    color: white;
-    background-color: rgb(15, 15, 21);
-}
 .active{
     color: white;
     background-color: rgb(15, 15, 21);
-}
-
-.content{
-    width: 82vw;
-    margin: 2vh 4vw;
 }
