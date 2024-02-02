@@ -21,7 +21,9 @@
     border-bottom: 2px solid ;
     outline: none;
 }
-
+.admin-main-part{
+    margin-bottom: 8vh;
+}
 .add-btn{
     color: white;
     border-radius: 1vh;
