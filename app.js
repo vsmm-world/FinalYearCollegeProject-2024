@@ -195,186 +195,54 @@ app.post('/admin/langauage/get/all', async (req, res) => {
 })
 app.get('/admin/langauage/get/:id', async (req, res) => {
     const id = req.params.id;
-
-    const lang = await Langauage.findById(id).then((data, err) => {
-        if (err) {
-            console.log(err);
+    const lang = {
+        1: {
+            name: "C++",
+            description: "C++ is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or C with Classes.",
+            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
+        },
+        2: {
+            name: "Python",
+            description: "Python is an interpreted high-level general-purpose programming language. Python's design philosophy emphasizes code readability with its notable use of significant indentation.",
+            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
+        },
+        3: {
+            name: "Java",
+            description: "Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible.",
+            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
+        },
+        4: {
+            name: "JavaScript",
+            description: "JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification.",
+            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
+        },
+        5: {
+            name: "C#",
+            description: "C# is a general-purpose, multi-paradigm programming language encompassing static typing, strong typing, lexically scoped, imperative, declarative, functional, generic, object-oriented, and component-oriented programming disciplines.",
+            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
+        },
+        6: {
+            name: "PHP",
+            description: "PHP is a general-purpose scripting language especially suited to web development. It was originally created by Danish-Canadian programmer Rasmus Lerdorf in 1994.",
+            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
+        },
+        7: {
+            name: "Swift",
+            description: "Swift is a general-purpose, multi-paradigm, compiled programming language developed by Apple Inc. and the open-source community, first released in 2014.",
+            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
+        },
+        8: {
+            name: "R",
+            description: "R is a programming language and free software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing.",
+            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
+        },
+        9: {
+            name: "Go",
+            description: "Go is a statically typed, compiled programming language designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson.",
+            img: "https://www.pngitem.com/pimgs/m/198-1985019_c-programming-language-logo-hd-png-download.png"
         }
-        res.status(200).send(data);
-    })
-})
-
-app.post('/admin/langauage/update', async (req, res) => {
-
-    const { id, NewVideoEmbed, NewLanguageText, NewLanguageName, NewLangauageDoc } = req.body;
-    const _id = id;
-    await Langauage.findByIdAndUpdate(_id, { VideoEmbed: NewVideoEmbed, LanguageText: NewLanguageText, LanguageName: NewLanguageName, LangauageDoc: NewLangauageDoc }).then((data, err) => {
-        if (err) {
-            console.log(err);
-        }
-        res.status(200).redirect('/admin');
-    })
-
-
-})
-
-app.post('/admin/langauage/delete', async (req, res) => {
-    const { id } = req.body.id;
-    const _id = id;
-    const lang = await Langauage.deleteOne(_id)
-    await VideoContent.deleteOne({ language: _id });
-    await TextContent.deleteOne({ language: _id });
-    await DocContent.deleteOne({ language: _id });
-    res.status(200).redirect('/admin');
-})
-
-
-app.post('/admin/langauage/create', async (req, res) => {
-
-    const { LanguageName } = req.body;
-    if (!LanguageName) {
-        return res.status(400).json({ message: "Please fill all the fields" });
     }
 
-    const lang = await Langauage.create(req.body)
-    VideoContent.create({ language: lang._id, video: [] });
-    TextContent.create({ language: lang._id, text: 'text' });
-    DocContent.create({ language: lang._id, doc: [] });
-
-    res.status(200).redirect('/admin');
-
-
-})
-
-
-
-// Language APIs 
-
-
-// Video Content APIs
-
-
-app.post('/language/videos/get', async (req, res) => {
-    const { id } = req.body;
-    const lang = await VideoContent.findOne({ language: id }).then((data, err) => {
-        if (err) {
-            console.log(err);
-        }
-        res.status(200).send(data);
-    })
-}
-)
-
-app.post('/language/videos/update', async (req, res) => {
-    const { id, video } = req.body;
-    const lang = await VideoContent.findOneAndUpdate({ language: id }, { video: video }).then((data, err) => {
-        if (err) {
-            console.log(err);
-        }
-        res.status(200).redirect('/admin');
-    })
-})
-
-app.post('/language/videos/create', async (req, res) => {
-    const { id, video } = req.body;
-
-    const vid = await VideoContent.findOne({ language: id })
-    vid.video.push(video);
-    vid.save();
-    res.status(200).redirect('/admin');
-})
-
-app.post('/language/videos/delete', async (req, res) => {
-    const { id } = req.body;
-    const lang = await VideoContent.deleteOne({ language: id }).then((data, err) => {
-        if (err) {
-            console.log(err);
-        }
-        res.status(200).redirect('/admin');
-    })
-})
-
-// Text Content APIs
-
-app.post('/language/text/get', async (req, res) => {
-    const { id } = req.body;
-    const lang = await TextContent.findOne({ language: id }).then((data, err) => {
-        if (err) {
-            console.log(err);
-        }
-        res.status(200).send(data);
-    })
-})
-
-app.post('/language/text/update', async (req, res) => {
-    const { id, text } = req.body;
-    const lang = await TextContent.findOneAndUpdate({ language: id }, { text: text }).then((data, err) => {
-        if (err) {
-            console.log(err);
-        }
-        res.status(200).redirect('/admin');
-    }
-    )
-})
-
-app.post('/language/text/create', async (req, res) => {
-    const { id, text } = req.body;
-
-    const lang = await TextContent.findOne({ language: id })
-    lang.text = text;
-    lang.save();
-    res.status(200).redirect('/admin');
-
-})
-
-app.post('/language/text/delete', async (req, res) => {
-    const { id } = req.body;
-    const lang = await TextContent.deleteOne({ language: id }).then((data, err) => {
-        if (err) {
-            console.log(err);
-        }
-        res.status(200).redirect('/admin');
-    })
-})
-
-// Doc Content APIs
-
-app.post('/language/doc/get', async (req, res) => {
-    const { id } = req.body;
-    const lang = await DocContent.findOne({ language: id }).then((data, err) => {
-        if (err) {
-            console.log(err);
-        }
-        res.status(200).send(data);
-    })
-})
-
-app.post('/language/doc/update', async (req, res) => {
-    const { id, doc } = req.body;
-
-    const lang = await DocContent.findOneAndUpdate({ language: id }, { doc: doc }).then((data, err) => {
-        if (err) {
-            console.log(err);
-        }
-        res.status(200).redirect('/admin');
-    })
-})
-
-app.post('/language/doc/create', async (req, res) => {
-    const { id, docLink } = req.body;
-    const dc = await DocContent.findOne({ language: id })
-    dc.doc.push(docLink);
-    dc.save();
-    res.status(200).redirect('/admin');
-
-})
-
-app.post('/language/doc/delete', async (req, res) => {
-    const { id } = req.body;
-    const lang = await DocContent.deleteOne({ language: id }).then((data, err) => {
-        if (err) {
-            console.log(err);
-        }
-        res.status(200).redirect('/admin');
-    })
+    console.log(lang[id]);
+    res.status(200).render('language', { lang: lang[id] });
 })
