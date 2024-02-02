@@ -1,19 +1,71 @@
-.container{
-    width: 50vw;
-    margin: 0 auto;
-    border: 2px solid black;
+.languages{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
-.ad-head{
+
+.addLanguage{
+    width: 100%;
     text-align: center;
-    font-size: 5vh;
 }
-.label{
-    margin-left: 7vw;
-    display: block;
+
+.addLanguage h2{
+    margin: 3vh 0;
 }
-.ad-inp{
-    margin: 0 auto;
+
+.language-inp{
+    border-top: 0;
+    font-size: 3vh;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 2px solid ;
+    outline: none;
+}
+
+.add-btn{
+    color: white;
+    border-radius: 1vh;
+    padding: 1vh;
+    font-size: 3vh;
+    background-color: rgb(67, 36, 95);
+}
+
+.language-card{
+    width: 22vw;
+    background-color: rgb(67, 36, 95);
+    height: 45vh;
+    border-radius: 5vh;
+    margin: 3vh 0;
+}
+
+.card-title{
+    color: white;
+    margin: 2vh 0;
+    width: 100%;
+    text-align: center;
+}
+
+.card-btn{
+    background-color: #ADEFD1FF;
+    border-radius: 1vh;
+    width: 15vw;
     display: block;
-    padding: 2vh ;
-    width: 70%;
+    margin: 2vh auto;
+    color: #00203FFF;
+    padding: 1vh;
+    border: 0;
+}
+
+.ad-footer{
+    background-color: rgb(67, 36, 95);
+    position: fixed;
+    bottom: 0; 
+    width: 100%;
+    display: block;
+    text-align: center;
+    color: white;
+}
+
+.ad-para{
+    padding: 2vh 0;
 }

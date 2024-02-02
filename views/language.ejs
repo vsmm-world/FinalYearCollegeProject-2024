@@ -56,7 +56,7 @@
                     langsList.innerHTML = '';
                     data.forEach((lang) => {
                         langsList.innerHTML += `
-                        <li class="item-list">
+                        <li class="item-listbar">
                             <button class="item-btn" id="${lang._id}" onclick="getLangaugeData('${lang._id}')">${lang.LanguageName}</button>
                         </li>
                         `
@@ -116,8 +116,6 @@
                         `
                     }
                 }
-
-
             </script>
 </body>
 <script src="/js/language.js"></script>
