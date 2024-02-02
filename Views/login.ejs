@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/universal.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <%- include('navbar') %>
+        <!-- partial:index.partial.html -->
+        <div id="login-form-wrap">
+            <h1>Login</h1>
+            <form action="api/login" method="post" id="login-form">
+
+                <div>
+                    <input type="text" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div id="showdiv">
+                    <label id="showspan" name="show password">
+                    <input type="checkbox" onclick="showpass()" id="showpas">
+                    Show Password</label>
+                </div>
+                <div>
+                    <input type="submit" id="login" value="login">
+                </div>
+            </form>
+            <div id="create-account-wrap">
+                <p>Not a member? <a class="createaccount" href="/register">Create Account</a>
+                <p>
+            </div>
+        </div>
+
+        <%- include('footer') %>
+    </div>
+    <script>
+
+        const username = document.getElementById('username');
+        const password = document.getElementById('password');
+        const form = document.getElementById('form');
+        const stat = document.getElementById('stat');
+
+        stat.style.display = 'none'
+        const baseURL = 'http://localhost:5000/'
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const res = await fetch(baseURL + 'api/login', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: username.value,
+                    password: password.value,
+                })
+            }).then(async (e) => {
+                const data = await e.json();
+                stat.style.display = 'block '
+                stat.innerHTML = data.message;
+                if (e.status == 200) {
+                    window.location.href = '/secret';
+                }
+            }).catch((err) => {
+                console.log(err);
+            })
+
+        })
+        function showpass() {
+            const x = document.getElementById("password");
+            const check = document.getElementById("showpas")
+            if (check.checked) {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

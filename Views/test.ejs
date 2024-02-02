@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/test.css">
+</head>
+
+<body>
+    <%- include('lnavbar') %>
+        <main>
+            <div class="container">
+                <div class="slidebar">
+                    <ul class="item-ul">
+                        <li class="item-li"><a href="/test" style="" class="item">HTML</a></li>
+                        <li class="item-li"><a href="/test" class="item">CSS</a></li>
+                        <li class="item-li"><a href="/test" class="item">JAVASCRIPT</a></li>
+                        <li class="item-li"><a href="/test" class="item">PHP</a></li>
+                        <li class="item-li"><a href="/test" class="item">SQL</a></li>
+                    </ul>
+                </div>
+                <div class="content">
+                    <%- include('../env/html.env') %>
+                </div>
+            </div>
+        </main>
+        <%- include('lfooter') %>
+
+            <script>
+
+                console.log("test");
+            </script>
+</body>
+
+</html>

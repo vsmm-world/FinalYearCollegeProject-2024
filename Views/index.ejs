@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/mainnav.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/universal.css">
+<!-- // this is a github project -->
+<body>
+    <div class="container">
+        <%- include('navbar') %>
+        <main>
+            <h1 class="titleindex">𝓦𝓮𝓵𝓬𝓸𝓶𝓮 𝓽𝓸 𝓜𝔂 - 𝓜𝓪𝓰𝓲𝓬𝓪𝓵 𝓦𝓸𝓻𝓵𝓭 . . .</h1>
+            <textarea class="textareawrite" name="text" id="text" value="text" spellcheck="false"
+                placeholder="Enjoy the website with magical buttons . . ."></textarea>
+            <div class="buton">
+                <button class="btns btn1" id="btn1"><b>Convert to UpperCase</b></button>
+                <button class="btns btn2" id="btn2"><b>Convert to LowerCase</b></button>
+                <button class="btns btn3" id="btn3"><b>Remove Extra Spaces</b></button>
+            </div>
+            <div class="buton">
+                <button class="btns btn4" id="btn4"><b>Clear Text</b></button>
+                <button class="btns btn5" id="btn5"><b>Copy Text</b></button>
+                <button class="btns btn6" id="btn6"><b>Capitalize</b></button>
+            </div>
+        </main>
+        <%- include('footer') %>
+    </div>
+</body>
+
+<script src="js/script.js"></script>
+
+</html>
