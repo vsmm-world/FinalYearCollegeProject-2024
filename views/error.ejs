@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/mainnav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/universal.css">
+    <!-- Additional styles for error page if needed -->
+    <style>
+        /* error.css */
+/* Add custom styles for the error page here */
+.error-message {
+    color: red;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <% include('navbar') %>
+        <main>
+            <h1 class="titleindex">Error 400: Email Already Registered</h1>
+            <p class="error-message">Your email is already registered. Please try to login with your username and password.</p>
+
+            <br><br>
+            <a href="/login" class="btn">Login</a>
+        </main>
+        <% include('footer') %>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
