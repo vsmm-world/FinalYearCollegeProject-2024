@@ -10,15 +10,14 @@ const register = async (req, res, next) => {
             name,
             username,
             email,
-            password:hash,
+            password: hash,
         }).then((e) => {
 
-            res.status(200).json({ message: "Succsess" });
+            res.status(200).redirect('/login');
             console.log(e);
-        }).catch(() => {
-            res.status(400).json({
-                message: 'Not Registerd'
-            })
+        }).catch((e) => {
+            console.log(e);
+            res.status(400).render("error");
         })
     })
 }

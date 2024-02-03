@@ -1,4 +1,4 @@
-body{
+body {
     width: 100vw;
     height: 100vh;
     margin: 0;
@@ -6,18 +6,18 @@ body{
     background-size: cover;
 }
 
-.lan-container{
+.lan-container {
     display: flex;
     margin: 0;
+    padding: 0;
     background: white;
     color: rgb(44, 43, 43);
     margin-top: 11.7vh;
 }
 
 
-.slidebar{
-    width: 18vw;
-    height:auto;
+.slidebar {
+    height: auto;
     padding: 1vh 0;
     background-color: rgb(38, 38, 45);
     border-right: 1px solid black;
@@ -25,46 +25,51 @@ body{
     backdrop-filter: blur(3vh);
 }
 
-.item-list{
+.item-list {
+    display: flex;
+    justify-content: center;
+    gap: 1vh;
+    color: rgb(155, 84, 84);
+    padding: 2vh;
+    text-decoration: none;
+}
+
+.item-listbar {
     display: flex;
     justify-content: center;
     color: rgb(155, 84, 84);
-    padding: 2vh ;
+
+    padding: 2vh;
     text-decoration: none;
-}       
-.item-listbar{
-    display: flex;
-    justify-content: center;
-    color: rgb(155, 84, 84);
-    
-    padding: 2vh ;
-    text-decoration: none;
-}       
-.item-btn{
+}
+
+.item-btn {
     padding: 1vh 1vw;
     width: 15vw;
-    background-color:#dbd3d8;
+    background-color: #dbd3d8;
     border: 0;
     border-radius: 1vh;
     font-size: 3vh;
 }
-.item-btn:hover{
+
+.item-btn:hover {
     cursor: pointer;
     background-color: #9b8d96;
 }
-.cvd{
+
+.cvd {
     display: flex;
     justify-content: center;
     background-color: rgb(38, 38, 45);
     color: rgb(222, 209, 209);
-    padding: 2vh ;
+    padding: 2vh;
     border: 0;
     font-size: 3vh;
     text-decoration: none;
     border-bottom: 2px solid rgb(222, 209, 209);
 }
 
-.active{
+.active {
     color: white;
     background-color: rgb(15, 15, 21);
 }

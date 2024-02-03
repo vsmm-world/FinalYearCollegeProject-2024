@@ -45,5 +45,11 @@ const isAuthenticted = (req, res, next) => {
     if (req.user) return next();
     res.redirect('/login');
 }
+const isAdmin = (req, res, next) => {
+    if (!req.user) return res.redirect('/login');
+    if (req.user.role == 'admin') return next();
+    console.log(req.user.role);
+    res.redirect('/login');
+}
 
-module.exports = { PassInit, isAuthenticted };
+module.exports = { PassInit, isAuthenticted, isAdmin };

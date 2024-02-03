@@ -5,7 +5,7 @@ const expressSession = require('express-session');
 const passport = require("passport");
 const port = process.env.port || 5000;
 const register = require('./auth/auth');
-const { PassInit, isAuthenticted } = require('./auth/passportConf');
+const { PassInit, isAuthenticted, isAdmin } = require('./auth/passportConf');
 const fs = require('fs');
 const path = require('path');
 const { upload } = require('./middleware/imageHandler');
@@ -62,7 +62,7 @@ app.get("/login", (req, res) => {
 app.get("/about", (req, res) => {
     res.status(200).render("about");
 })
-app.get("/admin", (req, res) => {
+app.get("/admin", isAdmin, (req, res) => {
     res.status(200).render("admin");
 })
 app.get("/contact", (req, res) => {
@@ -76,6 +76,9 @@ app.get('/logout', (req, res) => {
         res.redirect('/');
     });
 });
+app.get('/miniProjects', (req, res) => {
+    res.render('index');
+})
 
 app.get('/about', (req, res) => {
     res.render('about')
@@ -84,7 +87,7 @@ app.get('/contact', (req, res) => {
     res.render('about')
 })
 
-app.get('/language', (req, res) => {
+app.get('/language', isAuthenticted, (req, res) => {
     res.status(200).render('language');
 })
 app.get('/photos', async (req, res) => {
@@ -126,7 +129,12 @@ app.post('/data/img', upload.single('avatar'), async (req, res) => {
 });
 app.post('/api/register', register);
 app.post('/api/login', passport.authenticate('local'), (req, res) => {
-    res.status(200).json({ message: "Succsess" });
+    if (req.user.role == 'admin') {
+        res.redirect('/admin');
+        return;
+    }
+    res.redirect('/language');
+
 });
 
 
@@ -135,7 +143,7 @@ app.post('/api/login', passport.authenticate('local'), (req, res) => {
 //Admin Panel API
 
 
-app.get('/admin', (req, res) => {
+app.get('/admin', isAdmin, (req, res) => {
     res.render('admin');
 })
 
@@ -222,9 +230,9 @@ app.post('/admin/langauage/delete', async (req, res) => {
     const { id } = req.body.id;
     const _id = id;
     const lang = await Langauage.deleteOne(_id)
-    await VideoContent.deleteOne({ language: _id });
-    await TextContent.deleteOne({ language: _id });
-    await DocContent.deleteOne({ language: _id });
+    await VideoContent.deleteOne({ language: id });
+    await TextContent.deleteOne({ language: id });
+    await DocContent.deleteOne({ language: id });
     res.status(200).redirect('/admin');
 })
 
