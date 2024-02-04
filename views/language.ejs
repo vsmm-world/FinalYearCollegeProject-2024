@@ -7,9 +7,13 @@
     <link rel="stylesheet" href="/css/language.css">
     <link rel="stylesheet" href="css/universal.css">
     <style>
-        ol li {
-            display: block;
-            color: lime;
+        .vid-c {
+            display: flex;
+            width: 85vw;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -93,10 +97,10 @@
                     } else if (select.value == 'videos') {
                         mainData.innerHTML += `
                         <h2>Video Content</h2>
-                        <ul>
+                        <ul class="vid-c">
                             ${VideoContent.map((video) => {
                             return video.video.map((vid) => {
-                                return `<iframe width="1120" height="630" src="${video.video}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+                                return `<iframe width="1120" height="630" src="${vid}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
 
                             })
                         })}
