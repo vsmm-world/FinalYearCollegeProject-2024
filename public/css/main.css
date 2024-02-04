@@ -5,9 +5,11 @@ body{
     background-size: cover;
     user-select: none;
 }
+
 header nav ul{
     margin-bottom: 0;
 }
+
 h1{
     color: white;
 }
@@ -55,6 +57,10 @@ h1{
     display: block;
 }
 
+.cardbtn:hover{
+    background-color: rgb(42, 42, 75);
+}
+
 .card-img-top{
     filter:drop-shadow(10px);
     display: block;
@@ -68,6 +74,7 @@ h1{
     margin-bottom: 1vh;
     font-size: 3vh;
 }
+
 .card{
     width: 20vw;
     color: rgb(223, 223, 20);
@@ -83,6 +90,7 @@ h1{
     justify-content: space-evenly;
     margin-bottom: 5vh;
 }
+
 .card-text{
     font-size: 2.6vh;
     padding: 2vh 1vw;
