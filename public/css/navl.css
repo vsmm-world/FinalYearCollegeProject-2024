@@ -17,7 +17,7 @@ nav ul {
     display: flex;
     align-items: center;
     /* justify-content: space-around; */
-    width: 96.99vw;
+    width: 100vw;
     padding: 2vh;
     gap: 20px;
 }
@@ -29,7 +29,7 @@ nav ul {
 }
 .spans {
     position: fixed;
-    margin-left: 84.3vw;
+    margin-left: 88.3vw;
     display: flex;
     align-items: center;
     margin-right: -26vw;
