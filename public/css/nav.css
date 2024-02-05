@@ -30,7 +30,6 @@ nav ul {
 .spans {
     display: flex;
     align-items: center;
-    margin-right: -26vw;
 }
 
 .navimg{
@@ -41,7 +40,7 @@ nav ul {
 
 nav ul li {
     list-style: none;
-    padding: 0 1vw;
+    padding: 0 0.8vw;
 }
 
 nav ul li a {

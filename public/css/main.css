@@ -44,6 +44,9 @@ h1{
     border-radius: 2vh;
     margin: 0 45% 4vh 45%;
 }
+.starttoday:hover{
+    background-color: rgb(42, 42, 75);
+}
 
 .cardbtn{
     background-color: rgb(75, 75, 114);
