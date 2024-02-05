@@ -23,6 +23,7 @@ body {
     border-right: 1px solid black;
     transition: .5s;
     backdrop-filter: blur(3vh);
+    min-width: 17vw;
 }
 
 .item-list {
