@@ -386,3 +386,17 @@ app.post('/language/doc/delete', async (req, res) => {
         res.status(200).redirect('/admin');
     })
 })
+
+
+
+// USER Profile API
+
+app.get('/whoami', isAuthenticted, (req, res) => {
+    const user = req.user;
+
+    res.status(200).send(user)
+})
+
+app.get('/profile',isAuthenticted,(req,res)=>{
+    res.status(200).render('profile')
+})

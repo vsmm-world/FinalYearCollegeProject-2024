@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="css/lnav.css">
     <link rel="stylesheet" href="css/universal.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -20,12 +22,32 @@
                     <li><a class="navbartxt" href="/miniProjects">MiniProjects</a></li>
                     <li><a class="navbartxt" href="/language">Language</a></li>
                 </span>
-                <span class="spans">
+                <span class="spans" id="userProfile">
                     <li><a class="navbartxt" href="/login">Login</a></li>
                     <li><a class="navbartxt" href="/register">Register</a></li>
                 </span>
             </ul>
         </nav>
     </header>
+    <script>
+
+        const userProfile = document.getElementById('userProfile');
+
+
+        const baseURL = 'http://localhost:5000/';
+
+        async function Updates() {
+            const res = await fetch(baseURL + 'whoami')
+
+            const data = await res.json();
+            console.log(data);
+            if (data) {
+                userProfile.innerHTML = ` <li><a class="navbartxt" href="/profile">${data.name}</a></li> `;
+            }
+
+        }
+        Updates()
+    </script>
 </body>
+
 </html>
