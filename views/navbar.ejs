@@ -35,19 +35,18 @@
         const userProfile = document.getElementById('userProfile');
 
 
-        const baseURL = 'http://localhost:5000/';
+        const userURL = 'http://localhost:5000/';
 
-       async function Updates (){
-        const res = await fetch(baseURL+'whoami')
+        async function Updates() {
+            const res = await fetch(userURL + 'whoami')
 
-        const data =await res.json();
-        console.log(data);
-        if(data){
-            userProfile.innerHTML=` <li><a class="navbartxt" href="/profile">${data.name}</a></li> `;
+            const data = await res.json();
+            if (data) {
+                userProfile.innerHTML = ` <li><a class="navbartxt" href="/profile">${data.name}</a></li> `;
+            }
+
         }
-
-       }
-       Updates()
+        Updates()
     </script>
 </body>
 
