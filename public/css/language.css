@@ -15,6 +15,9 @@ body {
     margin-top: 11.7vh;
 }
 
+.item-list-part{
+    height: 75vh;
+}
 
 .slidebar {
     height: auto;
