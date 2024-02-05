@@ -39,8 +39,11 @@
                     </div>
                 </div>
                 <div class="content" id="mainData">
-
-                    <p>This is the best language learning platform developed by team Citiya</p>
+                    <h1>Unlock the World of Coding</h1>
+                    <p>Whether you're a beginner or an experienced coder, CodeMaster is here to guide you on your
+                        programming journey. Explore our comprehensive courses, interactive coding exercises, and
+                        vibrant community.</p>
+                    <p>Start coding today and transform your ideas into reality!</p>
 
                 </div>
             </div>
@@ -48,15 +51,18 @@
         <%- include('lfooter') %>
 
             <script>
+
+                const def = ``
+
                 const baseURL = 'http://localhost:5000/';
                 const langsList = document.querySelector('#langs-list');
                 const mainData = document.querySelector('#mainData');
                 const select = document.querySelector('#select');
 
                 const getlanguages = async () => {
+
                     const res = await fetch(baseURL + 'admin/langauage/get')
                     const data = await res.json();
-                    console.log(data);
                     langsList.innerHTML = '';
                     data.forEach((lang) => {
                         langsList.innerHTML += `

@@ -198,7 +198,7 @@ app.post('/admin/langauage/get/all', async (req, res) => {
         VideoC, TextC, DocC
     }
 
-    res.status(200).send(data)
+    res.status(200).json(data)
 
 })
 app.get('/admin/langauage/get/:id', async (req, res) => {

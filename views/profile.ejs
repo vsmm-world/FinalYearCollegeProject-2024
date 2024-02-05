@@ -7,30 +7,48 @@
     <link rel="stylesheet" href="/css/language.css">
     <link rel="stylesheet" href="css/universal.css">
     <style>
-        .vid-c {
+        .mainData {
+            margin: 50px;
+            padding: 150px;
             display: flex;
-            width: 85vw;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 50px;
+            background: grey;
         }
     </style>
 </head>
 
 <body>
     <%- include('navbarl') %>
-    <main>
-        <div>
-            <p>
-                This is Profile Page
-            </p>
-        </div>
-    </main>
+        <main class="mainData">
+
+
+            <div id="mainData">
+
+            </div>
+            <br>
+            <a href="/logout">Log Out</a>
+        </main>
+
         <%- include('lfooter') %>
 
 
+            <script>
+                const mainData = document.getElementById('mainData');
+                const baseURL = 'http://localhost:5000/'
+
+                async function getUserDetails() {
+
+                    const res = await fetch(baseURL + 'whoami')
+                    const data = await res.json();
+
+                    mainData.innerHTML = `
+<h1>You are Logged in as : ${data.name}</h1>
+                    
+                    `
+
+                }
+                getUserDetails()
+            </script>
 </body>
-<script src="/js/language.js"></script>
 
 </html>
