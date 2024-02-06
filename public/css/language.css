@@ -103,8 +103,22 @@ body {
     white-space: pre-wrap;
     line-height: 1.8;
     font-family: 'Ubuntu';
-
-
+}
+.doc-lang-li{
+    display: block;
+    text-align: center;
+}
+.vid-lang{
+    width: 70vw;
+    height: 80vh;
+    margin-bottom: 3vh;
+}
+.doc-lang-a{
+    color: blue;
+    text-decoration: none;
+}
+.doc-lang-a:hover{
+    color: blueviolet;
 }
 .main-content-head{
     display: block;
