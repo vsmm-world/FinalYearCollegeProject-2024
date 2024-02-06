@@ -85,23 +85,31 @@ body {
     display: block;
     text-align: center;
     margin: 3vh 0;
+    font-family: 'ubuntu';
     font-size: 5vh;
 }
 
 .text-lang-ul{
+    font-family: 'ubuntu';
     display: flex;
     flex-wrap: wrap;
 }
-.content div{
+.content div p{
+    font-family: 'ubuntu';
     padding:3vh 6vw;
 }
 .text-lang-li{
     margin: 3vh 6vw;
     white-space: pre-wrap;
+    line-height: 1.8;
+    font-family: 'Ubuntu';
+
+
 }
 .main-content-head{
     display: block;
     text-align: center;
     margin: 3vh 0;
+    font-family: 'ubuntu';
     font-size: 5vh;
 }
