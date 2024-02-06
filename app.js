@@ -397,6 +397,6 @@ app.get('/whoami', isAuthenticted, (req, res) => {
     res.status(200).send(user)
 })
 
-app.get('/profile',isAuthenticted,(req,res)=>{
+app.get('/profile', isAuthenticted, (req, res) => {
     res.status(200).render('profile')
 })

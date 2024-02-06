@@ -12,9 +12,7 @@ const register = async (req, res, next) => {
             email,
             password: hash,
         }).then((e) => {
-
             res.status(200).redirect('/login');
-            console.log(e);
         }).catch((e) => {
             console.log(e);
             res.status(400).render("error");
