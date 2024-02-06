@@ -26,6 +26,8 @@ nav ul {
 }
 
 .spans {
+    position: fixed;
+    margin-left: 88.3vw;
     display: flex;
     align-items: center;
     margin-right: -26vw;

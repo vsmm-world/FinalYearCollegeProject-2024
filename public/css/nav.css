@@ -29,11 +29,14 @@ nav ul {
 }
 
 .spans {
+    position: fixed;
+    margin-left: 88.3vw;
     display: flex;
     align-items: center;
+    margin-right: -26vw;
 }
 
-.navimg{
+.navimg {
     width: 4vw;
     height: 7vh;
     border-radius: 50%;
@@ -49,6 +52,7 @@ nav ul li a {
     color: rgb(199, 187, 187);
     position: relative;
 }
-nav ul li a:hover{
+
+nav ul li a:hover {
     color: rgb(255, 255, 255);
 }
