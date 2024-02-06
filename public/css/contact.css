@@ -33,7 +33,10 @@
     backdrop-filter: blur(30px);    
     padding: 2vh;
     border-radius:4vh;
+}
 
+.con-card a{
+    text-decoration: none;
 }
 
 .con-card1{
