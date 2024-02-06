@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/language.css">
-    <link rel="stylesheet" href="css/universal.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/language.css" />
+    <link rel="stylesheet" href="css/universal.css" />
     <style>
         .vid-c {
             display: flex;
@@ -33,96 +33,98 @@
                         </li>
                     </ul>
                     <div class="item-list-part">
-                        <ul class="item-ul" id="langs-list">
-
-                        </ul>
+                        <ul class="item-ul" id="langs-list"></ul>
                     </div>
                 </div>
                 <div class="content" id="mainData">
-                    <h1>Unlock the World of Coding</h1>
-                    <p>Whether you're a beginner or an experienced coder, CodeMaster is here to guide you on your
-                        programming journey. Explore our comprehensive courses, interactive coding exercises, and
-                        vibrant community.</p>
-                    <p>Start coding today and transform your ideas into reality!</p>
-
+                    <h1 class="main-content-head">Unlock the World of Coding</h1>
+                    <div>
+                        <p>
+                            Whether you're a beginner or an experienced coder, CodeMaster is
+                            here to guide you on your programming journey. Explore our
+                            comprehensive courses, interactive coding exercises, and vibrant
+                            community.
+                        </p>
+                        <p>Start coding today and transform your ideas into reality!</p>
+                    </div>
                 </div>
             </div>
         </main>
         <%- include('lfooter') %>
 
             <script>
+                const def = ``;
 
-                const def = ``
-
-                const baseURL = 'http://localhost:5000/';
-                const langsList = document.querySelector('#langs-list');
-                const mainData = document.querySelector('#mainData');
-                const select = document.querySelector('#select');
+                const baseURL = "http://localhost:5000/";
+                const langsList = document.querySelector("#langs-list");
+                const mainData = document.querySelector("#mainData");
+                const select = document.querySelector("#select");
 
                 const getlanguages = async () => {
-
-                    const res = await fetch(baseURL + 'admin/langauage/get')
+                    const res = await fetch(baseURL + "admin/langauage/get");
                     const data = await res.json();
-                    langsList.innerHTML = '';
+                    langsList.innerHTML = "";
                     data.forEach((lang) => {
                         langsList.innerHTML += `
                         <li class="item-listbar">
                             <button class="item-btn" id="${lang._id}" onclick="getLangaugeData('${lang._id}')">${lang.LanguageName}</button>
                         </li>
-                        `
-                    })
-                }
+                        `;
+                    });
+                };
                 getlanguages();
 
-                const getLangaugeData = async (id) => {
-                    const LangData = await fetch(baseURL + 'admin/langauage/get/all', {
+                // Text content
 
-                        method: 'POST',
+                const getLangaugeData = async (id) => {
+                    const LangData = await fetch(baseURL + "admin/langauage/get/all", {
+                        method: "POST",
                         headers: {
-                            'content-type': "application/json"
+                            "content-type": "application/json",
                         },
                         body: JSON.stringify({
-                            id: id
-                        })
-                    })
-                    const data = await LangData.json()
+                            id: id,
+                        }),
+                    });
+                    const data = await LangData.json();
                     const VideoContent = data.VideoC;
                     const TextContent = data.TextC;
                     const DocContent = data.DocC;
-                    mainData.innerHTML = '';
+                    mainData.innerHTML = "";
 
-                    if (select.value == 'content') {
+                    if (select.value == "content") {
                         mainData.innerHTML += `                
-                        <h2>Text Content</h2>
-                        <ul>
+                        <h2 class="text-lang-head">Text Content</h2>
+                        <ul class = "text-lang-ul">
                             ${TextContent.map((text) => {
-                            return `<li>${text.text}</li>`
+                            return `<li class = "text-lang-li">${text.text}</li>`;
                         })}
+                        
                         </ul>
-                        `
-                    } else if (select.value == 'videos') {
+                        `;
+                    } else if (select.value == "videos") {
                         mainData.innerHTML += `
                         <h2>Video Content</h2>
                         <ul class="vid-c">
                             ${VideoContent.map((video) => {
                             return video.video.map((vid) => {
-                                return `<iframe width="1120" height="630" src="${vid}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
-                            })
+                                return `<iframe width="1120" height="630" src="${vid}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+                            });
                         })}
                         </ul>
-                        `
-                    } else if (select.value == 'documentation') {
+                        `;
+                    } else if (select.value == "documentation") {
                         mainData.innerHTML += `
                         <h2>Documentation</h2>
                         <ol>
                    
                              ${DocContent.map((doc) => {
                             return `<li>Click here to go documentation 👉 <a href="${doc.doc}" target="_blank">${doc.doc}</a></li>\n`;
-                        }).join('')}
+                        }).join("")}
                         </ol>
-                        `
+                        `;
                     }
-                }
+                };
             </script>
 </body>
 <script src="/js/language.js"></script>

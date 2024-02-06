@@ -77,3 +77,31 @@ body {
     color: white;
     background-color: rgb(15, 15, 21);
 }
+.content{
+    width: 100vw;    
+}
+
+.text-lang-head{
+    display: block;
+    text-align: center;
+    margin: 3vh 0;
+    font-size: 5vh;
+}
+
+.text-lang-ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.content div{
+    padding:3vh 6vw;
+}
+.text-lang-li{
+    margin: 3vh 6vw;
+    white-space: pre-wrap;
+}
+.main-content-head{
+    display: block;
+    text-align: center;
+    margin: 3vh 0;
+    font-size: 5vh;
+}
