@@ -110,6 +110,7 @@ app.get('/get-img', async (req, res) => {
     })
 })
 
+
 // Post Requests Handeling
 
 app.post('/data/img', upload.single('avatar'), async (req, res) => {
