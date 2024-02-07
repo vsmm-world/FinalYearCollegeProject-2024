@@ -1,6 +1,14 @@
 /* Footer Start here */
 .full-header {
-    background:rgb(34, 32, 55);
+    /* background:#24344d; */
+    /* background:#002347; */
+    /* background:#101820ff; */
+    /* background:#2e3047; */
+    /* background:#022436; */
+    /* background:#012f46; */
+    background:#0d0c1d;
+    /* background:#161b33; match */
+    /* background:#101820ff; */
     box-sizing: border-box;
     color: rgb(192, 177, 177);
     margin-top: -3vh;
@@ -9,7 +17,6 @@
 }
 
 .ft-part-1 {
-
     display: flex;
     justify-content: space-evenly;
     margin:2vh 2vw;
