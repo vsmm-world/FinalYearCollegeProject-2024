@@ -44,6 +44,10 @@
             if (data) {
                 userProfile.innerHTML = ` <li><a class="navbartxt" href="/profile">${data.name}</a></li> `;
             }
+            if(data.role == 'admin'){
+                userProfile.innerHTML = ` <li><a class="navbartxt" href="/admin">${data.name}</a></li> `;
+
+            }
 
         }
         Updates()
