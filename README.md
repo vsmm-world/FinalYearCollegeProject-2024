@@ -12,14 +12,18 @@ Briefly describe your project here. What does it do? What problem does it solve?
 - [License](#license)
 - [Contact](#contact)
 
-## Installation
+## Installation & Run the Project 
 To install dependencies, run the following command:
 ```bash
-npm install
+$ npm install
+```
+```bash
+$ npm run start
 ```
 
 ## Contact
 Project Name : `Language Learning Platform`, 
-Twitter : `@mhz_144`,
+- [Twitter](@mhz_144),
+- [E-mail](rvpc792@gmail.com),
+
 Auther :  `Ravindra Valand`, 
-E-mail : `rvpc792@gmail.com`
