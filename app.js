@@ -3,7 +3,7 @@ const ConnectDB = require("./db/connection");
 const app = express();
 const expressSession = require('express-session');
 const passport = require("passport");
-const port = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 const register = require('./auth/auth');
 const { PassInit, isAuthenticted, isAdmin } = require('./auth/passportConf');
 const fs = require('fs');
@@ -17,6 +17,7 @@ const bodyParser = require('body-parser');
 const VideoContent = require('./models/videoContent');
 const TextContent = require('./models/textContent');
 const DocContent = require('./models/docContent');
+const User = require("./models/user");
 
 PassInit(passport);
 
