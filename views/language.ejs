@@ -94,7 +94,7 @@
 
                     if (select.value == "content") {
                         mainData.innerHTML += `                
-                        <h2 class="text-lang-head">Text Content</h2>
+                        <h2 class="text-lang-head">OverView of Language</h2>
                         <ul class = "text-lang-ul">
                             ${TextContent.map((text) => {
                             return `<li class = "text-lang-li">${text.text}</li>    
@@ -105,7 +105,7 @@
                         `;
                     } else if (select.value == "videos") {
                         mainData.innerHTML += `
-                        <h2 class="text-lang-head">Video Content</h2>
+                        <h2 class="text-lang-head">Videos To Learn in Better way </h2>
                         <ul class="vid-c">
                             ${VideoContent.map((video) => {
                             return video.video.map((vid) => {
@@ -116,7 +116,7 @@
                         `;
                     } else if (select.value == "documentation") {
                         mainData.innerHTML += `
-                        <h2 class="text-lang-head">Documentation</h2>
+                        <h2 class="text-lang-head">Official Documentation Links for Referance</h2>
                         <ol>
                    
                              ${DocContent.map((doc) => {
