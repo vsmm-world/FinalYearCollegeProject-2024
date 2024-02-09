@@ -144,13 +144,6 @@ app.post('/api/login', passport.authenticate('local'), (req, res) => {
 
 //Admin Panel API
 
-
-app.get('/admin', isAdmin, (req, res) => {
-    res.render('admin');
-})
-
-
-
 app.get('/admin/panel/users/get', async (req, res) => {
     const users = await User.find({}).then((data, err) => {
         if (err) {
