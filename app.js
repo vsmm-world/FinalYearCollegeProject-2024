@@ -102,6 +102,10 @@ app.get('/photos', async (req, res) => {
 
 
 
+
+//khali commit
+
+
 app.get('/get-img', async (req, res) => {
     const imgs = await File.find({}).then((data, err) => {
         if (err) {
