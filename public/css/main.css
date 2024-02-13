@@ -1,9 +1,10 @@
 body{
-    width: 100vw;
+    width: 97vw;
     height: 100vh;
     background-image: url("/img/wal1.jpg");
     background-size: cover;
     user-select: none;
+    background-attachment: fixed;
 }
 
 header nav ul{
