@@ -4,16 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/language.css">
+    <link rel="stylesheet" href="css/language.css">
     <link rel="stylesheet" href="css/universal.css">
+    <link rel="stylesheet" href="css/profile.css">
     <style>
-        .mainData {
-            margin: 50px;
-            padding: 150px;
-            display: flex;
-            flex-wrap: wrap;
-            background: grey;
-        }
+
     </style>
 </head>
 
@@ -21,15 +16,17 @@
     <%- include('navbarl') %>
         <main class="mainData">
 
-
+            <div class="pro-img">
+                <img src="/icons/user.png" alt="">
+            </div>
             <div id="mainData">
 
             </div>
             <br>
-            <a href="/logout">Log Out</a>
+            <a class="userlogout" href="/logout">Log Out</a>
         </main>
 
-        <%- include('lfooter') %>
+        <%- include('footer') %>
 
 
             <script>
@@ -42,8 +39,7 @@
                     const data = await res.json();
 
                     mainData.innerHTML = `
-<h1>You are Logged in as : ${data.name}</h1>
-                    
+                    <h1 class="pro-name" > ${data.name}</h1>
                     `
 
                 }

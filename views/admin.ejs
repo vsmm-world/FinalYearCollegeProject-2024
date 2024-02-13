@@ -19,21 +19,21 @@
                 <input type="text" autofocus name="LanguageName" class="language-inp" id="LanguageName"
                     placeholder="Language Name" required>
 
-            <button type="button" class="add-btn" id="add-btn" onclick="addLanguage()">Add Language</button>
-        </form>
-    </div>
-    <div class="admin-main-part">
+                <button type="button" class="add-btn" id="add-btn" onclick="addLanguage()">Add Language</button>
+            </form>
+        </div>
+        <div class="admin-main-part">
 
-        <div class="langDetails" id="langDetails">
+            <div class="langDetails" id="langDetails">
+            </div>
+            <div class="languages" id="languages">
+            </div>
         </div>
-        <div class="languages" id="languages">
-        </div>
-    </div>
-    <footer class="ad-footer">
-        <div>
-            <p class="ad-para">Copyright &copy; 2023-2024 Language Learner | All Rights Reserved</p>
-        </div>
-    </footer>
+        <footer class="ad-footer">
+            <div>
+                <p class="ad-para">Copyright &copy; 2023-2024 Language Learner | All Rights Reserved</p>
+            </div>
+        </footer>
         <!-- Displaying all languages dynamically -->
         <script>
             const baseURL = 'http://localhost:5000/';

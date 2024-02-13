@@ -23,7 +23,7 @@
 
 .con-cards{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .con-card{
@@ -31,7 +31,7 @@
     color: white;
     margin: 0 2vw;
     backdrop-filter: blur(30px);    
-    padding: 2vh;
+    padding: 1vh;
     border-radius:4vh;
 }
 
@@ -41,51 +41,50 @@
 
 .con-card1{
     border: 2px solid rgb(214, 31, 31);
-    margin-top: 14vh;
-    margin-bottom: 15vh;
-    width: 28vw;
-    height: 50vh;
+    margin-top:5vh;
+    margin-bottom: 1vh;
+    width: 20vw;
+    height: 40vh;
 }
 .con-card2{
     width: 25vw;
     border: 2px solid Green;
-    margin-top: 8vh;
-    height: 60vh;
+    margin-top: 9vh;
+    height: 30vh;
 }
 .con-card3{
-    margin-top: 14vh;
-    margin-bottom: 15vh;
-    height: 50vh;
-    width: 28vw;
+    margin-top:5vh;
+    margin-bottom: 1vh;
+    width: 20vw;
+    height: 40vh;
     border: 2px solid blue;
 }
 .con-card span{
-    cursor: default;
     display: block;
     text-align: center;
-    margin-bottom: 7vh;
-    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-top: 1vh;
     font-size: 4vh;
 }
 .con-card2 span{
     display: block;
     text-align: center;
-    margin-bottom: 7vh;
-    margin-top: 5vh;
-    font-size: 6vh;
+    margin-bottom: 5vh;
+    margin-top: 1vh;
+    font-size: 4vh;
 }
 .con-card2 p{
-    cursor: default;
     width: 17vw;
-    font-size: 3.4vh;
-    height: 20vh;
-    margin: 4vh auto;
+    cursor: default;
+    font-size: 3vh;
+    height: 16vh;
+    margin: 3vh auto;
 }
 .con-p{
     width: 17vw;
     cursor: default;
     font-size: 3vh;
-    height: 20vh;
+    height: 16vh;
     margin: 3vh auto;
 }
 

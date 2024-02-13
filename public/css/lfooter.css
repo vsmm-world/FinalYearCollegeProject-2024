@@ -41,6 +41,7 @@
 
 .ft-mail p{
     text-align: center;
+    line-height: 5vh;
 }
 .cntr{
     text-align: center;
@@ -74,7 +75,7 @@
     /* color: #302c2c; */
     color: white;
     font-size: 2.5vh;
-    line-height: 6vh;
+    
 }
 
 .ft-part-2 {
@@ -101,4 +102,7 @@
     /* color: #302c2c; */
     color: white;
     padding-left: 1vw;
+}
+.ft-para p{
+    width: 2vw;
 }
