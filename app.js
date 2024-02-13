@@ -100,7 +100,6 @@ app.get('/photos', async (req, res) => {
     })
 })
 
-//just for new commits 
 
 app.get('/get-img', async (req, res) => {
     const imgs = await File.find({}).then((data, err) => {
