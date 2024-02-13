@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    /* overflow-x: hidden; */
     font-family: sans-serif;
 }
 
@@ -12,7 +11,7 @@ nav {
 }
 
 nav ul {
-    width: 100vw;
+    width: 97vw;
     display: flex;
     align-items: center;
     /* justify-content: space-around; */
@@ -22,7 +21,7 @@ nav ul {
 
 .spanf {
     display: flex;
-    margin-right: 45vw;
+    margin-right: 46vw;
     margin-left: -1vw;
     align-items: center;
 }

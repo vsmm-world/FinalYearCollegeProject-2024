@@ -3,8 +3,8 @@
     /* background:#24344d; */
     /* background:#002347; */
     /* background:#101820ff; */
+    overflow-x: hidden;
     /* background:#2e3047; */
-    overflow-x:hidden ;
     /* background:#022436; */
     /* background:#012f46; */
     background:#0d0c1d;
@@ -14,6 +14,7 @@
     color: rgb(192, 177, 177);
     margin-top: -3vh;
     backdrop-filter: blur(3vh);
+    width: 100vw;
     user-select: none;
 }
 
