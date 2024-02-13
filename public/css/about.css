@@ -8,8 +8,9 @@
     background-size: cover;
     width: 100vw;
     height: 100vh;
-    cursor: defalut;
     user-select: none;
+    background-attachment: fixed;
+    overflow-x:hidden ;
 }
 
 .aboutimg {
