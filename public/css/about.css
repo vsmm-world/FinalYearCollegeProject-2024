@@ -30,6 +30,7 @@
   margin-bottom: 6vh;
   position: relative;
   top: -17vh;
+  border-radius: 15vh 2vh 15vh 2vh;
   left: 20vw;
   background-color: var(--dark);
 }
