@@ -1,3 +1,8 @@
+:root{
+    --dark : #00203FFF;
+    --light :  #ADEFD1FF;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +30,7 @@ nav ul {
 }
 .spanf {
     display: flex;
-    margin-right: 45vw;
+    margin-right: 43vw;
     margin-left: -1vw;
     align-items: center;
 }
@@ -36,6 +41,14 @@ nav ul {
     align-items: center;
     margin-right: -26vw;
 }
+.mode{
+    cursor: pointer;
+    width: 2.5vw;
+    margin-top: 1vh;
+    margin-right: 2vw;
+    height: 5vh;
+}
+
 .navimg{
     width: 4vw;
     height: 7vh;
@@ -50,6 +63,7 @@ nav ul li a {
     /* color: rgb(37, 35, 35); */
     color: rgb(221, 212, 212);
     position: relative;
+    margin-left: -1vh;
 }
 nav ul li a:hover{
     color: rgb(255, 255, 255);

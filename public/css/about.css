@@ -3,7 +3,7 @@
   padding: 0;
 }
 .container {
-  background-image: url("/img/wal1.jpg");
+  background-image:var(--backphoto);
   background-size: cover;
   width: 100vw;
   height: 100vh;

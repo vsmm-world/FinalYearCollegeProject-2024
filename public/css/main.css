@@ -2,7 +2,7 @@ body{
     width: 100vw;
     padding-top: 20vh;
     height: 100vh;
-    background-image: url("/img/wal1.jpg");
+    background-image: var(--backphoto);
     background-size: cover;
     user-select: none;
     background-attachment: fixed;

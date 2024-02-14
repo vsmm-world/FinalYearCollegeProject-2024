@@ -1,5 +1,5 @@
 body {
-  background-image: url("/img/wal1.jpg");
+  background-image: var(--backphoto);
     background-size: cover;
   font-size: 1.1 rem;
   width: 100vw;
