@@ -1,67 +1,59 @@
 * {
-    margin: 0;
-    padding: 0;   
+  margin: 0;
+  padding: 0;
 }
 .container {
-    background-image: url("/img/wal1.jpg");
-    background-size: cover;
-    width: 100vw;
-    height: 100vh;
-    user-select: none;
-    background-attachment: fixed;
-    overflow-x:hidden ;
+  background-image: url("/img/wal1.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  user-select: none;
+  background-attachment: fixed;
+  overflow-x: hidden;
 }
+.about-contain {
+  margin-top: 10vh;
+  width: 100%;
+  height: 40vh;
+  background-color: var(--light);
+  text-align: center;
+  position: relative;
+}
+.about-contain p {
+  color: var(--dark);
+  padding-top: 10vh;
+  font-size: 7vh;
+}
+.back {
+    padding: 3vh 0;
+  width: 60vw;
+  margin-bottom: 6vh;
+  position: relative;
+  top: -17vh;
+  left: 20vw;
+  background-color: var(--dark);
+}
+.fakro{
+    color: var(--light);
 
-.aboutimg {
-    width: 40vw;
-    margin: 7vh;
-    height: 65vh;
-    margin-left: 1vw;
 }
-
-.fy1{
-    
-    margin-left: 1.5vw;
+.about-title{
+    text-align: center;
 }
-.fakro {
-    width: 55vw;
-    padding: 2vh 5vh;
-    color: rgb(255, 255, 255);
-    backdrop-filter: blur(10px);
+.about-title h2{
+    padding: 3vh 0;
+    color: rgb(215, 203, 203);
 }
-
-.first {
-    display: flex;
-    margin-top: 15vh;
-    padding-top: 6vh;
-    user-select: none;
-    cursor: default;
-    padding-bottom: 3vh;
-    margin-bottom: 3vh;
+.fakro h4{
+    text-decoration: underline;
+    margin-left: 2vw;
 }
-
-.secondof {
-    width: 50vw;
+.inner-para{
+    margin: 2vh 5vw;
 }
-
-.second {
-    display: flex;
-    cursor: default;
-    padding: 3vh;
-    margin-bottom: 3vh;
-    user-select: none;
-}
-
-.thired {
-    cursor: default;
-    display: flex;
-    padding: 3vh;
-    margin-bottom: 3vh;
-    padding-bottom: 5vh;
-    user-select: none;
-}
-
 .aboutpara{
-    margin: 3vh 0;
-    color: rgb(233, 221, 221);
+    margin-bottom: 1.5vh;
+}
+.thired{
+    margin-bottom: -10vh;
 }
