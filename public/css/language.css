@@ -1,128 +1,166 @@
 body {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
 }
 
 .lan-container {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    background: white;
-    color: rgb(44, 43, 43);
-    margin-top: 11.7vh;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background: white;
+  color: rgb(44, 43, 43);
+  margin-top: 11.7vh;
 }
 
-.item-list-part{
-    height: 75vh;
+.item-list-part {
+  height: 75vh;
 }
 
 .slidebar {
-    height: auto;
-    padding: 1vh 0;
-    background-color: var(--dark);
-    border-right: 1px solid black;
-    transition: .5s;
-    backdrop-filter: blur(3vh);
-    min-width: 17vw;
+  height: auto;
+  padding: 1vh 0;
+  background-color: var(--dark);
+  border-right: 1px solid black;
+  transition: 0.5s;
+  backdrop-filter: blur(3vh);
+  min-width: 17vw;
 }
 
 .item-list {
-    display: flex;
-    justify-content: center;
-    gap: 1vh;
-    color: var(--dark);
-    padding: 2vh;
-    text-decoration: none;
+  display: flex;
+  justify-content: center;
+  gap: 1vh;
+  color: var(--dark);
+  padding: 2vh;
+  text-decoration: none;
 }
 
 .item-listbar {
-    display: flex;
-    justify-content: center;
-    color: var(--dark);
-    padding: 2vh;
-    text-decoration: none;
+  display: flex;
+  justify-content: center;
+  color: var(--dark);
+  padding: 2vh;
+  text-decoration: none;
 }
 
 .item-btn {
-    padding: 1vh 1vw;
-    width: 15vw;
-    background-color: var(--light);
-    border: 0;
-    border-radius: 1vh;
-    font-size: 3vh;
+  padding: 1vh 1vw;
+  width: 15vw;
+  background-color: var(--light);
+  border: 0;
+  border-radius: 1vh;
+  font-size: 3vh;
 }
 
 .item-btn:hover {
-    cursor: pointer;
-    width: 11vw;
+  cursor: pointer;
+  width: 11vw;
 }
 
 .cvd {
-    display: flex;
-    justify-content: center;
-    background-color:var(--dark);
-    color: rgb(222, 209, 209);
-    padding: 2vh;
-    border: 0;
-    font-size: 3vh;
-    text-decoration: none;
-    border-bottom: 2px solid rgb(222, 209, 209);
+  display: flex;
+  justify-content: center;
+  background-color: var(--dark);
+  color: rgb(222, 209, 209);
+  padding: 2vh;
+  border: 0;
+  font-size: 3vh;
+  text-decoration: none;
+  border-bottom: 2px solid rgb(222, 209, 209);
 }
 
 .active {
-    color: white;
-    background-color: rgb(15, 15, 21);
+  color: white;
+  background-color: rgb(15, 15, 21);
 }
-.content{
-    width: 100vw;    
-}
-
-.text-lang-head{
-    display: block;
-    text-align: center;
-    margin: 3vh 0;
-    font-family: 'ubuntu';
-    font-size: 5vh;
+.content {
+  width: 100vw;
+  background-color: var(--light);
 }
 
-.text-lang-ul{
-    font-family: 'ubuntu';
-    display: flex;
-    flex-wrap: wrap;
+.text-lang-head {
+  display: block;
+  text-align: center;
+  margin: 3vh 0;
+  font-family: "ubuntu";
+  font-size: 5vh;
 }
-.content div p{
-    font-family: 'ubuntu';
-    padding:3vh 6vw;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--dark) !important;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.text-lang-li{
-    margin: 3vh 6vw;
-    white-space: pre-wrap;
-    line-height: 1.8;
-    font-family: 'Ubuntu';
+
+.section-title {
+  color: var(--light) !important;
 }
-.doc-lang-li{
-    display: block;
-    text-align: center;
+.text-lang-ul {
+  font-family: "ubuntu";
+  display: flex;
+  background-color: var(--light);
+  flex-wrap: wrap;
 }
-.vid-lang{
-    width: 70vw;
-    height: 80vh;
-    margin-bottom: 3vh;
+.content div p {
+  font-family: "ubuntu";
+  padding: 3vh 6vw;
+  color: white;
 }
-.doc-lang-a{
-    color: blue;
-    text-decoration: none;
+.content-span {
+  font-family: "ubuntu";
+  margin-left: 16vw;
+  padding-left: 7v;
+  width: 55vw;
+  display: block;
 }
-.doc-lang-a:hover{
-    color: blueviolet;
+.key-features ul {
+  padding-left: 20px;
+  color: white !important;
 }
-.main-content-head{
-    display: block;
-    text-align: center;
-    margin: 3vh 0;
-    font-family: 'ubuntu';
-    font-size: 5vh;
+.reasons ul {
+  list-style-type: none;
+  padding-left: 0;
+  color: white !important;
+}
+.use-cases ul{
+    color: white !important;
+}
+.c-span {
+  color: black;
+  display: block;
+  margin-top: 3vh;
+}
+.text-lang-li {
+  margin: 3vh 6vw;
+  white-space: pre-wrap;
+  line-height: 1.8;
+  font-family: "Ubuntu";
+}
+.doc-lang-li {
+  display: block;
+  text-align: center;
+}
+.vid-lang {
+  width: 70vw;
+  height: 80vh;
+  margin-bottom: 3vh;
+}
+.doc-lang-a {
+  color: blue;
+  text-decoration: none;
+}
+.doc-lang-a:hover {
+  color: blueviolet;
+}
+.main-content-head {
+  display: block;
+  text-align: center;
+  margin: 3vh 0;
+  font-family: "ubuntu";
+  font-size: 5vh;
 }
