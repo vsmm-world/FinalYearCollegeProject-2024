@@ -1,7 +1,10 @@
+body{
+    background-color: rgb(14, 59, 61);
+}
 .mainData {
     margin: 15vh 40vw 10vh 40vw;
     flex-wrap: wrap;
-    background: rgb(215, 209, 209);
+    background: var(--dark);
     border-radius: 3vh;
     padding: 3vh 1vw;
 }
@@ -15,19 +18,19 @@
 }
 .pro-name{
     text-align: center;
+    color: var(--light);
     margin-bottom: 6vh;
 }
 .userlogout{
     display: block;
     text-decoration: none;
-    background-color: rgb(67, 36, 95);
-    color: white;
+    background-color: var(--light);
+    color: var(--dark);
     padding: 1vh 2vw;
     border-radius: 3vh;
     width: 5vw;
     margin: 0 auto;
 }
 .userlogout:hover{
-    color: #fff;
-    background-color: rgb(32, 3, 59);
+    scale: 1.1;
 }

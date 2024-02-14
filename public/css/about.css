@@ -1,7 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
-    
+    padding: 0;   
 }
 .container {
     background-image: url("/img/wal1.jpg");
@@ -21,6 +20,7 @@
 }
 
 .fy1{
+    
     margin-left: 1.5vw;
 }
 .fakro {
@@ -32,6 +32,7 @@
 
 .first {
     display: flex;
+    margin-top: 15vh;
     padding-top: 6vh;
     user-select: none;
     cursor: default;

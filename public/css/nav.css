@@ -2,10 +2,14 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    overflow-block: block;
 }
 
 nav {
-    background: transparent;
+    background-color: var(--dark);
+    position: fixed;
+    z-index: 3;
+    top: 0;
     cursor: default;
     user-select: none;
 }

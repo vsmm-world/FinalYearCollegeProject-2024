@@ -1,3 +1,9 @@
+:root{
+    --dark : #00203FFF;
+    --light :  #ADEFD1FF;
+}
+
+
 /* Footer Start here */
 .full-header {
     /* background:#24344d; */
@@ -7,7 +13,7 @@
     /* background:#2e3047; */
     /* background:#022436; */
     /* background:#012f46; */
-    background:#0d0c1d;
+    background:var(--dark);
     /* background:#161b33; match */
     /* background:#101820ff; */
     box-sizing: border-box;

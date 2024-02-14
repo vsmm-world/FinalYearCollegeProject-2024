@@ -22,7 +22,7 @@ body {
 .slidebar {
     height: auto;
     padding: 1vh 0;
-    background-color: rgb(38, 38, 45);
+    background-color: var(--dark);
     border-right: 1px solid black;
     transition: .5s;
     backdrop-filter: blur(3vh);
@@ -33,7 +33,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 1vh;
-    color: rgb(155, 84, 84);
+    color: var(--dark);
     padding: 2vh;
     text-decoration: none;
 }
@@ -41,7 +41,7 @@ body {
 .item-listbar {
     display: flex;
     justify-content: center;
-    color: rgb(155, 84, 84);
+    color: var(--dark);
     padding: 2vh;
     text-decoration: none;
 }
@@ -49,7 +49,7 @@ body {
 .item-btn {
     padding: 1vh 1vw;
     width: 15vw;
-    background-color: #dbd3d8;
+    background-color: var(--light);
     border: 0;
     border-radius: 1vh;
     font-size: 3vh;
@@ -57,13 +57,13 @@ body {
 
 .item-btn:hover {
     cursor: pointer;
-    background-color: #9b8d96;
+    width: 11vw;
 }
 
 .cvd {
     display: flex;
     justify-content: center;
-    background-color: rgb(38, 38, 45);
+    background-color:var(--dark);
     color: rgb(222, 209, 209);
     padding: 2vh;
     border: 0;

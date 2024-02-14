@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+main{
+    margin-top: 15vh;
+}
 
 .container {
     background-image: url("/img/wal1.jpg");
@@ -32,7 +35,7 @@
     fill-opacity: 10vh;
     color: white;
     margin: 0 2vw;
-    backdrop-filter: blur(30px);    
+    background-color: var(--dark);  
     padding: 1vh;
     border-radius:4vh;
 }
