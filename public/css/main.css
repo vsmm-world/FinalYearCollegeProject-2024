@@ -2,7 +2,7 @@ body{
     width: 100vw;
     padding-top: 20vh;
     height: 100vh;
-    background-image: var(--backphoto);
+    background: var(--backphoto);
     background-size: cover;
     user-select: none;
     background-attachment: fixed;
@@ -38,7 +38,7 @@ h1{
 .starttoday{
     border: 0;
     /* background: transparent; */
-    background-color:var(--dark);
+    background-color:var(--normalbtn);
     color: rgb(255, 255, 255);
     backdrop-filter: blur(10px);
     font-size: 3vh;
@@ -53,7 +53,7 @@ h1{
 }
 
 .cardbtn{
-    background-color: var(--light);
+    background-color: var(--cardbtn);
     color: var(--dark);
     backdrop-filter: blur(10px);
     text-decoration: none;
@@ -78,6 +78,7 @@ h1{
 }
 
 .card-title{
+    color: var(--cardbtn);
     text-align: center;
     margin-bottom: 1vh;
     font-size: 3vh;
@@ -89,9 +90,10 @@ h1{
     /* background:linear-gradient(red green blue); */
     scroll-behavior: none;
     /* background: transparent; */
-    background-color: var(--dark);
+    background-color: var(--card);
     border-radius: 2vh;
     backdrop-filter: blur(5px);
+    filter:var(--box-shadow2);
 }
 
 .cards{

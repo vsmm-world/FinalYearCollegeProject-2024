@@ -19,14 +19,12 @@
 }
 
 .ft-name-1 {
-    /* color: #453939; */
-    color: rgb(200, 192, 192);
+    /* color: rgb(200, 192, 192); */
     font-size: 12px;
     padding-bottom: 3vh;
-    /* margin-left: 1vw; */
     display: block;
     font-family: 'Inter', sans-serif;
-    /* text-align: center; */
+    text-align: center;
 }
 
 .cntr {

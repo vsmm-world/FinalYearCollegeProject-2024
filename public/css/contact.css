@@ -7,7 +7,7 @@ main{
 }
 
 .container {
-    background-image: var(--backphoto);
+    background: var(--backphoto);
     background-size: cover;
     width: 100vw;
     overflow-x: hidden;
@@ -16,12 +16,12 @@ main{
     user-select: none;
 }
 .cpart{
-    color: white;
+    color: var(--lwclr);
     text-align: center;
 }
 
 .cfirstpara{
-    color: rgb(209, 198, 198);
+    color: var(--lowwclr);
     margin:3vh 0;
     font-size: large;
 }
@@ -35,7 +35,8 @@ main{
     fill-opacity: 10vh;
     color: white;
     margin: 0 2vw;
-    background-color: var(--dark);  
+    background-color: var(--card);  
+    filter:var(--box-shadow2);
     padding: 1vh;
     border-radius:4vh;
 }
@@ -45,7 +46,7 @@ main{
 }
 
 .con-card1{
-    border: 2px solid rgb(214, 31, 31);
+    /* border: 2px solid rgb(214, 31, 31); */
     margin-top:5vh;
     margin-bottom: 1vh;
     width: 20vw;
@@ -53,7 +54,7 @@ main{
 }
 .con-card2{
     width: 25vw;
-    border: 2px solid Green;
+    /* border: 2px solid Green; */
     margin-top: 9vh;
     height: 30vh;
 }
@@ -62,11 +63,12 @@ main{
     margin-bottom: 1vh;
     width: 20vw;
     height: 40vh;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
 }
 .con-card span{
     display: block;
     text-align: center;
+    color:var(--mainheading);
     margin-bottom: 5vh;
     margin-top: 1vh;
     font-size: 4vh;
@@ -89,6 +91,7 @@ main{
     width: 17vw;
     cursor: default;
     font-size: 3vh;
+    color: var(--light);
     height: 16vh;
     margin: 3vh auto;
 }
@@ -99,53 +102,30 @@ main{
     margin: 2vh auto;
     display: block;
     text-align: center;
-    color: rgb(214, 31, 31);
-    background-color: transparent;
-    border:2px solid rgb(214, 31, 31);
+    color: var(--dark);
+    background-color: var(--cardbtn);
     cursor: pointer;
     border-radius: 3vh;
 }
-.cbtn2{
-    padding: 2vh 4vw;
-    margin: 2vh auto;
-    display: block;
-    text-align: center;
-    color: green;
-    font-size: 3vh;
-    background-color: transparent;
-    border:2px solid green;
-    border-radius: 3vh;
-    cursor: pointer;
-}
+
 .cbtn3{
     font-size: 2.7vh;
     padding: 1vh 3vw;
     margin: 2vh auto;
     display: block;
     text-align: center;
-    color: blue;
-    background-color: transparent;
-    border:2px solid blue;
+    color: var(--dark);
+    background-color: var(--cardbtn);
     cursor: pointer;
     border-radius: 3vh;
 }
 .cbtn1:hover{
-    color: white;
-    background-color:  rgb(214, 31, 31);
-    transition: 1s;
     font-size: 3vh;
-}
-.cbtn2:hover{
-    font-size: 3.4vh;
-    color: white;
-    background-color: green;
-    transition: 1s;
+    transition: 0.5s;
 }
 .cbtn3:hover{
     font-size: 3vh;
-    color: white;
-    background-color: blue;
-    transition: 1s;
+    transition: 0.5s;
 }
 /* logo start here */
 
@@ -157,13 +137,17 @@ main{
 .media{
     text-align: center;
 }
+.media:hover{
+    scale: 1.1;
+}
 
 .pngs{
     width: 4vw;   
 }
 
 .media-text{
-    color: white;
+    color: var(--lwclr);
     cursor: default;
     user-select: none;
+    margin-bottom: 3vh;
 }

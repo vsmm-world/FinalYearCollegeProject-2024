@@ -1,6 +1,9 @@
 :root{
     --dark : #00203FFF;
     --light :  #ADEFD1FF;
+    --backphoto :  url("/img/wal1.jpg");
+    --lwhite : rgb(222, 212, 212);
+    --dwhite : rgb(168, 158, 158);
 }
 
 * {

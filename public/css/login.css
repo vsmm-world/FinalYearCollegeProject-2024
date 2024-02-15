@@ -1,12 +1,11 @@
 body {
-  background-image: var(--backphoto);
+  background: var(--backphoto);
     background-size: cover;
   font-size: 1.1 rem;
   width: 100vw;
     height: 100vh;
   font-family: sans-serif;
   font-family: "Open Sans", sans-serif;
-  color: #2b3e51;
 }
 .log-title {
   font-weight: 600;
@@ -83,7 +82,7 @@ input[type="email"] {
   width: 100%;
   padding: 0 3.7vw 0 10px;
   margin: 0;
-  color: #ffffff;
+  color: var(--lwclr);
   border: 1px solid var(--light);
   font-style: normal;
   font-size: 16px;
@@ -95,7 +94,7 @@ input[type="email"] {
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus {
-  border-color: #3ca9e2;
+  border-color: var(--cardbtn);
 }
 
 #showdiv {
@@ -111,7 +110,7 @@ input[type="email"]:focus {
   display: flex;
   font-size: 2.6vh;
   margin-top: -1.5vh;
-  color: rgb(198, 186, 186);
+  color: var(--light)
 }
 
 
@@ -120,12 +119,12 @@ input[type="email"]:focus {
   margin-bottom: 10.7vh;
   margin-left: 0.3vw;
   margin-top: -4vh;
-
+;
 }
 
 input[type="submit"] {
-  background-color: var(--light );
-  color: var(--dark);
+  background-color: var(--text );
+  color: var(--card);
   backdrop-filter: blur(10px);
   border: none;
   display: block;

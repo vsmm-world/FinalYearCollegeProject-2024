@@ -1,12 +1,11 @@
 * {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
     font-family: sans-serif;
 }
 
 body {
-    background-image: var(--backphoto);
+    background: var(--backphoto);
     background-size: cover;
     width: 100vw;
     height: 100vh;
@@ -43,7 +42,8 @@ main {
     height: 50vh;
     font-size: 4vh;
     margin: 2vh 9vw;
-    background: var(--dark);
+    background: var(--card);
+    filter:var(--box-shadow2);
     color: var(--light);
     padding: 1vw;
     line-height: 6vh;
@@ -56,10 +56,9 @@ main {
     width: 11vw;
     font-size: 14px;
     padding: 4px;
-    background-color: var(--dark);
-    color: var(--light);
+    background-color: var(--text);
+    color: var(--card);
     border-radius: 2vh;
-    box-shadow: 0vh 1vw 6vh rgb(0, 0, 0);
 }
 .btns:hover{
     font-size: 16px;

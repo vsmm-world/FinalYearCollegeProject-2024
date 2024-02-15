@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: var(--backphoto);
+    background: var(--backphoto);
     background-size: cover;
     width: 100vw;
     height: 100vh;
