@@ -12,7 +12,13 @@ body{
 header nav ul{
     margin-bottom: 0;
 }
-
+.learn{
+    color: var(--light);
+    margin-left: 36vw;
+}
+.autogenrate{
+    color: var(--lvclr);
+}
 h1{
     color: white;
 }

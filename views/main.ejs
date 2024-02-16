@@ -10,18 +10,15 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/universal.css">
+
 </head>
 
 <body>
     <%- include('navbar') %>
         <main>
-            <!-- <h1 class="firstheading firsthead">Ｅｎｔｅｒ ｙｏｕｒ ｆｕｔｕｒｅ</h1>
-            <h3 class="firstheading secondhead">Express Your Intersting Cards</h3>
-            <p class="firstheading thiredhead">We are care of your future, you can explore these unique features with
-                great confinence and achieve a
-                great future with us . . . </p> -->
-
-                <%- include('slider') %>
+            <h2 class="learn">Let's learn about <span class="autogenrate"></span></h2>
+            <%- include('slider') %>
             <button class="btn starttoday"><b>Start Today</b></button>
             <div>
                 <div class="cards">
@@ -138,5 +135,16 @@
         </main>
         <%- include('footer') %>
 </body>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+    let typed = new Typed(".autogenrate" , {
+        strings : ["HTML" , "JavaScript" , "Python" , "PHP" , "Java" , "C and C++"] , 
+        typeSpeed : 70, 
+        backDelay: 1500,
+        startDelay : 0,
+        backSpeed : 4,
+        loop : true
+    })
+</script>
 
 </html>

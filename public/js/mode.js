@@ -1,7 +1,6 @@
 let mode = document.querySelector(".mode")
 let root = document.documentElement;
-console.log(root.style.setProperty);
-console.log(mode.src);
+
 let toggle = true;
 if(mode.src = "/icons/sun.png"){
     document.body.classList.toggle("dark")

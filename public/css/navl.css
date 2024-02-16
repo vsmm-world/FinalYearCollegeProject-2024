@@ -1,10 +1,38 @@
-:root{
-    --dark : #00203FFF;
-    --light :  #ADEFD1FF;
-    --backphoto :  url("/img/wal1.jpg");
-    --lwhite : rgb(222, 212, 212);
-    --dwhite : rgb(168, 158, 158);
+.dark{
+    --wbcolor : #ede7e7;
+    --dark : #00203FFF ;
+    --slidertext : #00203FFF ;
+    --normalbtn : #00203FFF;
+    --card : #00203FFF;
+    --cardbtn :  #ADEFD1FF ;
+    --light :  #ADEFD1FF ;
+    --slider :#ADEFD1FF ;
+    --mainheading :#ADEFD1FF ;
+    --lwclr :#FFFFFF;
+    --lowwclr : rgb(209, 198, 198);
+    --backphoto :  url("/img/wal1.jpg") ;
+    --text : #ADEFD1FF;
+    --texthover : #ADEFD1FF;
 }
+.light{
+    --wbcolor : #151414;
+    --dark : rgb(245, 242, 242);
+    --slidertext : rgb(53, 45, 45);
+    --normalbtn : #7209B8;
+    --card : #FFFFFF;
+    --cardbtn : #7209B8;
+    --light :  rgb(64, 59, 59) ;
+    --slider : white;
+    --mainheading :#000 ;
+    --lwclr :  rgb(64, 59, 59) ;
+    --lowwclr :  rgb(108, 100, 100) ;
+    --backphoto : rgb(245, 242, 242) ;
+    --text : #7209B8;
+    --texthover :#7209B8; 
+    --box-shadow : drop-shadow(0px 3px 15px #000); 
+    --box-shadow2 : drop-shadow(0px 6px 5px #000); 
+}
+
 
 * {
     margin: 0;
@@ -19,31 +47,43 @@
 }
 
 nav {
-    background:var(--dark);
+    background: var(--dark);
+    position: fixed;
+    z-index: 3;
+    top: 0;
     cursor: default;
+    filter:var(--box-shadow);
     user-select: none;
 }
 nav ul {
+    width: 97vw;
     display: flex;
     align-items: center;
-    /* justify-content: space-around; */
-    width: 100vw;
+    justify-content: space-between;
     padding: 2vh;
     gap: 20px;
 }
 .spanf {
     display: flex;
-    margin-right: 43vw;
-    margin-left: -1vw;
+    width: 46vw;
+    justify-content: space-evenly;
     align-items: center;
 }
-.spans {
-    position: fixed;
-    margin-left: 88.3vw;
+
+.spanf li:nth-child(n+2):hover{
+    scale: 1.1;
+}
+.spans li:hover{
+    scale:1.1;
+}
+
+.spans  {
     display: flex;
     align-items: center;
-    margin-right: -26vw;
+    justify-content:flex-end;
+    width: 50vw;
 }
+
 .mode{
     cursor: pointer;
     width: 2.5vw;
@@ -59,15 +99,14 @@ nav ul {
 }
 nav ul li {
     list-style: none;
-    padding: 0 1vw;
+    padding: 0 0.8vw;
 }
 nav ul li a {
     text-decoration: none;
-    /* color: rgb(37, 35, 35); */
-    color: rgb(221, 212, 212);
+    color: var(--text);
     position: relative;
-    margin-left: -1vh;
+    margin-bottom: 2vh;
 }
 nav ul li a:hover{
-    color: rgb(255, 255, 255);
+    color: var(--texthover);
 }

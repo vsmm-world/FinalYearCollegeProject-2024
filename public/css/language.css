@@ -16,7 +16,7 @@ body {
 }
 
 .item-list-part {
-  height: 75vh;
+  height:75vh;
 }
 
 .slidebar {
@@ -30,6 +30,7 @@ body {
 }
 
 .item-list {
+  
   display: flex;
   justify-content: center;
   gap: 1vh;
@@ -49,7 +50,8 @@ body {
 .item-btn {
   padding: 1vh 1vw;
   width: 15vw;
-  background-color: var(--light);
+  background-color: var(--cardbtn);
+  color: var(--card);
   border: 0;
   border-radius: 1vh;
   font-size: 3vh;
@@ -64,7 +66,7 @@ body {
   display: flex;
   justify-content: center;
   background-color: var(--dark);
-  color: rgb(222, 209, 209);
+  color: var(--lwclr);
   padding: 2vh;
   border: 0;
   font-size: 3vh;
@@ -78,13 +80,17 @@ body {
 }
 .content {
   width: 100vw;
-  background-color: var(--light);
+  background-color: var(--slider);
+}
+.content::-webkit-scrollbar{
+  display: none;
 }
 
 .text-lang-head {
+  margin-bottom: -2vh;
   display: block;
   text-align: center;
-  margin: 3vh 0;
+  margin: 3vh 0 0 0;
   font-family: "ubuntu";
   font-size: 5vh;
 }
@@ -99,13 +105,16 @@ body {
 
 .section-title {
   color: var(--light) !important;
+  margin: -5vh 0 !important;
 }
 .text-lang-ul {
   font-family: "ubuntu";
   display: flex;
-  background-color: var(--light);
+  height: 82vh;
+  background-color: var(--slider);
   flex-wrap: wrap;
 }
+
 .content div p {
   font-family: "ubuntu";
   padding: 3vh 6vw;
@@ -136,9 +145,11 @@ body {
   margin-top: 3vh;
 }
 .text-lang-li {
-  margin: 3vh 6vw;
+  margin: 0 6vw;
+  filter:var(--box-shadow) ;
   white-space: pre-wrap;
   line-height: 1.8;
+  height: 79vh;
   font-family: "Ubuntu";
 }
 .doc-lang-li {
@@ -147,7 +158,7 @@ body {
 }
 .vid-lang {
   width: 70vw;
-  height: 80vh;
+  height: 60vh;
   margin-bottom: 3vh;
 }
 .doc-lang-a {
@@ -163,4 +174,25 @@ body {
   margin: 3vh 0;
   font-family: "ubuntu";
   font-size: 5vh;
+}
+.vid-c{
+  height: 90vh;
+  scroll-behavior:auto;
+  margin-top: 1vh !important;
+
+}
+.introduction p{
+  color: var(--light) !important;
+}
+.key-features ul li{
+  color: var(--light) !important;
+}
+.reasons ul li{
+  color: var(--light) !important;
+}
+.use-cases ul li{
+  color: var(--light) !important;
+}
+.final-remarks p{
+  color: var(--light) !important;
 }

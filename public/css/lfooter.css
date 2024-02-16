@@ -23,7 +23,6 @@
 .ft-name-1 {
     font-size: 3.5vh;
     padding-bottom: 3vh;
-    text-decoration: underline;
     display: block;
     font-family: 'Inter', sans-serif;
     color: var(--mainheading);
