@@ -3,10 +3,17 @@
     --light :  #ADEFD1FF;
 }
 .admin-container{
-    background-color: var(--light);
+    background: var(--backphoto);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    user-select: none;
+    background-attachment: fixed;
+    overflow-x: hidden;
 }
 .admin-head{
     width: 100vw;
+    color: var(--mainheading);
     text-align: center;
     margin: 13vh 0 2vh 0;
 }
@@ -23,11 +30,13 @@
 
 .addLanguage h2{
     margin: 3vh 0;
+    color: var(--wbcolor);
 }
 
 .language-inp{
     border-top: 0;
-    font-size: 3vh;
+    color: var(--wbcolor);
+    font-size: 3.3vh;
     border-left: 0;
     border-right: 0;
     border-bottom: 2px solid ;
@@ -38,35 +47,36 @@
     margin-bottom: 8vh;
 }
 .add-btn{
-    color: white;
+    color: var(--card);
     border-radius: 1vh;
     padding: 1vh;
     font-size: 3vh;
-    background-color: var(--dark);
+    background-color: var(--cardbtn);
 }
 
 .language-card{
     width: 22vw;
-    background-color: var(--dark);
+    background-color: var(--card);
+    filter:var(--box-shadow2);
     height: 45vh;
     border-radius: 5vh;
     margin: 3vh 0;
 }
 
 .card-title{
-    color: white;
+    color: var(--mainheading);
     margin: 2vh 0;
     width: 100%;
     text-align: center;
 }
 
 .card-btn{
-    background-color: var(--light);
+    background-color: var(--cardbtn);
     border-radius: 1vh;
     width: 15vw;
     display: block;
     margin: 2vh auto;
-    color: black;
+    color: var(--card);
     font-weight: 500;
     padding: 1vh;
     border: 0;
@@ -74,6 +84,7 @@
 
 .ad-footer{
     background-color:var(--dark);
+    filter:var(--box-shadow);
     position: fixed;
     bottom: 0; 
     width: 100%;
@@ -84,4 +95,5 @@
 
 .ad-para{
     padding: 2vh 0;
+    color: var(--mainheading);
 }

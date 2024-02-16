@@ -1,11 +1,13 @@
 body{
-    background-color: rgb(14, 59, 61);
+    background-color: var(--slider);
+    overflow-x: hidden;
 }
 .mainData {
     margin: 15vh 40vw 10vh 40vw;
     flex-wrap: wrap;
     background: var(--dark);
     border-radius: 3vh;
+    filter:var(--box-shadow2);
     padding: 3vh 1vw;
 }
 .pro-img > img{
@@ -24,8 +26,8 @@ body{
 .userlogout{
     display: block;
     text-decoration: none;
-    background-color: var(--light);
-    color: var(--dark);
+    background-color: var(--cardbtn);
+    color: var(--card);
     padding: 1vh 2vw;
     border-radius: 3vh;
     width: 5vw;

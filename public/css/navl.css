@@ -9,6 +9,7 @@
     --slider :#ADEFD1FF ;
     --mainheading :#ADEFD1FF ;
     --lwclr :#FFFFFF;
+    --dwclr : #ADEFD1FF;
     --lowwclr : rgb(209, 198, 198);
     --backphoto :  url("/img/wal1.jpg") ;
     --text : #ADEFD1FF;
@@ -25,6 +26,7 @@
     --slider : white;
     --mainheading :#000 ;
     --lwclr :  rgb(64, 59, 59) ;
+    --dwclr : #cdc0c0;
     --lowwclr :  rgb(108, 100, 100) ;
     --backphoto : rgb(245, 242, 242) ;
     --text : #7209B8;

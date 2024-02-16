@@ -61,7 +61,6 @@ h1{
 .cardbtn{
     background-color: var(--cardbtn);
     color: var(--dark);
-    backdrop-filter: blur(10px);
     text-decoration: none;
     font:bold;
     padding:2vh;
