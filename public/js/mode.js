@@ -24,3 +24,4 @@ const modechange = function (event){
     }
 }
 mode.addEventListener("click" , modechange)
+

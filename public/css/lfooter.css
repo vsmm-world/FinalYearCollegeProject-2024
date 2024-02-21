@@ -25,7 +25,8 @@
     padding-bottom: 3vh;
     display: block;
     font-family: 'Inter', sans-serif;
-    color: var(--mainheading);
+    text-align: center;
+    color: var(--wbcolor);
 }
 .ft-mail p a{
     text-decoration: none;

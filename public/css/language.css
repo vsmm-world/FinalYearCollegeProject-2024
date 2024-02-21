@@ -146,7 +146,7 @@ body {
 }
 .text-lang-li {
   margin: 0 6vw;
-  filter:var(--box-shadow) ;
+  filter:var(--box-shadow2) ;
   white-space: pre-wrap;
   line-height: 1.8;
   height: 79vh;
@@ -178,8 +178,12 @@ body {
 .vid-c{
   height: 90vh;
   scroll-behavior:auto;
-  margin-top: 1vh !important;
-
+  margin-top: 1vh ;
+  display: flex;
+  width: 85vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 .introduction p{
   color: var(--light) !important;

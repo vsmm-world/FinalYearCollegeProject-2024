@@ -7,30 +7,132 @@
     <link rel="stylesheet" href="css/language.css">
     <link rel="stylesheet" href="css/universal.css">
     <link rel="stylesheet" href="css/profile.css">
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
 </head>
-
 <body>
     <%- include('navbar') %>
-        <main class="mainData">
-
-            <div class="pro-img">
-                <img src="/icons/user.png" alt="">
+        <div class="user-container">
+            <div class="inner-container">
+                <div class="user-profile">
+                    <div class="user-data">
+                        <img src="/icons/user.png" class="user-img" alt="">
+                        <div id="user-name">
+                            <p class="user-name"></p>
+                        </div>
+                        <p class="user-about">Hey there , i am using Language Learning.</p>
+                    </div>
+                    <div class="user-learning">
+                        <p class="languages">This is my experience of languages</p>
+                        <div class="lang-experience">
+                            <div class="medium expert">
+                                <h3 class="lang-heading">Expert</h3>
+                                <div class="expert-lang all-lang">
+                                    <p>Javascript</p>
+                                    <p>Kotlin</p>
+                                    <p>CSS</p>
+                                    <p>HTML</p>
+                                </div>
+                            </div>
+                            <div class="medium intermediate">
+                                <h3 class="lang-heading">intermediate</h3>
+                                <div class="expert-lang all-lang">
+                                    <p>Javascript</p>
+                                    <p>Python</p>
+                                    <p>C</p>
+                                    <p>C++</p>
+                                </div>
+                            </div>
+                            <div class="medium beginners">
+                                <h3 class="lang-heading">Beginners</h3>
+                                <div class="beginner-lang all-lang">
+                                    <p>PHP</p>
+                                    <p>Java</p>
+                                    <p>Flutter</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience">
+                    <div class="share-experience">
+                        <div class="feedback">
+                            <p class="experience-text">Share Your Experience With Us</p>
+                            <div class="emojistar">
+                                <div class="emojis">
+                                    <div class="first">
+                                        <picture class="emj">
+                                            <source srcset="" type="image/webp">
+                                            <img class="emj-img" src="" alt="😭">
+                                        </picture>
+                                    </div>
+                                    <div class="second">
+                                        <picture class="emj">
+                                            <source srcset="" type="image/webp">
+                                            <img class="emj-img" src="" alt="😟">
+                                        </picture>
+                                    </div>
+                                    <div class="thired">
+                                        <picture class="emj">
+                                            <source srcset="" type="image/webp">
+                                            <img class="emj-img" src="" alt="😊">
+                                        </picture>
+                                    </div>
+                                    <div class="four">
+                                        <picture class="emj">
+                                            <source srcset="" type="image/webp">
+                                            <img class="emj-img" src="" alt="😄">
+                                        </picture>
+                                    </div>
+                                    <div class="five">
+                                        <picture class="emj">
+                                            <source srcset="" type="image/webp">
+                                            <img class="emj-img" src="" alt="🥰">
+                                        </picture>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <textarea name="feedback" id="feedback-exp" cols="30" rows="10" spellcheck="false"
+                                class="exp-inp" placeholder="Say what you think about this web . . . "></textarea>
+                        </div>
+                        <!-- Start logic -->
+                        <div class="submit-btn">
+                            <input type="submit" value="Submit" class="send-exp">
+                        </div>
+                    </div>
+                    <div class="social-sites">
+                        <a href="#">
+                            <img src="icons/facebook.png" class="pngs" alt="" />
+                        </a>
+                        <a href="#">
+                            <img src="icons/linkedin.png" class="pngs" alt="" />
+                        </a>
+                        <a href="#">
+                            <img src="icons/instagram.png" class="pngs" alt="" />
+                        </a>
+                        <a href="#">
+                            <img src="icons/twitter.png" class="pngs" alt="" />
+                        </a>
+                        <a href="#">
+                            <img src="icons/telegram.png" class="pngs" alt="" />
+                        </a>
+                    </div>
+                    <div class="logout">
+                        <a href="/logout" class="logout-btn">Logout<img src="/icons/logout.png" alt="Logout" class="logout-img"></a>
+                    </div>
+                </div>
             </div>
-            <div id="mainData">
-
-            </div>
-            <br>
-            <a class="userlogout" href="/logout">Log Out</a>
-        </main>
-
+        </div>
         <%- include('footer') %>
+    <script src="/js/user.js" defer></script>
+    
+    </html>
+
 
 
             <script>
-                const mainData = document.getElementById('mainData');
+                const username = document.getElementById('user-name');
                 const baseURL = 'http://localhost:5000/'
 
                 async function getUserDetails() {
@@ -38,8 +140,8 @@
                     const res = await fetch(baseURL + 'whoami')
                     const data = await res.json();
 
-                    mainData.innerHTML = `
-                    <h1 class="pro-name" > ${data.name}</h1>
+                    username.innerHTML = `
+                    <p class="user-name">${data.name}</p>
                     `
 
                 }
