@@ -13,7 +13,6 @@ const File = require('./models/file');
 require('dotenv').config();
 const Langauage = require('./models/Langauage');
 const bodyParser = require('body-parser');
-
 const VideoContent = require('./models/videoContent');
 const TextContent = require('./models/textContent');
 const DocContent = require('./models/docContent');
@@ -60,6 +59,18 @@ app.get("/register", (req, res) => {
 app.get("/login", (req, res) => {
     res.status(200).render("login");
 });
+app.get('/grow-web',isAuthenticted, (req, res) => {
+    res.status(200).render("grow-web");
+})
+app.get('/top-languages',isAuthenticted, (req, res) => {
+    res.status(200).render("top-languages");
+})
+app.get('/users',isAuthenticted, (req, res) => {
+    res.status(200).render("users");
+})
+app.get('/feedback',isAuthenticted, (req, res) => {
+    res.status(200).render("feedback");
+})
 app.get("/about", (req, res) => {
     res.status(200).render("about");
 })
@@ -81,16 +92,10 @@ app.get('/miniProjects', (req, res) => {
     res.render('index');
 })
 
-app.get('/about', (req, res) => {
-    res.render('about')
-})
-app.get('/contact', (req, res) => {
-    res.render('about')
-})
-
 app.get('/language', isAuthenticted, (req, res) => {
     res.status(200).render('language');
 })
+
 app.get('/photos', async (req, res) => {
     const imgs = await File.find({}).then((data, err) => {
         if (err) {

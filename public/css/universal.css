@@ -1,0 +1,39 @@
+.dark{
+    --wbcolor : #ede7e7;
+    --dark : #00203FFF ;
+    --slidertext : #00203FFF ;
+    --normalbtn : #00203FFF;
+    --card : #00203FFF;
+    --cardbtn :  #ADEFD1FF ;
+    --light :  #ADEFD1FF ;
+    --slider :#ADEFD1FF ;
+    --mainheading :#ADEFD1FF ;
+    --lwclr :#FFFFFF;
+    --dwclr : #ADEFD1FF;
+    --lowwclr : rgb(209, 198, 198);
+    --backphoto :  url("/img/wal1.jpg") ;
+    --text : #ADEFD1FF;
+    --texthover : #ADEFD1FF;
+    --lvclr : #ede7e7;
+}
+.light{
+    --wbcolor : #151414;
+    --dark : rgb(245, 242, 242);
+    --slidertext : rgb(53, 45, 45);
+    --normalbtn : #7209B8;
+    --card : #FFFFFF;
+    --cardbtn : #7209B8;
+    --light :  rgb(64, 59, 59) ;
+    --slider : white;
+    --mainheading :#000 ;
+    --lwclr :  rgb(64, 59, 59) ;
+    --dwclr : #cdc0c0;
+    --lowwclr :  rgb(108, 100, 100) ;
+    --backphoto : rgb(245, 242, 242) ;
+    --text : #7209B8;
+    --texthover :#7209B8; 
+    --lvclr :#7209B8; 
+    --box-shadow : drop-shadow(0px 3px 15px #000); 
+    --box-shadow2 : drop-shadow(0px 2px 2px #000); 
+    --box-hover : drop-shadow(0px 4px 10px #000); 
+}

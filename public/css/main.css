@@ -14,6 +14,7 @@ header nav ul{
 }
 .learn{
     color: var(--light);
+    margin-top: -4vh;
     margin-left: 36vw;
 }
 .autogenrate{
@@ -54,8 +55,6 @@ h1{
     margin: 0 45% 4vh 45%;
 }
 .starttoday:hover{
-    /* background-color: var(--light);
-    color: var(--dark); */
     scale: 1.1;
 }
 
@@ -79,7 +78,6 @@ h1{
     filter:drop-shadow(10px);
     display: block;
     height: 20vh;
-    /* text-align: center; */
     margin: 4vh auto;
 }
 
@@ -93,9 +91,7 @@ h1{
 .card{
     width: 20vw;
     color: var(--light);
-    /* background:linear-gradient(red green blue); */
     scroll-behavior: none;
-    /* background: transparent; */
     background-color: var(--card);
     border-radius: 2vh;
     backdrop-filter: blur(5px);
@@ -114,4 +110,5 @@ h1{
 .card-text{
     font-size: 2.6vh;
     padding: 2vh 1vw;
+    height: 13vh;
 }

@@ -22,7 +22,8 @@
                     <li><a class="navbartxt" href="/miniProjects">MiniProjects</a></li>
                     <li><a class="navbartxt" href="/language">Language</a></li>
                 </span>
-                    <img src="/icons/sun.png" class="mode" alt="sun">
+                    <img src="/icons/sun.png" class="mode" alt="sun" onclick="themetoggle()">
+                    <div id="theme"></div>
                 <span class="spans" id="userProfile">
                     <li><a class="navbartxt" href="/login">Login</a></li>
                     <li><a class="navbartxt" href="/register">Register</a></li>
@@ -30,7 +31,8 @@
             </ul>
         </nav>
     </header>
-    <script src="js/mode.js"></script>
+    <!-- <script src="js/mode.js"></script> -->
+    <script src="js/onmode.js"></script>
     <script>
 
         const userProfile = document.getElementById('userProfile');

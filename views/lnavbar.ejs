@@ -6,22 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Learning Platform</title>
     <link rel="shortcut icon" href="img/girl.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/lnav.css">
-    <link rel="stylesheet" href="css/universal.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <!-- <link rel="stylesheet" href="css/universal.css"> -->
 </head>
 
 <body>
     <header>
-        <nav>
+        <nav class="navbar">
             <ul>
                 <span class="spanf">
-                    <li><a class="navbartxt" href="/"><img class="navimg" src="img/girl.png" alt=""></a></li>
-                    <li><a class="navbartxt" href="/">Home</a></li>
-                    <li><a class="navbartxt" href="/about">About</a></li>
-                    <li><a class="navbartxt" href="/contact">Contact Us</a></li>
-                    <li><a class="navbartxt" href="/miniProjects">MiniProjects</a></li>
-                    <li><a class="navbartxt" href="/language">Language</a></li>
+                    <li><a class="navbartxt" href="/admin">Languages</a></li>
+                    <li><a class="navbartxt" href="/grow-web">Grow Web</a></li>
+                    <li><a class="navbartxt" href="/top-languages">Top Languages</a></li>
+                    <li><a class="navbartxt" href="/users">Users</a></li>
+                    <li><a class="navbartxt" href="/feedback">Feedback</a></li>
                 </span>
+                    <img src="/icons/sun.png" class="mode" alt="sun">
                 <span class="spans" id="userProfile">
                     <li><a class="navbartxt" href="/login">Login</a></li>
                     <li><a class="navbartxt" href="/register">Register</a></li>
@@ -29,10 +29,10 @@
             </ul>
         </nav>
     </header>
+    <script src="js/mode.js"></script>
     <script>
 
         const userProfile = document.getElementById('userProfile');
-
 
         const userURL = 'http://localhost:5000/';
 
@@ -43,7 +43,9 @@
             if (data) {
                 userProfile.innerHTML = ` <li><a class="navbartxt" href="/profile">${data.name}</a></li> `;
             }
-
+            if (data.role == 'admin') {
+                userProfile.innerHTML = ` <li><a class="navbartxt" href="/admin">${data.name}</a></li> `;
+            }
         }
         Updates()
     </script>

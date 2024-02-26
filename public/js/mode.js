@@ -1,13 +1,7 @@
 let mode = document.querySelector(".mode")
-let root = document.documentElement;
 
 let toggle = true;
-if(mode.src = "/icons/sun.png"){
-    document.body.classList.toggle("dark")
-}
-else if(mode.src = "/icons/moon.png"){
-    document.body.classList.toggle("light")
-}
+document.body.classList.toggle("dark")
 const modechange = function (event){
     event.preventDefault()
     toggle = !toggle;
@@ -20,7 +14,6 @@ const modechange = function (event){
         mode.src = "/icons/moon.png";
         document.body.classList.add("light")
         document.body.classList.remove("dark")
-
     }
 }
 mode.addEventListener("click" , modechange)

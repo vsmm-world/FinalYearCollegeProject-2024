@@ -1,0 +1,83 @@
+body{
+    overflow-x: hidden;
+}
+.language-container {
+  background: var(--backphoto);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+}
+.admin-head {
+  width: 100%;
+  color: var(--mainheading);
+  text-align: center;
+  padding-top: 5vh;
+  margin-top: 10vh;
+}
+.languages {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.addLanguage {
+  width: 100%;
+  text-align: center;
+}
+
+.addLanguage h2 {
+  margin: 3vh 0;
+  color: var(--wbcolor);
+}
+
+.language-inp {
+  border-top: 0;
+  color: var(--wbcolor);
+  font-size: 3.3vh;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 2px solid;
+  background-color: transparent;
+  outline: none;
+}
+.admin-main-part {
+  margin-bottom: 5vh;
+  padding-bottom: 3vh;
+}
+.add-btn {
+  color: var(--card);
+  border-radius: 1vh;
+  padding: 1vh;
+  font-size: 3vh;
+  background-color: var(--cardbtn);
+}
+
+.language-card {
+  width: 22vw;
+  background-color: var(--card);
+  filter: var(--box-shadow2);
+  height: 45vh;
+  border-radius: 5vh;
+  margin: 3vh 0;
+}
+
+.card-title {
+  color: var(--mainheading);
+  margin: 2vh 0;
+  width: 100%;
+  text-align: center;
+}
+
+.card-btn {
+  background-color: var(--cardbtn);
+  border-radius: 1vh;
+  width: 15vw;
+  display: block;
+  margin: 2vh auto;
+  color: var(--card);
+  font-weight: 500;
+  padding: 1vh;
+  border: 0;
+}
