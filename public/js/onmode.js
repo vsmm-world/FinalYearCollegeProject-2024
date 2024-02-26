@@ -35,11 +35,4 @@ function themetoggle(){
         mode.src = sunmode;
     }
     document.getElementById("theme").textContent = localStorage.getItem("theme");
-    
-    // if(document.cookie = "theme == dark"){
-    //     console.log("i am dark")
-    // }
-    // else if(document.cookie = "theme == light"){
-    //     console.log("i am light")
-    // }
 }
