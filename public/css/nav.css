@@ -75,9 +75,8 @@ nav ul {
     align-items: center;
 }
 
-.spanf:nth-child(2):hover{
+.spanf li:nth-child(n+2):hover{
     scale: 1.1;
-    background-color: red;
 }
 .spans li:hover{
     scale:1.1;
