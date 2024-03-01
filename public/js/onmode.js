@@ -39,7 +39,11 @@ function themetoggle(){
     }
     document.getElementById("theme").textContent = localStorage.getItem("theme");
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6fa4ed1690d5882962af0942523a036d255d7743
 =======
 }
 >>>>>>> 6fa4ed1690d5882962af0942523a036d255d7743
