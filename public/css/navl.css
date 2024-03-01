@@ -46,9 +46,6 @@
     top: 0;
     position: fixed;
     z-index: 3;
-}
-
-nav {
     background: var(--dark);
     position: fixed;
     z-index: 3;
@@ -57,8 +54,9 @@ nav {
     filter:var(--box-shadow);
     user-select: none;
 }
+
 nav ul {
-    width: 97vw;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -67,7 +65,7 @@ nav ul {
 }
 .spanf {
     display: flex;
-    width: 46vw;
+    width: 45vw;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -83,6 +81,7 @@ nav ul {
     display: flex;
     align-items: center;
     justify-content:flex-end;
+    margin-right: 2vw;
     width: 50vw;
 }
 

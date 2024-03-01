@@ -1,19 +1,22 @@
-let onpageload = localStorage.getItem("theme");
-let element = document.body;
+const onpageload = localStorage.getItem("theme");
+const element = document.body;
 element.classList.add(onpageload)
-let themes = document.getElementById("theme");
-let mode = document.querySelector(".mode");
-let moonmode = "../icons/moon.png"
-let sunmode = "../icons/sun.png"
+const themes = document.getElementById("theme");
+const mode = document.querySelector(".mode");
+const moonmode = "../icons/moon.png"
+const sunmode = "../icons/sun.png"
+themes.classList.add("light")
+themes.textContent = "light";
+document.cookie= "theme = light";
+
 themes.textContent = localStorage.getItem("theme")
 let theme = localStorage.getItem("theme")
 if(theme === "light"){
     mode.src = moonmode;
 }
-else if(theme === "dark"){
+else{
     mode.src = sunmode;
 }
-
 function themetoggle(){
     let element = document.body;
     mode.src = "../icons/sun.png";
@@ -35,11 +38,8 @@ function themetoggle(){
         mode.src = sunmode;
     }
     document.getElementById("theme").textContent = localStorage.getItem("theme");
-    
-    // if(document.cookie = "theme == dark"){
-    //     console.log("i am dark")
-    // }
-    // else if(document.cookie = "theme == light"){
-    //     console.log("i am light")
-    // }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 6fa4ed1690d5882962af0942523a036d255d7743

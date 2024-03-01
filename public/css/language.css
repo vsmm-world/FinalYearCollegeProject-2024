@@ -104,7 +104,7 @@ body {
 }
 
 .section-title {
-  color: var(--light) !important;
+  color: var(--wbcolor) !important;
   margin: -5vh 0 !important;
 }
 .text-lang-ul {
