@@ -17,9 +17,10 @@ const VideoContent = require('./models/videoContent');
 const TextContent = require('./models/textContent');
 const DocContent = require('./models/docContent');
 const User = require("./models/user");
+const cors = require('cors');
 
 PassInit(passport);
-
+app.use(cors());
 // Middlwere Usages 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
@@ -31,6 +32,14 @@ app.use(expressSession({
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
 }));
+
+// Enable CORS
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+});
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.json());
@@ -59,16 +68,16 @@ app.get("/register", (req, res) => {
 app.get("/login", (req, res) => {
     res.status(200).render("login");
 });
-app.get('/grow-web',isAuthenticted, (req, res) => {
+app.get('/grow-web', isAuthenticted, (req, res) => {
     res.status(200).render("grow-web");
 })
-app.get('/top-languages',isAuthenticted, (req, res) => {
+app.get('/top-languages', isAuthenticted, (req, res) => {
     res.status(200).render("top-languages");
 })
-app.get('/users',isAuthenticted, (req, res) => {
+app.get('/users', isAuthenticted, (req, res) => {
     res.status(200).render("users");
 })
-app.get('/feedback',isAuthenticted, (req, res) => {
+app.get('/feedback', isAuthenticted, (req, res) => {
     res.status(200).render("feedback");
 })
 app.get("/about", (req, res) => {

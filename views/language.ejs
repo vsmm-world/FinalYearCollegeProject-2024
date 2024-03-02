@@ -83,33 +83,30 @@
                     if (select.value == "content") {
                         mainData.innerHTML += `                
                         <h2 class="text-lang-head">Text Content</h2>
-                        <ul class = "text-lang-ul">
+                        <ul class="text-lang-ul">
                             ${TextContent.map((text) => {
-                            return `<li class = "text-lang-li">${text.text}</li>    
-                            `;
-                        })}
-                        
+                                return `<li class="text-lang-li">${text.text}</li>`;
+                            }).join("")}
                         </ul>
                         `;
                     } else if (select.value == "videos") {
                         mainData.innerHTML += `
-                        <h2 class="text-lang-head">Videos To Learn in Better way </h2>
+                        <h2 class="text-lang-head">Videos To Learn in Better way</h2>
                         <ul class="vid-c">
                             ${VideoContent.map((video) => {
-                            return video.video.map((vid) => {
-                                return `<iframe class="vid-lang" width="1120" height="500" src="${vid}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
-                            });
-                        })}
+                                return video.video.map((vid) => {
+                                    return `<iframe class="vid-lang" width="1120" height="500" src="${vid}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+                                }).join("");
+                            }).join("")}
                         </ul>
                         `;
                     } else if (select.value == "documentation") {
                         mainData.innerHTML += `
-                        <h2 class="text-lang-head">Official Documentation Links for Referance</h2>
+                        <h2 class="text-lang-head">Official Documentation Links for Reference</h2>
                         <ol>
-                   
-                             ${DocContent.map((doc) => {
-                            return `<li class = "doc-lang-li">Click here to go documentation 👉 <a class="doc-lang-a" href="${doc.doc}" target="_blank">${doc.doc}</a></li>\n`;
-                        }).join("")}
+                            ${DocContent.map((doc) => {
+                                return `<li class="doc-lang-li">Click here to go documentation 👉 <a class="doc-lang-a" href="${doc.doc}" target="_blank">${doc.doc}</a></li>`;
+                            }).join("")}
                         </ol>
                         `;
                     }
