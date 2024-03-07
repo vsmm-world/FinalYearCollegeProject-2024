@@ -401,9 +401,8 @@ app.post('/language/doc/delete', async (req, res) => {
 
 app.get('/whoami', isAuthenticted, (req, res) => {
     const user = req.user;
-
-    res.status(200).send(user)
-})
+    res.status(200).json(user);
+});
 
 app.get('/profile', isAuthenticted, (req, res) => {
     res.status(200).render('profile')

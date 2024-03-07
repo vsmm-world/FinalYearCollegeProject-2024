@@ -20,8 +20,8 @@
                     <li><a class="navbartxt" href="/users">Users</a></li>
                     <li><a class="navbartxt" href="/feedback">Feedback</a></li>
                 </span>
-                    <img src="/icons/sun.png" class="mode" alt="sun" onclick="themetoggle()">
-                    <div id= "theme"></div>
+                <img src="/icons/sun.png" class="mode" alt="sun" onclick="themetoggle()">
+                <div id="theme"></div>
                 <span class="spans" id="userProfile">
                     <li><a class="navbartxt" href="/login">Login</a></li>
                     <li><a class="navbartxt" href="/register">Register</a></li>
@@ -34,7 +34,7 @@
 
         const userProfile = document.getElementById('userProfile');
 
-        const userURL = 'http://localhost:5000/';
+        const userURL = 'https://projects.ravindravaland.co/';
 
         async function Updates() {
             const res = await fetch(userURL + 'whoami')
